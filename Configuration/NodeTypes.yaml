@@ -9,8 +9,6 @@
 #    sidebar:
 #      type: 'TYPO3.Neos:ContentCollection'
 
-
-
 ##
 # Adjust the "TwoColumn" node type:
 # Disable some of the layout options, override labels and set the default layout
@@ -69,3 +67,43 @@
             values:
               '25-25-25-25':
                 label: '25% / 25% / 25% / 25%'
+
+
+##
+# A "Youtube" content element
+#
+'TYPO3.NeosDemoTypo3Org:YouTube':
+  superTypes: ['TYPO3.Neos:Content']
+  ui:
+    label: YouTube
+    icon: 'icon-youtube'
+    inspector:
+      groups:
+        'video':
+          label: Video
+          position: 50
+  properties:
+    'video':
+      type: string
+      defaultValue: ''
+      ui:
+        label: 'Youtube video ID'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'video'
+    'width':
+      type: integer
+      defaultValue: 400
+      ui:
+        label: 'Width'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'video'
+    'height':
+      type: integer
+      defaultValue: 300
+      ui:
+        label: 'Height'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'video'

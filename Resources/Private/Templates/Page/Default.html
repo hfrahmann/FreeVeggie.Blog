@@ -16,39 +16,52 @@
     <body>
     <f:section name="body">
 
-        <div class="topbar content-min-1000">
-            <div class="content">
+        <nav>
+            <div class="topbar content-min-1000">
+                <div class="content">
 
-                <a href="{neos:uri.node(node: site)}">
-                    <div class="logo"></div>
-                </a>
+                    <a href="{neos:uri.node(node: site)}">
+                        <div class="logo"></div>
+                    </a>
 
-                <div class="left">
-                    <nav class="menu">
-                        {parts.mainMenu -> f:format.raw()}
-                    </nav>
+                    <div class="left">
+                        <nav class="menu">
+                            {parts.mainMenu -> f:format.raw()}
+                        </nav>
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <div class="subbar content-min-1000">
-            <div class="content">
-                <div class="logotext"></div>
-                <a href="#" class="sublink">Eins</a>
-                <a href="#" class="sublink">Apfelbaum</a>
-                <a href="#" class="sublink">Blaues Buch</a>
-                <a href="#" class="sublink">Testitest</a>
+
+            <div class="subbar content-min-1000">
+                <div class="content">
+                    <div class="logotext"></div>
+                    <a href="#" class="sublink">Eins</a>
+                    <a href="#" class="sublink">Apfelbaum</a>
+                    <a href="#" class="sublink">Blaues Buch</a>
+                    <a href="#" class="sublink">Testitest</a>
+                </div>
             </div>
-        </div>
-
-            <!-- {parts.menu -> f:format.raw()} -->
         </nav>
+            <!-- {parts.menu -> f:format.raw()} -->
+
         <!--<nav class="breadcrumb">
             {parts.breadcrumb -> f:format.raw()}
         </nav>-->
-        <div class="content">
-            {content.main -> f:format.raw()}
+        <div class="main-content">
+            <div class="content">
+                {content.main -> f:format.raw()}
+            </div>
         </div>
+
+        <footer>
+            <div class="footer content-min-1000">
+                <div class="content">
+                    {footer -> f:format.raw()}
+                </div>
+            </div>
+        </footer>
+
     </f:section>
     <f:section name="bodyScripts">
         <!-- Put your scripts inclusions for the end of the body here, they will be included in your website by TypoScript -->

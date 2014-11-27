@@ -76,7 +76,7 @@ div.topbar {
 }
 
 ul.topmenu {
-    position: absolute;
+
     list-style-type:none;
     list-style-image:none;
     margin: 0px;
@@ -165,6 +165,9 @@ div.footer {
     padding-top: 20px;
     margin-bottom: 50px;
     border-top: 1px solid #cdcdcd;
+
+    font-size: 15px;
+    color: #787878;
 }
 
 /*** CONTENT ***/
@@ -183,6 +186,8 @@ div.content {
     width: 100%;
     clear: both;
     display: table;
+    margin-right: -10px;
+    margin-left: -10px;
 }
 
 .row [class^="col-"], .row [class*=" col-"] {
@@ -210,6 +215,6 @@ div.content {
     width: 25%;
 }
 
-.container {
-    line-height: 150%;
+.main-content {
+    line-height: 130%;
 }
