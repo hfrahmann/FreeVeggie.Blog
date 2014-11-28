@@ -23,6 +23,7 @@
 
                     <a href="{neos:uri.node(node: site)}">
                         <div class="logo"></div>
+                        <div class="logotext"></div>
                     </a>
 
                     <div class="left">
@@ -36,22 +37,19 @@
 
             <div class="subbar content-min-1000">
                 <div class="content">
-                    <div class="logotext"></div>
-                    {parts.thirdMenu -> f:format.raw()}
+                    {parts.breadcrumb -> f:format.raw()}
                 </div>
             </div>
 
         </div>
-            <!-- {parts.menu -> f:format.raw()} -->
 
-        <!--<nav class="breadcrumb">
-            {parts.breadcrumb -> f:format.raw()}
-        </nav>-->
+
         <div class="main-content">
             <div class="content">
                 {content.main -> f:format.raw()}
             </div>
         </div>
+
 
         <footer>
             <div class="footer content-min-1000">

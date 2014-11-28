@@ -28,13 +28,10 @@ page = Page {
                 maximumLevels = 2
             }
 
-            thirdMenu = Menu
-            thirdMenu {
-                entryLevel = 3
-                templatePath = 'resource://FreeVeggie.Blog/Private/Templates/TypoScriptObjects/ThirdMenu.html'
-                maximumLevels = 0
-            }
 			breadcrumb = Breadcrumb
+            breadcrumb {
+                templatePath = 'resource://FreeVeggie.Blog/Private/Templates/TypoScriptObjects/Breadcrumb.html'
+            }
 		}
 		// These are your content areas, you can define as many as you want, just name them and the nodePath.
 		content {
