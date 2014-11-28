@@ -16,7 +16,8 @@
     <body>
     <f:section name="body">
 
-        <nav>
+        <div class="navigationbar">
+
             <div class="topbar content-min-1000">
                 <div class="content">
 
@@ -36,13 +37,11 @@
             <div class="subbar content-min-1000">
                 <div class="content">
                     <div class="logotext"></div>
-                    <a href="#" class="sublink">Eins</a>
-                    <a href="#" class="sublink">Apfelbaum</a>
-                    <a href="#" class="sublink">Blaues Buch</a>
-                    <a href="#" class="sublink">Testitest</a>
+                    {parts.thirdMenu -> f:format.raw()}
                 </div>
             </div>
-        </nav>
+
+        </div>
             <!-- {parts.menu -> f:format.raw()} -->
 
         <!--<nav class="breadcrumb">

@@ -14,6 +14,9 @@ body, table {
     font-size: 16px;
 }
 
+body {
+}
+
 .left {
     float: left;
 }
@@ -67,16 +70,20 @@ div.logotext {
     float:left;
 }
 
+.navigationbar {
+    background: #343434;
+    padding-top: 10px;
+}
+
 /*** TOPBAR ***/
 
 div.topbar {
-    background: #404040;
+    background: transparent;
     height: 60px;
     text-align: center;
 }
 
 ul.topmenu {
-
     list-style-type:none;
     list-style-image:none;
     margin: 0px;
@@ -88,43 +95,44 @@ ul.topmenu ul.submenu {
     list-style-image:none;
     margin: 0px;
     padding: 0px;
-    background: #404040;
+    background: #454545;
     position:absolute;
     min-width:200px;
 }
 
 ul.topmenu > li {
     float:left;
-    min-width: 150px;
-}
-
-ul.topmenu > li > a {
-    border-right: 0px solid #545454;
+    min-width: 120px;
 }
 
 ul.topmenu ul.submenu > li > a,
 ul.topmenu > li > a {
     display: block;
     text-decoration: none;
-    color: #eeeeee;
-    padding: 20px 0px 23px 15px;
+    color: #EFEFEF;
+    padding: 7px 10px 9px 10px;
     font-size: 14px;
     font-weight: 200;
     letter-spacing: 1px;
 }
 
+ul.topmenu > li > a {
+    margin-bottom: 5px;
+    border-radius: 5px;
+}
+
 ul.topmenu ul.submenu {
     padding-bottom: 10px;
     padding-top: 10px;
-}
-
-ul.topmenu ul.submenu > li > a:hover,
-ul.topmenu > li > a:hover {
-    background: #505050;
+    border-radius: 5px;
 }
 
 ul.topmenu ul.submenu > li > a {
     padding: 10px 10px 10px 15px;
+}
+
+ul.topmenu ul.submenu > li > a:hover {
+    background: #676767;
 }
 
 ul.topmenu >li ul.submenu {
@@ -135,14 +143,14 @@ ul.topmenu > li:hover ul.submenu {
     display: block;
 }
 
-ul.topmenu > li:hover {
-    background: #393939;
+ul.topmenu > li:hover > a {
+    background: #676767;
 }
 
 /*** SUBBAR ***/
 
 div.subbar {
-    background: #1c1c1c;
+    background: transparent;
     min-height: 35px;
 }
 
@@ -161,16 +169,21 @@ div.subbar a.sublink:hover {
 /*** FOOTER ***/
 
 div.footer {
-    margin-top: 100px;
     padding-top: 20px;
-    margin-bottom: 50px;
-    border-top: 1px solid #cdcdcd;
-
+    padding-bottom: 50px;
     font-size: 15px;
-    color: #787878;
+    color: #BCBCBC;
+    background: #343434;
 }
 
 /*** CONTENT ***/
+
+div.main-content {
+    background: #FFFFFF;
+    min-height: 200px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
 
 div.content-min-1000 {
     min-width: 1000px;
