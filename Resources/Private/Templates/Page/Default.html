@@ -7,6 +7,7 @@
 
         </f:section>
         <f:section name="stylesheets">
+            <link href='http://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
             <link rel="stylesheet" href="{f:uri.resource(path: 'Styles/Layout.css', package: 'FreeVeggie.Blog')}" media="all" />
         </f:section>
         <f:section name="headScripts">
@@ -34,17 +35,20 @@
                 </div>
             </div>
 
-
-            <div class="subbar content-min-1000">
-                <div class="content">
-                    {parts.breadcrumb -> f:format.raw()}
-                </div>
-            </div>
-
         </div>
 
 
         <div class="main-content">
+
+            <div class="pagetitle" style="display:block;">
+                <div class="content">
+                    <h1>{parts.title}&nbsp;</h1>
+
+                    {parts.breadcrumb -> f:format.raw()}
+                </div>
+            </div>
+
+
             <div class="content">
                 {content.main -> f:format.raw()}
             </div>

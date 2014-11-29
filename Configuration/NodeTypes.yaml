@@ -13,7 +13,7 @@
 # Adjust the "TwoColumn" node type:
 # Disable some of the layout options, override labels and set the default layout
 #
-'TYPO3.Neos.NodeTypes:TwoColumn':
+'FreeVeggie.Blog:TwoColumn':
   properties:
     'layout':
       defaultValue: '50-50'
@@ -36,7 +36,7 @@
 # Adjust the "ThreeColumn" node type:
 # Disable some of the layout options, override labels and set the default layout
 #
-'TYPO3.Neos.NodeTypes:ThreeColumn':
+'FreeVeggie.Blog:ThreeColumn':
   properties:
     'layout':
       defaultValue: '33-33-33'
@@ -57,7 +57,7 @@
 # Adjust the "FourColumn" node type:
 # Disable some of the layout options, override labels and set the default layout
 #
-'TYPO3.Neos.NodeTypes:FourColumn':
+'FreeVeggie.Blog:FourColumn':
   properties:
     'layout':
       defaultValue: '25-25-25-25'
@@ -72,7 +72,7 @@
 ##
 # A "Youtube" content element
 #
-'TYPO3.NeosDemoTypo3Org:YouTube':
+'FreeVeggie.Blog:YouTube':
   superTypes: ['TYPO3.Neos:Content']
   ui:
     label: YouTube
@@ -107,3 +107,36 @@
         reloadIfChanged: TRUE
         inspector:
           group: 'video'
+
+
+##
+# A "Quote" content element
+#
+'FreeVeggie.Blog:Quote':
+  superTypes: ['TYPO3.Neos:Content']
+  ui:
+    label: 'Quote'
+    icon: 'icon-comment-alt'
+    inspector:
+      groups:
+        'quote':
+          label: Quote
+          position: 50
+  properties:
+    'quote':
+      type: date
+      ui:
+        label: 'Date of quote'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'quote'
+
+
+##
+# A "Ingredients" content element
+#
+'FreeVeggie.Blog:Ingredients':
+  superTypes: ['TYPO3.Neos:Content']
+  ui:
+    label: 'Ingredients'
+    icon: 'icon-food'

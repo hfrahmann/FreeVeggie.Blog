@@ -21,6 +21,8 @@ page = Page {
 		templatePath = 'resource://FreeVeggie.Blog/Private/Templates/Page/Default.html'
 		sectionName = 'body'
 		parts {
+            title = ${q(node).property('title')}
+
             mainMenu = Menu
             mainMenu {
                 entryLevel = 1

@@ -1,8 +1,11 @@
 {namespace neos=TYPO3\Neos\ViewHelpers}
 <f:if condition="{items}">
     <ul class="breadcrumbs">
-        <f:for each="{items}" as="item" reverse="TRUE">
+        <f:for each="{items}" as="item" reverse="TRUE" iteration="iterator">
             <f:if condition="{item.hiddenInIndex} == 0">
+                <f:if condition="{iterator.isFirst} != 1">
+                    <li><span class="splitter"></span></li>
+                </f:if>
                 <li>
                     <neos:link.node node="{item}">{item.label}</neos:link.node>
                 </li>
