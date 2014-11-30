@@ -1,0 +1,6 @@
+##
+# "Quote" element
+#
+prototype(FreeVeggie.Blog:Quote) < prototype(Content) {
+    attributes.class = 'fv-quote'
+}

@@ -1,1 +1,11 @@
-Hello Quote
+{namespace neos=TYPO3\Neos\ViewHelpers}
+<div{attributes -> f:format.raw()}>
+    <span>&raquo;</span>
+    {neos:contentElement.editable(property: 'text')}
+    <span>&laquo;</span>
+    <div class="dateAndAuthor">
+        {quotesource}
+        &nbsp;&nbsp;&nbsp;
+        <f:format.date format="d.m.Y">{quotedate}</f:format.date>
+    </div>
+</div>

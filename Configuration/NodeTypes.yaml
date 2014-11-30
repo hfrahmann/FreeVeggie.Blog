@@ -123,13 +123,35 @@
           label: Quote
           position: 50
   properties:
-    'quote':
+    'quotedate':
       type: date
       ui:
         label: 'Date of quote'
         reloadIfChanged: TRUE
         inspector:
           group: 'quote'
+    'quotesource':
+       type: string
+       defaultValue: 'John Doe'
+       ui:
+         label: 'Quote source'
+         reloadIfChanged: TRUE
+         inspector:
+           group: 'quote'
+    'text':
+      type: string
+      defaultValue: 'This is a quote'
+      ui:
+        inlineEditable: TRUE
+        aloha:
+          'alignment':
+            'left': FALSE
+            'center': FALSE
+            'right': FALSE
+            'justify': FALSE
+          'format':
+            'paragraph': FALSE
+            'removeFormat': FALSE
 
 
 ##
