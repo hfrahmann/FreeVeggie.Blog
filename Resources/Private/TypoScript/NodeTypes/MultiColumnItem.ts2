@@ -1,6 +1,0 @@
-##
-# Adjust "MultiColumnItem" element to Twitter bootstrap CSS classes
-#
-prototype(TYPO3.Neos.NodeTypes:MultiColumnItem) {
-	attributes.class = ${'col-' + String.split(q(node).parent().property('layout'), '-')[multiColumnIteration.index]}
-}

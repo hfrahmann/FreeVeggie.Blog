@@ -202,7 +202,7 @@ div.main-content {
     background: #FFFFFF;
     min-height: 750px;
     padding-top: 4px;
-    padding-bottom: 10px;
+    padding-bottom: 80px;
     line-height: 150%;
     color: #444444;
 }
@@ -356,6 +356,10 @@ span.splitter:before {
     display: inline;
     font-size: 25px;
     font-style: italic;
+}
+
+.fv-quote p {
+    min-width: 20px;
 }
 
 .fv-quote div.dateAndAuthor {
