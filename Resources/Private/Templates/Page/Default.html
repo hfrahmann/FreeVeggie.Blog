@@ -1,7 +1,7 @@
 {namespace neos=TYPO3\Neos\ViewHelpers}
 {namespace ts=TYPO3\TypoScript\ViewHelpers}
 <!DOCTYPE html>
-<html>
+<html xmlns:f="http://www.w3.org/1999/html">
     <head>
         <f:section name="metadata">
 
@@ -33,6 +33,7 @@
                         </nav>
                     </div>
 
+                    <!--
                     <div class="right">
                         <ul class="topmenu">
                             <li>
@@ -58,6 +59,7 @@
                             </li>
                         </ul>
                     </div>
+                    -->
 
                 </div>
             </div>
@@ -66,19 +68,7 @@
 
 
         <div class="main-content">
-
-            <div class="pagetitle" style="display:block;">
-                <div class="content">
-                    <h1>{parts.title}&nbsp;</h1>
-
-                    {parts.breadcrumb -> f:format.raw()}
-                </div>
-            </div>
-
-
-            <div class="content">
-                {content.main -> f:format.raw()}
-            </div>
+            {content.main -> f:format.raw()}
         </div>
 
 

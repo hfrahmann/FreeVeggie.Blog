@@ -1,0 +1,25 @@
+{namespace neos=TYPO3\Neos\ViewHelpers}
+{namespace ts=TYPO3\TypoScript\ViewHelpers}
+
+
+<article itemscope="" itemtype="http://schema.org/Article" class="freeveggie-blog-article" xmlns:f="http://www.w3.org/1999/html">
+
+    <div class="blogtitle">
+        <div class="content">
+            <h1>{title}</h1>
+            <!--{breadcrumb -> f:format.raw()}-->
+            <p>
+                <f:format.nl2br>{teaser -> f:format.raw()}</f:format.nl2br>
+            </p>
+        </div>
+    </div>
+
+    <div class="content">
+        <time datetime="{f:format.date(date: node.properties.datePublished, format: 'c')}" itemprop="datePublished">
+            <f:format.date format="F jS, Y">{node.properties.datePublished}</f:format.date>
+        </time>
+
+        <ts:render path="main" />
+    </div>
+
+</article>

@@ -1,0 +1,23 @@
+TYPO3:
+  TYPO3CR:
+    contentDimensions:
+      'language':
+        default: 'de'
+        defaultPreset: 'de'
+        presets:
+          'all': ~
+          'de':
+            label: 'German'
+            values: ['de']
+            uriSegment: 'de'
+          'en':
+            label: 'English'
+            values: ['en', 'de']
+            uriSegment: 'en'
+
+  Neos:
+    nodeTypes:
+      groups:
+        freeveggie:
+          position: 'after general'
+          label: 'Free veggie'

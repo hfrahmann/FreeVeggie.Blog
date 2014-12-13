@@ -42,7 +42,6 @@ page = Page {
 		}
 		// These are your content areas, you can define as many as you want, just name them and the nodePath.
 		content {
-			// The default content section
 			main = PrimaryContent {
 				nodePath = 'main'
 			}

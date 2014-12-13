@@ -1,3 +1,4 @@
+
 ##
 # "YouTube" element
 #
@@ -25,4 +26,63 @@ prototype(TYPO3.Neos.NodeTypes:MultiColumnItem) {
 prototype(TYPO3.Neos.NodeTypes:MultiColumn) {
     attributes.class = 'row'
     columns.iterationName = 'multiColumnIteration'
+}
+
+##
+# "BlogpostList" element, extending the default "Menu"
+#
+prototype(Site:BlogpostCollection) < prototype(TYPO3.Neos.NodeTypes:Menu) {
+    chapterImageWidth = '280'
+    chapterImageHeight = '150'
+}
+
+
+prototype(TYPO3.Neos:PrimaryContent).page {
+    condition = ${q(documentNode).is('[instanceof TYPO3.Neos.NodeTypes:Page]')}
+    type = 'TYPO3.Neos.NodeTypes:Page'
+}
+prototype(TYPO3.Neos.NodeTypes:Page) < prototype(TYPO3.TypoScript:Template) {
+    templatePath = 'resource://FreeVeggie.Blog/Private/Templates/TypoScriptObjects/Page.html'
+    title = ${q(node).property('title')}
+
+    node = ${node}
+
+    breadcrumb = Breadcrumb
+    breadcrumb {
+        templatePath = 'resource://FreeVeggie.Blog/Private/Templates/TypoScriptObjects/Breadcrumb.html'
+    }
+
+    # Render the main ContentCollection of the Post like a page would
+    main = TYPO3.Neos:ContentCollection {
+        nodePath = 'main'
+        @cache {
+            mode = 'cached'
+        }
+    }
+}
+
+
+prototype(TYPO3.Neos:PrimaryContent).blogPost {
+    condition = ${q(documentNode).is('[instanceof FreeVeggie.Blog:Blogpost]')}
+    type = 'FreeVeggie.Blog:Blogpost'
+}
+prototype(FreeVeggie.Blog:Blogpost) < prototype(TYPO3.Neos.NodeTypes:Page) {
+    templatePath = 'resource://FreeVeggie.Blog/Private/Templates/TypoScriptObjects/Blogpost.html'
+    teaser = ${q(node).property('teaser')}
+}
+
+
+prototype(TYPO3.Neos:PrimaryContent).receipt {
+    condition = ${q(documentNode).is('[instanceof FreeVeggie.Blog:Receipt]')}
+    type = 'FreeVeggie.Blog:Receipt'
+}
+prototype(FreeVeggie.Blog:Receipt) < prototype(TYPO3.Neos.NodeTypes:Page) {
+    templatePath = 'resource://FreeVeggie.Blog/Private/Templates/TypoScriptObjects/Receipt.html'
+
+    headerImageUri = TYPO3.Neos:ImageUri {
+        asset = ${q(node).property('headerImage')}
+        maximumWidth = 2560
+        maximumHeight = 1280
+        @if.image = ${q(node).property('headerImage')}
+    }
 }

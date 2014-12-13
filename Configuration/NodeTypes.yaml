@@ -9,6 +9,90 @@
 #    sidebar:
 #      type: 'TYPO3.Neos:ContentCollection'
 
+# Document: BlogPost
+'FreeVeggie.Blog:Blogpost':
+  superTypes:
+    - 'TYPO3.Neos:Document'
+  ui:
+    label: 'Blog Post'
+    group: freeveggie
+    icon: 'icon-file-text'
+    inspector:
+      groups:
+        page:
+          label: 'Blog Post'
+  childNodes:
+    main:
+      type: 'TYPO3.Neos:ContentCollection'
+  properties:
+    datePublished:
+      type: date
+      ui:
+        label: 'Publication Date'
+        reloadIfChanged: true
+        inspector:
+          group: page
+    teaser:
+      type: string
+      ui:
+        label: Teaser
+        reloadIfChanged: TRUE
+        inspector:
+          group: page
+          editor: 'TYPO3.Neos/Inspector/Editors/TextAreaEditor'
+
+
+# Document: Receipt
+'FreeVeggie.Blog:Receipt':
+  superTypes:
+    - 'TYPO3.Neos:Document'
+  ui:
+    label: 'Receipt'
+    group: freeveggie
+    icon: 'icon-food'
+    inspector:
+      groups:
+        page:
+          label: 'Receipt'
+  childNodes:
+    main:
+      type: 'TYPO3.Neos:ContentCollection'
+  properties:
+    datePublished:
+      type: date
+      ui:
+        label: 'Publication Date'
+        reloadIfChanged: true
+        inspector:
+          group: page
+          position: 10
+    teaser:
+      type: string
+      ui:
+        label: Teaser
+        reloadIfChanged: TRUE
+        inspector:
+          group: page
+          editor: 'TYPO3.Neos/Inspector/Editors/TextAreaEditor'
+          position: 20
+    headerImage:
+      type: TYPO3\Media\Domain\Model\ImageVariant
+      ui:
+        label: 'Image'
+        reloadIfChanged: TRUE
+        inspector:
+          group: page
+          position: 50
+          editorOptions:
+            maximumWidth: 400
+            crop:
+              aspectRatio:
+                locked:
+                  width: 2
+                  height: 1
+
+
+
 ##
 # Adjust the "TwoColumn" node type:
 # Disable some of the layout options, override labels and set the default layout
@@ -77,6 +161,7 @@
   ui:
     label: YouTube
     icon: 'icon-youtube'
+    group: freeveggie
     inspector:
       groups:
         'video':
@@ -117,6 +202,7 @@
   ui:
     label: 'Quote'
     icon: 'icon-comment-alt'
+    group: freeveggie
     inspector:
       groups:
         'quote':
@@ -162,3 +248,40 @@
   ui:
     label: 'Ingredients'
     icon: 'icon-food'
+    group: freeveggie
+
+
+
+'FreeVeggie.Blog:BlogpostCollection':
+  superTypes: ['TYPO3.Neos.NodeTypes:Menu']
+  ui:
+    label: 'Blogpost collection'
+    group: freeveggie
+
+
+
+'FreeVeggie.Blog:ReceiptCollection':
+  superTypes: ['TYPO3.Neos.NodeTypes:Menu']
+  ui:
+    label: 'Receipt collection'
+    group: freeveggie
+
+
+
+
+'FreeVeggie.Blog:BlogpostList':
+  superTypes: ['TYPO3.Neos.NodeTypes:Menu']
+  ui:
+    label: 'Blogpost list'
+    icon: 'icon-list'
+    group: freeveggie
+
+
+
+'FreeVeggie.Blog:ReceiptList':
+  superTypes: ['TYPO3.Neos.NodeTypes:Menu']
+  ui:
+    label: 'Receipt list'
+    icon: 'icon-list'
+    group: freeveggie
+
