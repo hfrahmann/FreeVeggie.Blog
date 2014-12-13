@@ -35,10 +35,10 @@ page = Page {
                 templatePath = 'resource://FreeVeggie.Blog/Private/Templates/TypoScriptObjects/Breadcrumb.html'
             }
 
-            /*languageMenu = TYPO3.Neos:DimensionMenu {
+            languageMenu = TYPO3.Neos:DimensionMenu {
                 dimension = 'language'
                 templatePath = 'resource://FreeVeggie.Blog/Private/Templates/TypoScriptObjects/LanguageMenu.html'
-            }*/
+            }
 		}
 		// These are your content areas, you can define as many as you want, just name them and the nodePath.
 		content {

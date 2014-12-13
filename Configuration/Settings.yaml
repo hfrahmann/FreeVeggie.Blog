@@ -8,7 +8,7 @@ TYPO3:
           'all': ~
           'de':
             label: 'German'
-            values: ['de']
+            values: ['de', 'en']
             uriSegment: 'de'
           'en':
             label: 'English'
