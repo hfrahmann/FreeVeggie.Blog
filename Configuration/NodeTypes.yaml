@@ -84,7 +84,6 @@
           group: page
           position: 50
           editorOptions:
-            maximumWidth: 400
             crop:
               aspectRatio:
                 locked:
@@ -162,6 +161,7 @@
     label: YouTube
     icon: 'icon-youtube'
     group: freeveggie
+    position: 30
     inspector:
       groups:
         'video':
@@ -203,6 +203,7 @@
     label: 'Quote'
     icon: 'icon-comment-alt'
     group: freeveggie
+    position: 20
     inspector:
       groups:
         'quote':
@@ -249,6 +250,7 @@
     label: 'Ingredients'
     icon: 'icon-food'
     group: freeveggie
+    position: 10
 
 
 
@@ -257,6 +259,7 @@
   ui:
     label: 'Blogpost collection'
     group: freeveggie
+    position: 100
 
 
 
@@ -265,6 +268,7 @@
   ui:
     label: 'Receipt collection'
     group: freeveggie
+    position: 110
 
 
 
@@ -275,6 +279,7 @@
     label: 'Blogpost list'
     icon: 'icon-list'
     group: freeveggie
+    position: 200
 
 
 
@@ -284,4 +289,5 @@
     label: 'Receipt list'
     icon: 'icon-list'
     group: freeveggie
+    position: 210
 
