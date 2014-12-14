@@ -31,9 +31,9 @@ prototype(TYPO3.Neos.NodeTypes:MultiColumn) {
 ##
 # "BlogpostList" element, extending the default "Menu"
 #
-prototype(Site:BlogpostCollection) < prototype(TYPO3.Neos.NodeTypes:Menu) {
-    chapterImageWidth = '280'
-    chapterImageHeight = '150'
+prototype(FreeVeggie.Blog:BlogpostCollection) < prototype(TYPO3.Neos:Content) {
+    filter = 'FreeVeggie.Blog:Blogpost'
+    items = ${q(documentNode).children('[instanceof FreeVeggie.Blog:Blogpost]')}
 }
 
 

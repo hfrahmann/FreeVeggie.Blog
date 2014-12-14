@@ -255,7 +255,7 @@
 
 
 'FreeVeggie.Blog:BlogpostCollection':
-  superTypes: ['TYPO3.Neos.NodeTypes:Menu']
+  superTypes: ['TYPO3.Neos:Content']
   ui:
     label: 'Blogpost collection'
     group: freeveggie
