@@ -35,7 +35,12 @@ prototype(TYPO3.Neos.NodeTypes:MultiColumn) {
 prototype(FreeVeggie.Blog:BlogpostCollection) < prototype(TYPO3.Neos:Content) {
     templatePath = 'resource://FreeVeggie.Blog/Private/Templates/NodeTypes/BlogpostCollection.html'
     blogposts = ${q(documentNode).children('[instanceof FreeVeggie.Blog:Blogpost]').get()}
-    itemsPerPage = ${q(node).property('itemsPerPage') > 0 ? q(node).property('itemsPerPage') : 10}
+    blogposts.@process.sort = ${q(value).count() > 0 ? q(value).sort('publishDate', 'DESC').get() : value}
+
+    itemsPerPage = ${q(node).property('itemsPerPage')}
+    itemsPerPage.@process.1 = ${String.toInteger(value)}
+    itemsPerPage = ${q(itemsPerPage) > 0 ? q(itemsPerPage) : 10}
+
     @cache {
         mode = 'uncached'
         context {
@@ -49,9 +54,14 @@ prototype(FreeVeggie.Blog:BlogpostCollection) < prototype(TYPO3.Neos:Content) {
 ##
 # "BlogpostList" element, extending the default "Menu"
 #
-prototype(FreeVeggie.Blog:BlogpostList) < prototype(TYPO3.Neos:Content) {
-    rootDocument = ${q(node).property('rootDocument')}
-    blogposts = ${q(rootDocument) != null ? q(rootDocument).children('[instanceof FreeVeggie.Blog:Blogpost]').get() : null}
+prototype(FreeVeggie.Blog:BlogpostList) < prototype(TYPO3.Neos.NodeTypes:Menu) {
+    @class = 'FreeVeggie\\Blog\\TypoScript\\FilteredMenuImplementation'
+
+    startingPoint = ${q(node).property('rootDocument')}
+    filter = 'FreeVeggie.Blog:Blogpost'
+    maximumLevels = 1
+
+    numberOfItems = ${q(node).property('numberOfItems')}
 }
 
 

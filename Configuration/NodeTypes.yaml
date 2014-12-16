@@ -25,8 +25,9 @@
     main:
       type: 'TYPO3.Neos:ContentCollection'
   properties:
-    datePublished:
+    publishDate:
       type: date
+      defaultValue: 'now'
       ui:
         label: 'Publication Date'
         reloadIfChanged: true
@@ -58,8 +59,9 @@
     main:
       type: 'TYPO3.Neos:ContentCollection'
   properties:
-    datePublished:
+    publishDate:
       type: date
+      defaultValue: 'now'
       ui:
         label: 'Publication Date'
         reloadIfChanged: true
@@ -292,7 +294,7 @@
 
 
 'FreeVeggie.Blog:BlogpostList':
-  superTypes: ['TYPO3.Neos:Content']
+  superTypes: ['TYPO3.Neos.NodeTypes:Menu']
   ui:
     label: 'Blogpost list'
     icon: 'icon-list'
@@ -300,17 +302,37 @@
     position: 200
     inspector:
       groups:
-        'options':
-          label: 'Options'
+        'list':
+          label: 'List'
+          position: 50
+        'selection':
+          label: 'Selection'
           position: 50
   properties:
+    'startLevel': []
+    'maximumLevels': []
     'rootDocument':
       type: 'reference'
       ui:
         label: 'Root Document'
         reloadIfChanged: TRUE
         inspector:
-          group: 'options'
+          group: 'list'
+    'numberOfItems':
+      type: string
+      defaultValue: 10
+      ui:
+        label: 'Number of Items'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'list'
+    'selection':
+      type: 'references'
+      ui:
+        label: 'Selected Blogposts'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'selection'
 
 
 

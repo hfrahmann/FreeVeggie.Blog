@@ -21,3 +21,6 @@ TYPO3:
         freeveggie:
           position: 'after general'
           label: 'Free veggie'
+    typoScript:
+      autoInclude:
+        'FreeVeggie.Blog': true
