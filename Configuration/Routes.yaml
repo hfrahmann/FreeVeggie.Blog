@@ -1,0 +1,19 @@
+
+-
+  name: 'FreeVeggie - Pagination'
+  uriPattern:    '{node}/page{--typo3-typo3cr-viewhelpers-widget-paginateviewhelper.currentPage}.{@format}'
+  defaults:
+    '@package':    'TYPO3.Neos'
+    '@controller': 'Frontend\Node'
+    '@format':     'html'
+    '@action':     'show'
+    '--typo3-typo3cr-viewhelpers-widget-paginateviewhelper':
+      '@package': ''
+      '@subpackage': ''
+      '@controller': ''
+      '@action': 'index'
+      'currentPage': '1'
+  routeParts:
+    node:
+      handler: TYPO3\Neos\Routing\FrontendNodeRoutePartHandler
+  appendExceedingArguments: TRUE

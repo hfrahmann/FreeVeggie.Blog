@@ -258,15 +258,33 @@
   superTypes: ['TYPO3.Neos:Content']
   ui:
     label: 'Blogpost collection'
+    icon: 'icon-th-large'
     group: freeveggie
     position: 100
+    inspector:
+      groups:
+        'pagination':
+          label: 'Pagination'
+          position: 50
+  properties:
+    'itemsPerPage':
+      type: string
+      defaultValue: 10
+      ui:
+        label: 'Items per page'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'pagination'
+
+
 
 
 
 'FreeVeggie.Blog:ReceiptCollection':
-  superTypes: ['TYPO3.Neos.NodeTypes:Menu']
+  superTypes: ['TYPO3.Neos:Content']
   ui:
     label: 'Receipt collection'
+    icon: 'icon-th-large'
     group: freeveggie
     position: 110
 
@@ -274,17 +292,30 @@
 
 
 'FreeVeggie.Blog:BlogpostList':
-  superTypes: ['TYPO3.Neos.NodeTypes:Menu']
+  superTypes: ['TYPO3.Neos:Content']
   ui:
     label: 'Blogpost list'
     icon: 'icon-list'
     group: freeveggie
     position: 200
+    inspector:
+      groups:
+        'options':
+          label: 'Options'
+          position: 50
+  properties:
+    'rootDocument':
+      type: 'reference'
+      ui:
+        label: 'Root Document'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'options'
 
 
 
 'FreeVeggie.Blog:ReceiptList':
-  superTypes: ['TYPO3.Neos.NodeTypes:Menu']
+  superTypes: ['TYPO3.Neos:Content']
   ui:
     label: 'Receipt list'
     icon: 'icon-list'

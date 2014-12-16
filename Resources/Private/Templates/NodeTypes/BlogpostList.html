@@ -1,0 +1,28 @@
+{namespace neos=TYPO3\Neos\ViewHelpers}
+{namespace ts=TYPO3\TypoScript\ViewHelpers}
+{namespace media=TYPO3\Media\ViewHelpers}
+<div{attributes -> f:format.raw()}>
+<b>Blogposts</b>
+<ul>
+    <f:render section="itemsList" arguments="{_all}" />
+</ul>
+</div>
+
+<f:section name="itemsList">
+    <f:for each="{blogposts}" as="item">
+        <li class="{item.state}">
+
+            <neos:link.node node="{item.node}">{item.label}</neos:link.node>
+
+            <f:if condition="{item.node.properties.chapterDescription}">
+                <p class="text-muted">
+                    {item.node.properties.teaser}
+                </p>
+            </f:if>
+
+            <f:if condition="{item.subItems}">
+                    <f:render section="itemsList" arguments="{items: item.subItems}" />
+            </f:if>
+        </li>
+    </f:for>
+</f:section>

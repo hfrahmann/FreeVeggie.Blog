@@ -2,7 +2,8 @@
 ##
 # "YouTube" element
 #
-prototype(Site:YouTube) < prototype(Content) {
+prototype(FreeVeggie.Blog:YouTube) < prototype(Content) {
+    templatePath = 'resource://FreeVeggie.Blog/Private/Templates/NodeTypes/Youtube.html'
     attributes.class = 'responsive-video'
 }
 
@@ -29,27 +30,48 @@ prototype(TYPO3.Neos.NodeTypes:MultiColumn) {
 }
 
 ##
-# "BlogpostList" element, extending the default "Menu"
+# "BlogpostCollection" element
 #
 prototype(FreeVeggie.Blog:BlogpostCollection) < prototype(TYPO3.Neos:Content) {
-    filter = 'FreeVeggie.Blog:Blogpost'
-    items = ${q(documentNode).children('[instanceof FreeVeggie.Blog:Blogpost]')}
+    templatePath = 'resource://FreeVeggie.Blog/Private/Templates/NodeTypes/BlogpostCollection.html'
+    blogposts = ${q(documentNode).children('[instanceof FreeVeggie.Blog:Blogpost]').get()}
+    itemsPerPage = ${q(node).property('itemsPerPage') > 0 ? q(node).property('itemsPerPage') : 10}
+    @cache {
+        mode = 'uncached'
+        context {
+            1 = 'documentNode'
+            2 = 'node'
+        }
+    }
 }
 
 
+##
+# "BlogpostList" element, extending the default "Menu"
+#
+prototype(FreeVeggie.Blog:BlogpostList) < prototype(TYPO3.Neos:Content) {
+    rootDocument = ${q(node).property('rootDocument')}
+    blogposts = ${q(rootDocument) != null ? q(rootDocument).children('[instanceof FreeVeggie.Blog:Blogpost]').get() : null}
+}
+
+
+
+##
+# "Page" element
+#
 prototype(TYPO3.Neos:PrimaryContent).page {
     condition = ${q(documentNode).is('[instanceof TYPO3.Neos.NodeTypes:Page]')}
     type = 'TYPO3.Neos.NodeTypes:Page'
 }
 prototype(TYPO3.Neos.NodeTypes:Page) < prototype(TYPO3.TypoScript:Template) {
-    templatePath = 'resource://FreeVeggie.Blog/Private/Templates/TypoScriptObjects/Page.html'
+    templatePath = 'resource://FreeVeggie.Blog/Private/Templates/NodeTypes/Page.html'
     title = ${q(node).property('title')}
 
     node = ${node}
 
     breadcrumb = Breadcrumb
     breadcrumb {
-        templatePath = 'resource://FreeVeggie.Blog/Private/Templates/TypoScriptObjects/Breadcrumb.html'
+        templatePath = 'resource://FreeVeggie.Blog/Private/Templates/NodeTypes/Breadcrumb.html'
     }
 
     # Render the main ContentCollection of the Post like a page would
@@ -62,22 +84,26 @@ prototype(TYPO3.Neos.NodeTypes:Page) < prototype(TYPO3.TypoScript:Template) {
 }
 
 
+##
+# "BlogPost" element
+#
 prototype(TYPO3.Neos:PrimaryContent).blogPost {
     condition = ${q(documentNode).is('[instanceof FreeVeggie.Blog:Blogpost]')}
     type = 'FreeVeggie.Blog:Blogpost'
 }
 prototype(FreeVeggie.Blog:Blogpost) < prototype(TYPO3.Neos.NodeTypes:Page) {
-    templatePath = 'resource://FreeVeggie.Blog/Private/Templates/TypoScriptObjects/Blogpost.html'
     teaser = ${q(node).property('teaser')}
 }
 
 
+##
+# "Receipt" element
+#
 prototype(TYPO3.Neos:PrimaryContent).receipt {
     condition = ${q(documentNode).is('[instanceof FreeVeggie.Blog:Receipt]')}
     type = 'FreeVeggie.Blog:Receipt'
 }
 prototype(FreeVeggie.Blog:Receipt) < prototype(TYPO3.Neos.NodeTypes:Page) {
-    templatePath = 'resource://FreeVeggie.Blog/Private/Templates/TypoScriptObjects/Receipt.html'
 
     headerImageUri = TYPO3.Neos:ImageUri {
         asset = ${q(node).property('headerImage')}
@@ -86,3 +112,4 @@ prototype(FreeVeggie.Blog:Receipt) < prototype(TYPO3.Neos.NodeTypes:Page) {
         @if.image = ${q(node).property('headerImage')}
     }
 }
+
