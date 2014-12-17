@@ -294,7 +294,7 @@
 
 
 'FreeVeggie.Blog:BlogpostList':
-  superTypes: ['TYPO3.Neos.NodeTypes:Menu']
+  superTypes: ['TYPO3.Neos:Content']
   ui:
     label: 'Blogpost list'
     icon: 'icon-list'
@@ -309,8 +309,6 @@
           label: 'Selection'
           position: 50
   properties:
-    'startLevel': []
-    'maximumLevels': []
     'rootDocument':
       type: 'reference'
       ui:
