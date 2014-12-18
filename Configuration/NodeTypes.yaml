@@ -327,7 +327,17 @@
         'list':
           label: 'List'
           position: 50
+        'selection':
+          label: 'Selection'
+          position: 60
   properties:
+    selection:
+      type: 'references'
+      ui:
+        reloadIfChanged: TRUE
+        label: 'Selection'
+        inspector:
+          group: 'selection'
     'rootDocument':
       type: 'reference'
       ui:
@@ -346,6 +356,7 @@
 
 
 
+
 'FreeVeggie.Blog:ReceiptList':
   superTypes: ['TYPO3.Neos:Content']
   ui:
@@ -358,7 +369,17 @@
         'list':
           label: 'List'
           position: 50
+        'selection':
+          label: 'Selection'
+          position: 60
   properties:
+    selection:
+      type: 'references'
+      ui:
+        reloadIfChanged: TRUE
+        label: 'Selection'
+        inspector:
+          group: 'selection'
     'rootDocument':
       type: 'reference'
       ui:
