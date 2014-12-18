@@ -1,0 +1,27 @@
+
+##
+# "Page" element
+#
+prototype(TYPO3.Neos:PrimaryContent).page {
+    condition = ${q(documentNode).is('[instanceof TYPO3.Neos.NodeTypes:Page]')}
+    type = 'TYPO3.Neos.NodeTypes:Page'
+}
+prototype(TYPO3.Neos.NodeTypes:Page) < prototype(TYPO3.TypoScript:Template) {
+    templatePath = 'resource://FreeVeggie.Blog/Private/Templates/NodeTypes/Page.html'
+    title = ${q(node).property('title')}
+
+    node = ${node}
+
+    breadcrumb = Breadcrumb
+    breadcrumb {
+        templatePath = 'resource://FreeVeggie.Blog/Private/Templates/NodeTypes/Breadcrumb.html'
+    }
+
+    # Render the main ContentCollection of the Post like a page would
+    main = TYPO3.Neos:ContentCollection {
+        nodePath = 'main'
+        @cache {
+            mode = 'cached'
+        }
+    }
+}

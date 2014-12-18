@@ -1,0 +1,9 @@
+
+##
+# "BlogpostList" element
+#
+prototype(FreeVeggie.Blog:BlogpostList) < prototype(TYPO3.Neos:Content) {
+    items = ${(q(node).property('rootDocument')) ? q(q(node).property('rootDocument')).children('[instanceof FreeVeggie.Blog:Blogpost]').filter('[_visible=true]').get() : NULL}
+    items.@process.sort = ${q(value).count() > 0 ? q(value).sort('publishDate', 'DESC').get() : value}
+    items.@process.slice = ${q(value).count() > 0 ? q(value).slice(0, q(node).property('numberOfItems')).get() : value}
+}

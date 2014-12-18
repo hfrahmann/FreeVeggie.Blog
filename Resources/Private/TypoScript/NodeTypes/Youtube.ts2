@@ -1,0 +1,8 @@
+
+##
+# "YouTube" element
+#
+prototype(FreeVeggie.Blog:YouTube) < prototype(Content) {
+    templatePath = 'resource://FreeVeggie.Blog/Private/Templates/NodeTypes/Youtube.html'
+    attributes.class = 'responsive-video'
+}

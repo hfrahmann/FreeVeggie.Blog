@@ -1,0 +1,11 @@
+
+##
+# "BlogPost" element
+#
+prototype(TYPO3.Neos:PrimaryContent).blogPost {
+    condition = ${q(documentNode).is('[instanceof FreeVeggie.Blog:Blogpost]')}
+    type = 'FreeVeggie.Blog:Blogpost'
+}
+prototype(FreeVeggie.Blog:Blogpost) < prototype(TYPO3.Neos.NodeTypes:Page) {
+    teaser = ${q(node).property('teaser')}
+}

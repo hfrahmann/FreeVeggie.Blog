@@ -25,14 +25,18 @@
     main:
       type: 'TYPO3.Neos:ContentCollection'
   properties:
+    '_hiddenInIndex':
+      defaultValue: true
     publishDate:
-      type: date
+      type: 'date'
       defaultValue: 'now'
       ui:
         label: 'Publication Date'
         reloadIfChanged: true
         inspector:
           group: page
+          editorOptions:
+            format: 'd-m-Y H:i'
     teaser:
       type: string
       ui:
@@ -59,8 +63,10 @@
     main:
       type: 'TYPO3.Neos:ContentCollection'
   properties:
+    '_hiddenInIndex':
+      defaultValue: true
     publishDate:
-      type: date
+      type: 'date'
       defaultValue: 'now'
       ui:
         label: 'Publication Date'
@@ -68,6 +74,8 @@
         inspector:
           group: page
           position: 10
+          editorOptions:
+            format: 'd-m-Y H:i'
     teaser:
       type: string
       ui:
@@ -289,6 +297,20 @@
     icon: 'icon-th-large'
     group: freeveggie
     position: 110
+    inspector:
+      groups:
+        'pagination':
+          label: 'Pagination'
+          position: 50
+  properties:
+    'itemsPerPage':
+      type: string
+      defaultValue: 10
+      ui:
+        label: 'Items per page'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'pagination'
 
 
 
@@ -304,9 +326,6 @@
       groups:
         'list':
           label: 'List'
-          position: 50
-        'selection':
-          label: 'Selection'
           position: 50
   properties:
     'rootDocument':
@@ -324,13 +343,6 @@
         reloadIfChanged: TRUE
         inspector:
           group: 'list'
-    'selection':
-      type: 'references'
-      ui:
-        label: 'Selected Blogposts'
-        reloadIfChanged: TRUE
-        inspector:
-          group: 'selection'
 
 
 
@@ -341,4 +353,25 @@
     icon: 'icon-list'
     group: freeveggie
     position: 210
+    inspector:
+      groups:
+        'list':
+          label: 'List'
+          position: 50
+  properties:
+    'rootDocument':
+      type: 'reference'
+      ui:
+        label: 'Root Document'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'list'
+    'numberOfItems':
+      type: string
+      defaultValue: 10
+      ui:
+        label: 'Number of Items'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'list'
 

@@ -1,0 +1,17 @@
+
+##
+# "Receipt" element
+#
+prototype(TYPO3.Neos:PrimaryContent).receipt {
+    condition = ${q(documentNode).is('[instanceof FreeVeggie.Blog:Receipt]')}
+    type = 'FreeVeggie.Blog:Receipt'
+}
+prototype(FreeVeggie.Blog:Receipt) < prototype(TYPO3.Neos.NodeTypes:Page) {
+
+    headerImageUri = TYPO3.Neos:ImageUri {
+        asset = ${q(node).property('headerImage')}
+        maximumWidth = 2560
+        maximumHeight = 1280
+        @if.image = ${q(node).property('headerImage')}
+    }
+}
