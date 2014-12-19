@@ -7,7 +7,7 @@
 
     <typo3cr:widget.paginate nodes="{items}" as="paginatedNodes" configuration="{itemsPerPage: itemsPerPage}">
         <f:for each="{paginatedNodes}" as="nodeItem">
-            - {nodeItem.properties.title}<br>
+            <neos:link.node node="{nodeItem}">{nodeItem.label}</neos:link.node><br />
         </f:for>
     </typo3cr:widget.paginate>
 

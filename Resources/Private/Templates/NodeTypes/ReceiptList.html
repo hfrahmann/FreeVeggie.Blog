@@ -4,6 +4,10 @@
 <div{attributes -> f:format.raw()}>
     <b>Receipt List</b>
 
-        <f:debug>{items}</f:debug>
+    <ul>
+        <f:for each="{items}" as="item">
+            <li><neos:link.node node="{item}">{item.properties.title}</neos:link.node></li>
+        </f:for>
+    </ul>
 
 </div>

@@ -11,11 +11,6 @@ prototype(FreeVeggie.Blog:ReceiptCollection) < prototype(TYPO3.Neos:Content) {
     itemsPerPage = ${q(node).property('itemsPerPage')}
     itemsPerPage.@process.1 = ${(String.toInteger(value) > 0) ? String.toInteger(value) : 10}
 
-    #startingPoint = ${q(documentNode)}
-    #entryLevel = 0
-    #maximumLevels = 6
-    #filter = 'FreeVeggie.Blog:Receipt'
-
     @cache {
     mode = 'uncached'
         context {

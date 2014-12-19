@@ -8,13 +8,14 @@ namespace FreeVeggie\Blog\TypoScript;
 use TYPO3\Flow\Annotations as Flow;
 use TYPO3\TYPO3CR\Domain\Model\NodeInterface;
 use TYPO3\TypoScript\Exception as TypoScriptException;
-use TYPO3\Eel\FlowQuery\FlowQuery as FlowQuery;
 use TYPO3\TypoScript\TypoScriptObjects\TemplateImplementation;
 
 /**
  *
  */
 class ListImplementation extends TemplateImplementation {
+
+    protected $defaultPageFilter = 'TYPO3.Neos:Document';
 
     /**
      * An internal cache for the built list items array.
@@ -24,20 +25,43 @@ class ListImplementation extends TemplateImplementation {
     protected $items;
 
     /**
-     * Internal cache for the rootDocument tsValue.
+     * Internal cache for the listRootDocument tsValue.
      *
-     * @var FlowQuery
+     * @var NodeInterface
      */
-    protected $listRootDocumentQuery;
+    protected $listRootDocument;
 
     /**
-     * @return FlowQuery
+     * @return int
      */
-    public function getListRootDocumentQuery() {
-        if($this->listRootDocumentQuery == NULL) {
-            $this->listRootDocumentQuery = $this->tsValue('listRootDocumentQuery');
+    public function getNumberOfItems() {
+        $numberOfItems = $this->tsValue('numberOfItems');
+        if((int)$numberOfItems > 0 == FALSE) {
+            $numberOfItems = 10;
         }
-        return $this->listRootDocumentQuery;
+        return $numberOfItems;
+    }
+
+    /**
+     * @return array
+     */
+    public function getItemCollection() {
+        $itemCollection = $this->tsValue('itemCollection');
+        if(is_array($itemCollection)) {
+            return $itemCollection;
+        } else {
+            return array();
+        }
+    }
+
+    /**
+     * @return NodeInterface
+     */
+    public function getListRootDocument() {
+        if($this->listRootDocument == NULL) {
+            $this->listRootDocument = $this->tsValue('listRootDocument');
+        }
+        return $this->listRootDocument;
     }
 
     /**
@@ -56,25 +80,96 @@ class ListImplementation extends TemplateImplementation {
     /**
      * Main API method which sends the to-be-rendered data to Fluid
      *
-     * @return array
+     * @return NodeInterface[]
      */
     public function getItems() {
         if ($this->items === NULL) {
-            $this->items = $this->buildItems();
+            if (count($this->getItemCollection()) > 0) {
+                $items = $this->getItemCollection();
+                $this->items = $this->filterItems($items);
+                $this->items = $this->sortItems($this->items);
+            } else if($this->getListRootDocument() != NULL) {
+                $this->buildItems($this->getListRootDocument());
+                $this->items = $this->sortItems($this->items);
+                $this->items = $this->limitItems($this->items, $this->getNumberOfItems());
+            } else {
+                $this->items = array();
+            }
         }
-
         return $this->items;
     }
 
     /**
-     * @return array
+     * @param NodeInterface $node
+     * @return void
      */
-    protected function buildItems() {
-        $query =  $this->getListRootDocumentQuery();
-        $query = $query->children('[instanceof '.$this->getFilter().']');
-        $query = $query->sort('publishDate', 'DESC');
-        $result = $query->get();
-        return array($this->getFilter(), $result);
+    protected function buildItems(NodeInterface $node) {
+        $childNodes =  $node->getChildNodes($this->defaultPageFilter);
+        /** @var NodeInterface $childNode */
+        foreach($childNodes as $childNode) {
+            if($this->canShowItem($childNode)) {
+                $this->items[] = $childNode;
+            }
+            $this->buildItems($childNode);
+        }
+    }
+
+    /**
+     * @param NodeInterface $item
+     * @return bool
+     */
+    protected function canShowItem(NodeInterface $item) {
+        return ($item->isVisible() && $item->getNodeType()->getName() == $this->getFilter());
+    }
+
+    /**
+     * @param NodeInterface[] $items
+     * @return NodeInterface[]
+     */
+    protected function filterItems(array $items) {
+        $filteredItems = array();
+        /** @var NodeInterface $item */
+        foreach($items as $item) {
+            if($this->canShowItem($item)) {
+                $filteredItems[] = $item;
+            }
+        }
+        return $filteredItems;
+    }
+
+    /**
+     * @param NodeInterface[] $items
+     * @return NodeInterface[]
+     */
+    protected function sortItems(array $items) {
+        $itemsCopy = $items;
+        usort($itemsCopy, function($itemA, $itemB) {
+            $dateProperty = 'publishDate';
+
+            if($itemA->hasProperty($dateProperty) == FALSE || $itemB->hasProperty($dateProperty) == FALSE) {
+                return 0;
+            }
+
+            /** @var \Datetime $dateA */
+            $dateA = $itemA->getProperty($dateProperty);
+            /** @var \Datetime $dateB */
+            $dateB = $itemB->getProperty($dateProperty);
+
+            if($dateA->getTimestamp() == $dateB->getTimestamp()) {
+                return 0;
+            }
+            return ($dateA->getTimestamp() < $dateB->getTimestamp()) ? 1 : -1;
+        });
+        return $itemsCopy;
+    }
+
+    /**
+     * @param NodeInterface[] $items
+     * @param int $limit
+     * @return NodeInterface[]
+     */
+    protected function limitItems(array $items, $limit) {
+        return array_slice($items, 0, $limit);
     }
 
 }
