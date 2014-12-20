@@ -37,6 +37,7 @@ page = Page {
 
             languageMenu = TYPO3.Neos:DimensionMenu {
                 dimension = 'language'
+                renderHiddenInIndex = TRUE
                 templatePath = 'resource://FreeVeggie.Blog/Private/Templates/NodeTypes/LanguageMenu.html'
             }
 		}

@@ -153,9 +153,26 @@ ul.topmenu > li:hover ul.submenu {
     display: block;
 }
 
-ul.submenu.right {
-    right: 0 !important;
-    left: auto !important;
+
+/*** LANGUAGE ***/
+
+div.languageMenu {
+    display: inline;
+}
+
+div.languageMenu a {
+    text-decoration: none;
+    color: #000000;
+    font-size: 0.9em;
+}
+
+div.languageMenu a.current,
+div.languageMenu a:hover {
+    color: #72C02C;
+}
+
+div.languageMenu a.current {
+    border-bottom: 2px solid #72C02C;
 }
 
 /*** FOOTER ***/
@@ -227,6 +244,7 @@ div.main-content div.pagetitle h1 {
     display:block;
 }
 
+
 /*** BREADCRUMB ***/
 
 ul.breadcrumbs {
@@ -275,15 +293,18 @@ div.content {
 }
 
 .row {
-    width: 100%;
+    margin-right: -5px;
+    margin-left: -5px;
+}
+
+.row::after {
     clear: both;
+    content: " ";
     display: table;
-    margin-right: -10px;
-    margin-left: -10px;
 }
 
 .row [class^="col-"], .row [class*=" col-"] {
-    padding: 10px;
+    padding: 5px;
     float: left;
     min-height: 1px;
     box-sizing: border-box;

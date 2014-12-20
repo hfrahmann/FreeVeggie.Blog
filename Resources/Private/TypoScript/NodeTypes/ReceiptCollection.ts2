@@ -3,10 +3,11 @@
 # "ReceiptCollection" element
 #
 prototype(FreeVeggie.Blog:ReceiptCollection) < prototype(TYPO3.Neos:Content) {
-    templatePath = 'resource://FreeVeggie.Blog/Private/Templates/NodeTypes/ReceiptCollection.html'
+    @class = 'FreeVeggie\\Blog\\TypoScript\\CollectionImplementation'
 
-    items = ${q(documentNode).children('[instanceof FreeVeggie.Blog:Receipt]').filter('[_visible=true]').get()}
-    items.@process.sort = ${q(value).count() > 0 ? q(value).sort('publishDate', 'DESC').get() : value}
+    filter = 'FreeVeggie.Blog:Receipt'
+    listRootDocument = ${documentNode}
+    items = ${this.items}
 
     itemsPerPage = ${q(node).property('itemsPerPage')}
     itemsPerPage.@process.1 = ${(String.toInteger(value) > 0) ? String.toInteger(value) : 10}
@@ -15,7 +16,6 @@ prototype(FreeVeggie.Blog:ReceiptCollection) < prototype(TYPO3.Neos:Content) {
     mode = 'uncached'
         context {
             1 = 'documentNode'
-            2 = 'node'
         }
     }
 }

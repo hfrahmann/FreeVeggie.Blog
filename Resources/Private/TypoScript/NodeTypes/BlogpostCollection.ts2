@@ -3,19 +3,19 @@
 # "BlogpostCollection" element
 #
 prototype(FreeVeggie.Blog:BlogpostCollection) < prototype(TYPO3.Neos:Content) {
-    templatePath = 'resource://FreeVeggie.Blog/Private/Templates/NodeTypes/BlogpostCollection.html'
+    @class = 'FreeVeggie\\Blog\\TypoScript\\CollectionImplementation'
 
-    items = ${q(documentNode).children('[instanceof FreeVeggie.Blog:Blogpost]').filter('[_visible=true]').get()}
-    items.@process.sort = ${q(value).count() > 0 ? q(value).sort('publishDate', 'DESC').get() : value}
+    filter = 'FreeVeggie.Blog:Blogpost'
+    listRootDocument = ${documentNode}
+    items = ${this.items}
 
     itemsPerPage = ${q(node).property('itemsPerPage')}
     itemsPerPage.@process.1 = ${(String.toInteger(value) > 0) ? String.toInteger(value) : 10}
 
     @cache {
-    mode = 'uncached'
+        mode = 'uncached'
         context {
             1 = 'documentNode'
-            2 = 'node'
         }
     }
 }

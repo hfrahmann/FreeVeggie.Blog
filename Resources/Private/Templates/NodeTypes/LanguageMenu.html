@@ -1,54 +1,10 @@
 {namespace neos=TYPO3\Neos\ViewHelpers}
 {namespace ts=TYPO3\TypoScript\ViewHelpers}
 
-<!--<div class="language-menu">
-    <div>
-        <f:for each="{items}" as="item">
-            <f:if condition="{item.state} == 'current'"><span class="language-menu-full">{item.label}</span><span class="language-menu-short" title="{item.label}">{item.preset.uriSegment}</span></f:if>
-        </f:for>
-        <span>▼</span>
-    </div>
-    <ul{attributes -> f:format.raw()}>
+<div class="languageMenu">
     <f:for each="{items}" as="item">
-        <li{ts:render(path:'{item.state}.attributes', context: {item: item}) -> f:format.raw()}>
         <f:if condition="{item.node}">
-            <f:then>
-                <neos:link.node node="{item.node}"><span class="language-menu-full">{item.label}</span><span class="language-menu-short" title="{item.label}">{item.preset.uriSegment}</span></neos:link.node>
-            </f:then>
-            <f:else>
-                <span class="language-menu-full">{item.label}</span><span class="language-menu-short" title="{item.label}">{item.preset.uriSegment}</span>
-            </f:else>
+            <neos:link.node class="{item.state}" node="{item.node}">{item.preset.uriSegment}</neos:link.node>
         </f:if>
-        </li>
     </f:for>
-    </ul>
-</div>-->
-
-
-<ul class="topmenu">
-    <li>
-        <f:for each="{items}" as="item">
-            <f:if condition="{item.state} == 'current'">
-                <a href="javascript:;">{item.label}</a>
-            </f:if>
-        </f:for>
-
-        <ul class="submenu right small">
-            <f:for each="{items}" as="item">
-                <li{ts:render(path:'{item.state}.attributes', context: {item: item}) -> f:format.raw()}>
-                <f:if condition="{item.node}">
-                    <neos:link.node class="{item.state}" node="{item.node}">{item.label}</neos:link.node>
-                </f:if>
-                </li>
-            </f:for>
-        </ul>
-    </li>
-    <!--
-    <li>
-        <a href="#">
-            <span class="fv-icon-magnifier" style="width:20px;height:20px;"></span>
-        </a>
-    </li>
-    -->
-
-</ul>
+</div>

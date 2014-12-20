@@ -14,7 +14,7 @@ use TYPO3\TypoScript\TypoScriptObjects\TemplateImplementation;
 /**
  *
  */
-class ListImplementation extends TemplateImplementation {
+class CollectionImplementation extends TemplateImplementation {
 
     protected $defaultPageFilter = 'TYPO3.Neos:Document';
 
@@ -31,29 +31,6 @@ class ListImplementation extends TemplateImplementation {
      * @var NodeInterface
      */
     protected $listRootDocument;
-
-    /**
-     * @return int
-     */
-    public function getNumberOfItems() {
-        $numberOfItems = $this->tsValue('numberOfItems');
-        if((int)$numberOfItems > 0 == FALSE) {
-            $numberOfItems = 10;
-        }
-        return $numberOfItems;
-    }
-
-    /**
-     * @return array
-     */
-    public function getItemCollection() {
-        $itemCollection = $this->tsValue('itemCollection');
-        if(is_array($itemCollection)) {
-            return $itemCollection;
-        } else {
-            return array();
-        }
-    }
 
     /**
      * @return NodeInterface
@@ -85,14 +62,9 @@ class ListImplementation extends TemplateImplementation {
      */
     public function getItems() {
         if ($this->items === NULL) {
-            if (count($this->getItemCollection()) > 0) {
-                $items = $this->getItemCollection();
-                $this->items = $this->filterItems($items);
-                $this->items = $this->sortItems($this->items);
-            } else if($this->getListRootDocument() != NULL) {
+            if($this->getListRootDocument() != NULL) {
                 $this->buildItems($this->getListRootDocument());
                 $this->items = $this->sortItems($this->items);
-                $this->items = $this->limitItems($this->items, $this->getNumberOfItems());
             } else {
                 $this->items = array();
             }
@@ -127,21 +99,6 @@ class ListImplementation extends TemplateImplementation {
      * @param NodeInterface[] $items
      * @return NodeInterface[]
      */
-    protected function filterItems(array $items) {
-        $filteredItems = array();
-        /** @var NodeInterface $item */
-        foreach($items as $item) {
-            if($this->canShowItem($item)) {
-                $filteredItems[] = $item;
-            }
-        }
-        return $filteredItems;
-    }
-
-    /**
-     * @param NodeInterface[] $items
-     * @return NodeInterface[]
-     */
     protected function sortItems(array $items) {
         $itemsCopy = $items;
         usort($itemsCopy, function($itemA, $itemB) {
@@ -162,15 +119,6 @@ class ListImplementation extends TemplateImplementation {
             return ($dateA->getTimestamp() < $dateB->getTimestamp()) ? 1 : -1;
         });
         return $itemsCopy;
-    }
-
-    /**
-     * @param NodeInterface[] $items
-     * @param int $limit
-     * @return NodeInterface[]
-     */
-    protected function limitItems(array $items, $limit) {
-        return array_slice($items, 0, $limit);
     }
 
 }
