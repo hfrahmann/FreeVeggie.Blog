@@ -1,0 +1,41 @@
+
+/* General */
+
+body, table {
+  font-family: "Lato", "Helvetica neue", Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Positions */
+
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}
+
+.clear {
+  clear: both;
+}
+
+
+/* Content */
+
+div.fv-container {
+  text-align: center;
+}
+
+div.fv-content {
+  width: 1000px;
+  margin: 0 auto 0 auto;
+
+  @media #{$screen-small} {
+    width: 100%;
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+}

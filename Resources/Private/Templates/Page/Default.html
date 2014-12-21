@@ -4,62 +4,59 @@
 <html xmlns:f="http://www.w3.org/1999/html">
     <head>
         <f:section name="metadata">
-
+            <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
         </f:section>
         <f:section name="stylesheets">
-            <link href='http://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
-            <link rel="stylesheet" href="{f:uri.resource(path: 'Styles/Layout.css', package: 'FreeVeggie.Blog')}" media="screen" />
+            <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext" />
+            <link rel="stylesheet" type="text/css" href="{f:uri.resource(path: 'Styles/FreeVeggie.css', package: 'FreeVeggie.Blog')}" media="screen" />
+            <link rel="stylesheet" type="text/css" href="{f:uri.resource(path: 'Styles/Print.css', package: 'FreeVeggie.Blog')}" media="print" />
         </f:section>
         <f:section name="headScripts">
-            <!-- Put your scripts inclusions for the head here, they will be included in your website by TypoScript -->
         </f:section>
     </head>
     <body>
     <f:section name="body">
 
-        <div class="navigationbar">
+        <header>
 
-            <div class="topbar content-min-1000">
-                <div class="content">
+            <!-- Logo and Navigation -->
+            <div class="fv-content">
+                <a href="{neos:uri.node(node: site)}" class="fv-logo">
+                    <div class="fv-logo-image"></div>
+                    <div class="fv-logo-text"></div>
+                </a>
 
-                    <a href="{neos:uri.node(node: site)}">
-                        <div class="logo"></div>
-                        <div class="logotext"></div>
-                    </a>
+                <a class="fv-hamburger" href="javascript:void();">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </a>
 
-                    <div class="left">
-                        <nav class="menu">
-                            {parts.mainMenu -> f:format.raw()}
-                        </nav>
-                    </div>
-
-
-                    <div class="right">
-                        {parts.languageMenu -> f:format.raw()}
-                    </div>
-
-                </div>
+                <nav class="fv-navigation">
+                    {parts.mainMenu -> f:format.raw()}
+                    <span class="clear"></span>
+                </nav>
             </div>
 
+        </header>
+
+        <div class="fv-container">
+            <div style="background: #008800; display: block; height: 200px;"></div>
+            <div class="fv-content">
+
+            </div>
         </div>
-
-
-        <div class="main-content">
-            {content.main -> f:format.raw()}
-        </div>
-
 
         <footer>
-            <div class="footer content-min-1000">
-                <div class="content">
-                    {footer -> f:format.raw()}
-                </div>
+            <div class="fv-content">
+                Test
             </div>
         </footer>
 
     </f:section>
     <f:section name="bodyScripts">
-        <!-- Put your scripts inclusions for the end of the body here, they will be included in your website by TypoScript -->
+        <script src="{f:uri.resource(path: 'Libraries/jQuery/jquery-1.10.1.min.js', package: 'TYPO3.Twitter.Bootstrap')}"></script>
+        <script src="{f:uri.resource(path: 'JavaScript/Script.js', package: 'FreeVeggie.Blog')}"></script>
     </f:section>
     </body>
 </html>

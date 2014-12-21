@@ -1,0 +1,4 @@
+body { background: #fff; padding-top: 0 !important; color: #000; font-family: Georgia, Times, serif; }
+
+.fv-container a { font-weight: bold; text-decoration: underline; color: #06c; }
+.fv-container a:after { content: " (" attr(href) ") "; }

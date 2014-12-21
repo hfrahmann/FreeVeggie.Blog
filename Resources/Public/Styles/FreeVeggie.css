@@ -1,0 +1,153 @@
+/*
+	HTML5 Reset :: style.css
+	----------------------------------------------------------
+	We have learned much from/been inspired by/taken code where offered from:
+
+	Eric Meyer					:: http://meyerweb.com
+	HTML5 Doctor				:: http://html5doctor.com
+	and the HTML5 Boilerplate	:: http://html5boilerplate.com
+
+-------------------------------------------------------------------------------*/
+/* Let's default this puppy out
+-------------------------------------------------------------------------------*/
+html, body, body div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, figure, footer, header, menu, nav, section, time, mark, audio, video, details, summary { margin: 0; padding: 0; border: 0; font-size: 100%; font-weight: normal; vertical-align: baseline; background: transparent; }
+
+article, aside, figure, footer, header, nav, section, details, summary { display: block; }
+
+/* Handle box-sizing while better addressing child elements: http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
+html { box-sizing: border-box; }
+
+*, *:before, *:after { box-sizing: inherit; }
+
+/* consider resetting the default cursor: https://gist.github.com/murtaugh/5247154 */
+/* Responsive images and other embedded objects Note: keeping IMG here will cause problems if you're using foreground images as sprites. If this default setting for images is causing issues, you might want to replace it with a .responsive class instead. */
+img, object, embed { max-width: 100%; }
+
+/* force a vertical scrollbar to prevent a jumpy page */
+html { overflow-y: scroll; }
+
+/* we use a lot of ULs that aren't bulleted.
+	don't forget to restore the bullets within content. */
+ul { list-style: none; }
+
+blockquote, q { quotes: none; }
+
+blockquote:before, blockquote:after, q:before, q:after { content: ''; content: none; }
+
+a { margin: 0; padding: 0; font-size: 100%; vertical-align: baseline; background: transparent; }
+
+del { text-decoration: line-through; }
+
+abbr[title], dfn[title] { border-bottom: 1px dotted #000; cursor: help; }
+
+/* tables still need cellspacing="0" in the markup */
+table { border-collapse: collapse; border-spacing: 0; }
+
+th { font-weight: bold; vertical-align: bottom; }
+
+td { font-weight: normal; vertical-align: top; }
+
+hr { display: block; height: 1px; border: 0; border-top: 1px solid #ccc; margin: 1em 0; padding: 0; }
+
+input, select { vertical-align: middle; }
+
+pre { white-space: pre; /* CSS2 */ white-space: pre-wrap; /* CSS 2.1 */ white-space: pre-line; /* CSS 3 (and 2.1 as well, actually) */ word-wrap: break-word; /* IE */ }
+
+input[type="radio"] { vertical-align: text-bottom; }
+
+input[type="checkbox"] { vertical-align: bottom; }
+
+.ie7 input[type="checkbox"] { vertical-align: baseline; }
+
+.ie6 input { vertical-align: text-bottom; }
+
+select, input, textarea { font: 99% sans-serif; }
+
+table { font-size: inherit; font: 100%; }
+
+small { font-size: 85%; }
+
+strong { font-weight: bold; }
+
+td, td img { vertical-align: top; }
+
+/* Make sure sup and sub don't mess with your line-heights http://gist.github.com/413930 */
+sub, sup { font-size: 75%; line-height: 0; position: relative; }
+
+sup { top: -0.5em; }
+
+sub { bottom: -0.25em; }
+
+/* standardize any monospaced elements */
+pre, code, kbd, samp { font-family: monospace, sans-serif; }
+
+/* hand cursor on clickable elements */
+.clickable, label, input[type=button], input[type=submit], input[type=file], button { cursor: pointer; }
+
+/* Webkit browsers add a 2px margin outside the chrome of form elements */
+button, input, select, textarea { margin: 0; }
+
+/* make buttons play nice in IE */
+button, input[type=button] { width: auto; overflow: visible; }
+
+/* scale images in IE7 more attractively */
+.ie7 img { -ms-interpolation-mode: bicubic; }
+
+/* prevent BG image flicker upon hover (commented out as usage is rare, and the filter syntax messes with some pre-processors)
+.ie6 html {filter: expression(document.execCommand("BackgroundImageCache", false, true));}
+*/
+/* let's clear some floats */
+.clearfix:before, .clearfix:after { content: "\0020"; display: block; height: 0; overflow: hidden; }
+
+.clearfix:after { clear: both; }
+
+.clearfix { zoom: 1; }
+
+/* General */
+body, table { font-family: "Lato", "Helvetica neue", Helvetica, Arial, sans-serif; font-size: 16px; font-weight: 300; -webkit-font-smoothing: antialiased; }
+
+/* Positions */
+.left { float: left; }
+
+.right { float: right; }
+
+.clear { clear: both; }
+
+/* Content */
+div.fv-container { text-align: center; }
+
+div.fv-content { width: 1000px; margin: 0 auto 0 auto; }
+@media only screen and (max-width: 1000px) { div.fv-content { width: 100%; padding-left: 5px; padding-right: 5px; } }
+
+header { display: block; margin-top: 5px; }
+@media only screen and (max-width: 767px) { header { margin-bottom: 15px; } }
+header a.fv-logo { display: inline-block; text-decoration: none; }
+header div.fv-logo-image { display: inline-block; background-image: url(../Images/logo.png); background-size: 100%; height: 40px; width: 50px; margin-right: 0px; margin-left: 17px; overflow: hidden; -webkit-transition-duration: 0.8s; -moz-transition-duration: 0.8s; -o-transition-duration: 0.8s; transition-duration: 0.8s; -webkit-transition-property: -webkit-transform; -moz-transition-property: -moz-transform; -o-transition-property: -o-transform; transition-property: transform; }
+header div.fv-logo-image:hover { -webkit-transform: rotate(-360deg); -moz-transform: rotate(-360deg); -o-transform: rotate(-360deg); }
+header div.fv-logo-text { position: relative; top: -7px; display: inline-block; background-image: url(../Images/logotext.png); background-size: 100%; background-position: right; height: 30px; width: 140px; }
+header a.fv-hamburger { display: none; float: right; width: 30px; }
+@media only screen and (max-width: 767px) { header a.fv-hamburger { display: block; } }
+header a.fv-hamburger div { display: block; height: 4px; margin: 5px 0; background: #343434; }
+
+header nav.fv-navigation { margin-left: 40px; height: 50px; display: inline-block; }
+@media only screen and (max-width: 767px) { header nav.fv-navigation { display: block; margin: 0; height: auto; } }
+header nav.fv-navigation ul.fv-menu { display: block; margin: 20px 0 0 0; padding: 0; list-style-type: none; }
+@media only screen and (max-width: 767px) { header nav.fv-navigation ul.fv-menu { transition: height 300ms cubic-bezier(0.17, 0.04, 0.03, 0.94); } }
+header nav.fv-navigation ul.fv-menu > li { float: left; position: relative; }
+@media only screen and (max-width: 767px) { header nav.fv-navigation ul.fv-menu > li { display: block; position: static; float: none; } }
+header nav.fv-navigation ul.fv-menu > li > a { display: block; padding: 0px 5px 5px 5px; margin-right: 5px; text-decoration: none; color: #343434; text-transform: uppercase; font-weight: 300; font-size: 14px; border-bottom: 2px solid transparent; }
+@media only screen and (max-width: 767px) { header nav.fv-navigation ul.fv-menu > li > a { border-bottom: 0; margin: 0; padding: 10px; } }
+header nav.fv-navigation ul.fv-menu > li > a:hover { color: #72C02C !important; }
+@media only screen and (max-width: 767px) { header nav.fv-navigation ul.fv-menu > li { border-bottom: 1px solid #dfdfdf; } }
+header nav.fv-navigation ul.fv-menu > li:hover > a, header nav.fv-navigation ul.fv-menu > li > a:hover, header nav.fv-navigation ul.fv-menu > li > a.current { color: #72C02C; border-bottom: 2px solid #72C02C; }
+@media only screen and (max-width: 767px) { header nav.fv-navigation ul.fv-menu > li:hover > a, header nav.fv-navigation ul.fv-menu > li > a:hover, header nav.fv-navigation ul.fv-menu > li > a.current { border-bottom: 0; color: #343434; } }
+header nav.fv-navigation ul.fv-menu ul.fv-submenu { display: none; margin: 0; padding: 20px 0; list-style-type: none; right: auto; left: 0; position: absolute; min-width: 300px; background: #FFFFFF; box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2); border-bottom-left-radius: 8px; border-bottom-right-radius: 8px; border-top-right-radius: 8px; }
+@media only screen and (max-width: 767px) { header nav.fv-navigation ul.fv-menu ul.fv-submenu { display: block; border-radius: 0; box-shadow: none; position: static; padding: 0; margin-bottom: 10px; } }
+header nav.fv-navigation ul.fv-menu ul.fv-submenu > li > a { display: block; padding: 6px 10px 6px 10px; text-decoration: none; color: #343434; font-weight: 300; font-size: 14px; }
+@media only screen and (max-width: 767px) { header nav.fv-navigation ul.fv-menu ul.fv-submenu > li > a { margin-left: 5px; } }
+header nav.fv-navigation ul.fv-menu ul.fv-submenu > li > a:hover, header nav.fv-navigation ul.fv-menu ul.fv-submenu > li > a.current { color: #72C02C; }
+header nav.fv-navigation ul.fv-menu > li:hover > ul.fv-submenu { display: block; }
+
+div.fv-container { display: block; min-height: 650px; }
+
+footer { display: block; background: #343434; padding: 40px 0 100px 0; margin-top: 50px; }

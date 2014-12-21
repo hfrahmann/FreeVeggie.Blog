@@ -1,0 +1,70 @@
+
+header {
+
+  display: block;
+  margin-top: 5px;
+
+  @media #{$screen-tablet} {
+    margin-bottom: 15px;
+  }
+
+  a.fv-logo {
+    display: inline-block;
+    text-decoration: none;
+  }
+
+  div.fv-logo-image {
+    display: inline-block;
+    background-image: url(../Images/logo.png);
+    background-size: 100%;
+    height: 40px;
+    width: 50px;
+    margin-right: 0px;
+    margin-left: 17px;
+    overflow:hidden;
+
+    -webkit-transition-duration: 0.8s;
+    -moz-transition-duration: 0.8s;
+    -o-transition-duration: 0.8s;
+    transition-duration: 0.8s;
+    -webkit-transition-property: -webkit-transform;
+    -moz-transition-property: -moz-transform;
+    -o-transition-property: -o-transform;
+    transition-property: transform;
+  }
+  div.fv-logo-image:hover {
+    -webkit-transform:rotate(-360deg);
+    -moz-transform:rotate(-360deg);
+    -o-transform:rotate(-360deg);
+  }
+
+  div.fv-logo-text {
+    position: relative;
+    top: -7px;
+    display: inline-block;
+    background-image: url(../Images/logotext.png);
+    background-size: 100%;
+    background-position: right;
+    height: 30px;
+    width: 140px;
+  }
+
+
+  a.fv-hamburger {
+    display: none;
+    float: right;
+    width: 30px;
+
+    @media #{$screen-tablet} {
+      display: block;
+    }
+
+    div {
+      display: block;
+      height: 4px;
+      margin: 5px 0;
+      background: $fv-darkgray;
+    }
+  }
+
+}
