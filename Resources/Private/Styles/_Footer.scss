@@ -4,4 +4,13 @@ footer {
   background: $fv-darkgray;
   padding: 40px 0 100px 0;
   margin-top: 50px;
+  color: $fv-lightgray;
+
+  a {
+    color: white;
+    text-decoration: none;
+  }
+  a:hover {
+    color: $fv-green;
+  }
 }

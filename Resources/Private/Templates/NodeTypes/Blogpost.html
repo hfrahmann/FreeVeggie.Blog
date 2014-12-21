@@ -4,8 +4,8 @@
 
 <article itemscope="" itemtype="http://schema.org/Article" class="freeveggie-blog-article" xmlns:f="http://www.w3.org/1999/html">
 
-    <div class="blogtitle">
-        <div class="content">
+    <div class="fv-blogtitle">
+        <div class="fv-content">
             <h1>{title}</h1>
             <!--{breadcrumb -> f:format.raw()}-->
             <p>
@@ -14,7 +14,7 @@
         </div>
     </div>
 
-    <div class="content">
+    <div class="fv-content">
         <time datetime="{f:format.date(date: node.properties.datePublished, format: 'c')}" itemprop="datePublished">
             <f:format.date format="F jS, Y">{node.properties.datePublished}</f:format.date>
         </time>

@@ -1,0 +1,46 @@
+
+
+.multicolumn {
+  margin-right: -5px;
+  margin-left: -5px;
+
+  .col-33 {
+    width: 33.3333333333%;
+  }
+
+  .col-66 {
+    width: 66.6666666666%;
+  }
+
+  .col-50 {
+    width: 50%;
+  }
+
+  .col-25 {
+    width: 25%;
+  }
+
+  [class^="col-"], .row [class*=" col-"] {
+    padding: 5px;
+    float: left;
+    min-height: 1px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+  }
+
+  @media #{$screen-tablet} {
+    [class^="col-"], .row [class*=" col-"] {
+      width: 100% !important;
+      display: block !important;
+      float: none !important;
+    }
+  }
+
+}
+
+.multicolumn::after {
+  clear: both;
+  content: " ";
+  display: table;
+}

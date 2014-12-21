@@ -10,6 +10,6 @@ prototype(TYPO3.Neos.NodeTypes:MultiColumnItem) {
 # Adjust "MultiColumn" element to Twitter bootstrap CSS classes
 #
 prototype(TYPO3.Neos.NodeTypes:MultiColumn) {
-    attributes.class = 'row'
+    attributes.class = 'multicolumn'
     columns.iterationName = 'multiColumnIteration'
 }

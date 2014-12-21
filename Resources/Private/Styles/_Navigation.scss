@@ -4,10 +4,13 @@ header {
 
     margin-left: 40px;
     height: 50px;
-    display: inline-block;
+
+    @media #{$screen-aftertablet} {
+      display: inline-block !important;
+    }
 
     @media #{$screen-tablet} {
-      display: block;
+      display: none;
       margin: 0;
       height: auto;
     }
@@ -51,10 +54,6 @@ header {
         }
         > a:hover {
           color: $fv-green !important;
-        }
-
-        @media #{$screen-tablet} {
-          border-bottom: 1px solid $fv-lightgray;
         }
       }
       > li:hover > a,
