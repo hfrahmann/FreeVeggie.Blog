@@ -9,8 +9,16 @@ header {
   }
 
   a.fv-logo {
-    display: inline-block;
+    display: block;
     text-decoration: none;
+    float: left;
+    width: 211px;
+    margin-top: 12px;
+
+    @media #{$screen-tablet} {
+      float: none;
+      display: inline-block;
+    }
   }
 
   div.fv-logo-image {

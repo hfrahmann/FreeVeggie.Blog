@@ -1,9 +1,7 @@
 
 header {
   nav.fv-navigation {
-
     margin-left: 40px;
-    height: 50px;
 
     @media #{$screen-aftertablet} {
       display: inline-block !important;
@@ -14,107 +12,43 @@ header {
       margin: 0;
       height: auto;
     }
-
-    ul.fv-menu {
-      display: block;
-      margin: 20px 0 0 0;
-      padding: 0;
-      list-style-type: none;
-
-      @media #{$screen-tablet} {
-        transition: height 300ms cubic-bezier(0.17, 0.04, 0.03, 0.94);
-      }
-
-      > li {
-        float: left;
-        position: relative;
-
-        @media #{$screen-tablet} {
-          display: block;
-          position: static;
-          float: none;
-        }
-
-        > a {
-          display: block;
-          padding: 0px 5px 5px 5px;
-          margin-right: 5px;
-          text-decoration: none;
-          color: $fv-darkgray;
-          text-transform: uppercase;
-          font-weight: 300;
-          font-size: 14px;
-          border-bottom: 2px solid transparent;
-
-          @media #{$screen-tablet} {
-            border-bottom: 0;
-            margin: 0;
-            padding: 10px;
-          }
-        }
-        > a:hover {
-          color: $fv-green !important;
-        }
-      }
-      > li:hover > a,
-      > li > a:hover,
-      > li > a.current {
-        color: $fv-green;
-        border-bottom: 2px solid $fv-green;
-
-        @media #{$screen-tablet} {
-          border-bottom: 0;
-          color: $fv-darkgray;
-        }
-      }
-
-      ul.fv-submenu {
-        display: none;
-        margin: 0;
-        padding: 20px 0;
-        list-style-type: none;
-        right: auto;
-        left: 0;
-        position: absolute;
-        min-width: 300px;
-        background: #FFFFFF;
-        box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
-        border-bottom-left-radius: 8px;
-        border-bottom-right-radius: 8px;
-        border-top-right-radius: 8px;
-
-        @media #{$screen-tablet} {
-          display: block;
-          border-radius: 0;
-          box-shadow: none;
-          position: static;
-          padding: 0;
-          margin-bottom: 10px;
-        }
-
-        > li > a {
-          display: block;
-          padding: 6px 10px 6px 10px;
-          text-decoration: none;
-          color: $fv-darkgray;
-          font-weight: 300;
-          font-size: 14px;
-
-          @media #{$screen-tablet} {
-            margin-left: 5px;
-          }
-        }
-        > li > a:hover,
-        > li > a.current {
-          color: $fv-green;
-        }
-      }
-
-      > li:hover > ul.fv-submenu {
-        display: block;
-      }
-    }
-
   }
 
+  ul.fv-menu {
+    display: block;
+    margin: 20px 0 0 0;
+    padding: 0;
+    list-style-type: none;
+
+    > li {
+      float: left;
+      position: relative;
+
+      @media #{$screen-tablet} {
+        display: block;
+        position: static;
+        float: none;
+        border-bottom: 1px solid #EEEEEE;
+      }
+
+      > a {
+        display: block;
+        padding: 0px 5px 5px 5px;
+        margin-right: 5px;
+        text-decoration: none;
+        color: $fv-darkgray;
+        text-transform: uppercase;
+        font-weight: 300;
+        font-size: 14px;
+
+        @media #{$screen-tablet} {
+          padding-top: 15px;
+          padding-bottom: 18px;
+        }
+      }
+      > a:hover {
+        color: $fv-green !important;
+      }
+    }
+  }
 }

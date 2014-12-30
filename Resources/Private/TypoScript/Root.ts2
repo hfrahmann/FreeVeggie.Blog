@@ -26,12 +26,19 @@ page = Page {
 		parts {
             title = ${q(node).property('title')}
 
-            mainMenu = Menu
-            mainMenu {
-                entryLevel = 1
-                templatePath = 'resource://FreeVeggie.Blog/Private/Templates/NodeTypes/MainMenu.html'
-                maximumLevels = 2
-            }
+			mainMenu = Menu
+			mainMenu {
+				entryLevel = 1
+				templatePath = 'resource://FreeVeggie.Blog/Private/Templates/NodeTypes/MainMenu.html'
+				maximumLevels = 0
+			}
+
+			secondMenu = Menu
+			secondMenu {
+				entryLevel = 2
+				templatePath = 'resource://FreeVeggie.Blog/Private/Templates/NodeTypes/SecondMenu.html'
+				maximumLevels = 0
+			}
 
 			breadcrumb = Breadcrumb
             breadcrumb {
@@ -62,3 +69,4 @@ page = Page {
 		}
 	}
 }
+

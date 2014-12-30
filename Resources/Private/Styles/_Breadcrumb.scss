@@ -1,0 +1,35 @@
+
+ul.breadcrumbs {
+  display: block;
+  list-style-type: none;
+  margin: 40px 0 10px 0;
+  padding: 0;
+
+  > li {
+    display: inline;
+    color: #FFFFFF;
+    font-size: 16px;
+
+    a {
+      text-decoration: none;
+      color: #FFFFFF;
+      margin-right: 15px;
+      font-size: 16px;
+    }
+
+    a:hover {
+      color: #D4ECBF;
+    }
+  }
+}
+
+
+span.splitter:before {
+  position: relative;
+  top: -1px;
+  content: "\203A";
+  font-size: 22px;
+  height: 18px;
+  width: 15px;
+  display: inline-block;
+}
