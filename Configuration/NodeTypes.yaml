@@ -9,6 +9,26 @@
 #    sidebar:
 #      type: 'TYPO3.Neos:ContentCollection'
 
+
+
+'TYPO3.Neos.NodeTypes:Page':
+  ui:
+    inspector:
+      groups:
+        freeveggie:
+          label: 'Free veggie'
+  properties:
+    showTitleblock:
+      defaultValue: true
+      type: boolean
+      ui:
+        label: 'Show Titleblock'
+        reloadIfChanged: true
+        inspector:
+          group: freeveggie
+
+
+
 # Document: BlogPost
 'FreeVeggie.Blog:Blogpost':
   superTypes:

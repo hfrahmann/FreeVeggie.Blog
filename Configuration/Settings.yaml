@@ -14,8 +14,15 @@ TYPO3:
             label: 'English'
             values: ['en', 'de']
             uriSegment: 'en'
-
   Neos:
+    userInterface:
+      editPreviewModes:
+        print:
+          isEditingMode: FALSE
+          isPreviewMode: TRUE
+          typoScriptRenderingPath: 'print'
+          title: 'Print'
+          position: 200
     nodeTypes:
       groups:
         freeveggie:

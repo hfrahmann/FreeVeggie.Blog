@@ -8,11 +8,9 @@
         </f:section>
         <f:section name="stylesheets">
             <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext" />
-            <link rel="stylesheet" type="text/css" href="{f:uri.resource(path: 'Styles/FreeVeggie.css', package: 'FreeVeggie.Blog')}" media="screen" />
+            <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Oswald:400,300,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+            <link rel="stylesheet" type="text/css" href="{f:uri.resource(path: 'Styles/FreeVeggie.css', package: 'FreeVeggie.Blog')}" media="all" />
             <link rel="stylesheet" type="text/css" href="{f:uri.resource(path: 'Styles/Print.css', package: 'FreeVeggie.Blog')}" media="print" />
-            <f:if condition="{node.context.workspace.name} != 'live'">
-                <link rel="stylesheet" href="{f:uri.resource(path: 'Styles/Backend.css', package: 'FreeVeggie.Blog')}" media="all" />
-            </f:if>
         </f:section>
         <f:section name="headScripts">
         </f:section>
@@ -28,15 +26,14 @@
                     <div class="fv-logo-image"></div>
                     <div class="fv-logo-text"></div>
                 </a>
-
                 <a class="fv-hamburger" href="javascript:fvToggleNavigation('nav.fv-navigation');">
                     <div></div>
                     <div></div>
                     <div></div>
                 </a>
-
                 <nav class="fv-navigation">
                     {parts.mainMenu -> f:format.raw()}
+                    {parts.secondMenu -> f:format.raw()}
                     <span class="clear"></span>
                 </nav>
             </div>

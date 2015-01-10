@@ -30,7 +30,7 @@ page = Page {
 			mainMenu {
 				entryLevel = 1
 				templatePath = 'resource://FreeVeggie.Blog/Private/Templates/NodeTypes/MainMenu.html'
-				maximumLevels = 0
+				maximumLevels = 2
 			}
 
 			secondMenu = Menu
@@ -66,6 +66,23 @@ page = Page {
 		javascripts.site = TYPO3.TypoScript:Template {
 			templatePath = 'resource://FreeVeggie.Blog/Private/Templates/Page/Default.html'
 			sectionName = 'bodyScripts'
+		}
+	}
+}
+
+print < page
+print {
+	head {
+		stylesheets.printCss = TYPO3.TypoScript:Tag {
+			@position = 'end 10'
+			tagName = 'link'
+			attributes {
+				media = 'all'
+				rel = 'stylesheet'
+				href = TYPO3.TypoScript:ResourceUri {
+					path = 'resource://FreeVeggie.Blog/Public/Styles/Print.css'
+				}
+			}
 		}
 	}
 }

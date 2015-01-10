@@ -372,30 +372,6 @@ span.splitter:before {
     font-weight: bold;
 }
 
-/*** Quote ***/
-
-.fv-quote {
-
-    text-align: center;
-}
-
-.fv-quote div, .fv-quote p, .fv-quote span {
-    display: inline;
-    font-size: 25px;
-    font-style: italic;
-}
-
-.fv-quote p {
-    min-width: 20px;
-}
-
-.fv-quote div.dateAndAuthor {
-    display: block;
-    color: #AAAAAA;
-    font-size: 14px;
-    font-style: normal;
-    text-align: center;
-}
 
 /*** Base64 Image ***/
 

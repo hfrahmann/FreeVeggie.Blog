@@ -6,7 +6,9 @@ prototype(TYPO3.Neos:PrimaryContent).receipt {
     condition = ${q(documentNode).is('[instanceof FreeVeggie.Blog:Receipt]')}
     type = 'FreeVeggie.Blog:Receipt'
 }
-prototype(FreeVeggie.Blog:Receipt) < prototype(TYPO3.Neos.NodeTypes:Document) {
+
+prototype(FreeVeggie.Blog:Receipt) < prototype(TYPO3.Neos.NodeTypes:Page) {
+    templatePath = 'resource://FreeVeggie.Blog/Private/Templates/NodeTypes/Receipt.html'
 
     headerImageUri = TYPO3.Neos:ImageUri {
         asset = ${q(node).property('headerImage')}

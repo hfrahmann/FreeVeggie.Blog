@@ -6,9 +6,12 @@ prototype(TYPO3.Neos:PrimaryContent).page {
     condition = ${q(documentNode).is('[instanceof TYPO3.Neos.NodeTypes:Page]')}
     type = 'TYPO3.Neos.NodeTypes:Page'
 }
+
 prototype(TYPO3.Neos.NodeTypes:Page) < prototype(TYPO3.TypoScript:Template) {
     templatePath = 'resource://FreeVeggie.Blog/Private/Templates/NodeTypes/Page.html'
     title = ${q(node).property('title')}
+
+    showTitleblock = ${q(node).property('showTitleblock')}
 
     node = ${node}
 

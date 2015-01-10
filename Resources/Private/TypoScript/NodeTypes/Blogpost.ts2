@@ -6,6 +6,8 @@ prototype(TYPO3.Neos:PrimaryContent).blogPost {
     condition = ${q(documentNode).is('[instanceof FreeVeggie.Blog:Blogpost]')}
     type = 'FreeVeggie.Blog:Blogpost'
 }
-prototype(FreeVeggie.Blog:Blogpost) < prototype(TYPO3.Neos.NodeTypes:Document) {
+
+prototype(FreeVeggie.Blog:Blogpost) < prototype(TYPO3.Neos.NodeTypes:Page) {
+    templatePath = 'resource://FreeVeggie.Blog/Private/Templates/NodeTypes/Blogpost.html'
     teaser = ${q(node).property('teaser')}
 }
