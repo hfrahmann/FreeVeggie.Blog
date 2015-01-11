@@ -1,5 +1,5 @@
 /* General */
-html, body { margin: 0; }
+html, body { margin: 0; -webkit-text-size-adjust: none; }
 
 body, table { font-family: "Lato", "Helvetica neue", Helvetica, Arial, sans-serif; font-size: 16px; font-weight: 300; -webkit-font-smoothing: antialiased; }
 
@@ -28,7 +28,7 @@ header nav.fv-navigation { margin-left: 40px; }
 header ul.fv-menu { display: block; margin: 20px 0 0 0; padding: 0; list-style-type: none; }
 header ul.fv-menu > li { float: left; position: relative; }
 @media only screen and (max-width: 767px) { header ul.fv-menu > li { display: block; position: static; float: none; border-bottom: 1px solid #EEEEEE; text-align: center; font-size: 15px; } }
-header ul.fv-menu > li > a { display: block; text-decoration: none; color: #343434; text-transform: uppercase; font-weight: 300; font-size: 14px; }
+header ul.fv-menu > li > a { display: block; text-decoration: none; color: #343434; text-transform: uppercase; font-weight: 900; letter-spacing: -1px; font-size: 14px; }
 @media only screen and (min-width: 768px) { header ul.fv-menu > li > a { margin-right: 15px; } }
 @media only screen and (max-width: 767px) { header ul.fv-menu > li > a { padding-top: 15px; padding-bottom: 15px; } }
 header ul.fv-menu > li > a:hover, header ul.fv-menu > li > a.current { color: #72C02C !important; }
@@ -47,6 +47,8 @@ header ul.fv-secondmenu-tablet { display: none; }
 
 div.fv-container { display: block; min-height: 690px; margin-top: 20px; text-align: center; line-height: 140%; }
 
+div.fv-container:after { content: " "; display: table; clear: both; }
+
 [class^="typo3-neos-nodetypes"], .row [class*=" typo3-neos-nodetypes"] { margin-top: 10px; margin-bottom: 10px; }
 
 div.fv-content { width: 1000px; margin: 0 auto 0 auto; text-align: left !important; box-sizing: border-box; }
@@ -57,11 +59,16 @@ div.fv-pagetitle h1 { font-size: 35px; }
 
 div.fv-blogtitle { background-color: #72C02C; padding: 50px 0px 30px 0px; display: block; color: white; }
 
-div.fv-receipttitle { background-color: #343434; background-size: 100%; background-attachment: scroll; background-position: center; background-repeat: no-repeat; padding: 50px 0px 0px 0px; height: 300px; display: block; text-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3); color: white; }
+div.fv-receipttitle { background-color: #343434; background-size: cover; background-attachment: scroll; background-position: center; background-repeat: no-repeat; padding: 50px 0px 0px 0px; height: 300px; display: block; text-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3); color: white; }
+@media only screen and (max-width: 767px) { div.fv-receipttitle { height: 200px; padding-top: 10px; } }
+div.fv-receipttitle h1 { font-size: 45px; line-height: 50px; border-radius: 10px; padding: 15px; border-radius: 10px; background: rgba(0, 0, 0, 0.7); display: inline-block; }
+@media only screen and (max-width: 767px) { div.fv-receipttitle h1 { font-size: 30px; line-height: 35px; } }
 
 .typo3-neos-alignment-right { float: right; margin-left: 2em; margin-bottom: 1em; }
 
 .typo3-neos-alignment-left { float: left; margin-right: 2em; margin-bottom: 1em; }
+
+.typo3-neos-alignment-center { text-align: center; }
 
 .typo3-neos-alignment-left:after, .typo3-neos-alignment-right:after { content: ""; display: table; clear: both; }
 
@@ -73,6 +80,10 @@ div.fv-receipttitle { background-color: #343434; background-size: 100%; backgrou
 .fv-quote p { min-width: 20px; }
 
 .fv-quote div.dateAndAuthor { display: block; color: #AAAAAA; font-size: 14px; font-style: normal; text-align: center; }
+
+div.fv-container table { border-bottom: 1px solid #DDDDDD; border-right: 1px solid #DDDDDD; margin: 0; border-spacing: 0; }
+div.fv-container table td, div.fv-container table th { border-top: 1px solid #DDDDDD; border-left: 1px solid #DDDDDD; margin: 0; padding: 5px; }
+div.fv-container table th { background: #EEEEEE; text-align: center; font-weight: bold; }
 
 footer { display: block; background: #343434; padding: 40px 0 100px 0; margin-top: 50px; color: #dfdfdf; }
 footer a { color: white; text-decoration: none; }

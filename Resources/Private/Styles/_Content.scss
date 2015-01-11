@@ -13,6 +13,12 @@ div.fv-container {
   line-height: 140%;
 }
 
+div.fv-container:after {
+  content: " ";
+  display: table;
+  clear: both;
+}
+
 [class^="typo3-neos-nodetypes"], .row [class*=" typo3-neos-nodetypes"] {
   margin-top: 10px;
   margin-bottom: 10px;
@@ -53,7 +59,7 @@ div.fv-blogtitle {
 
 div.fv-receipttitle {
   background-color: $fv-darkgray;
-  background-size: 100%;
+  background-size: cover;
   background-attachment: scroll;
   background-position: center;
   background-repeat: no-repeat;
@@ -62,6 +68,26 @@ div.fv-receipttitle {
   display: block;
   text-shadow: 0px 0px 20px rgba(0,0,0,0.3);
   color: white;
+
+  @media #{$screen-tablet} {
+    height: 200px;
+    padding-top: 10px;
+  }
+
+  h1 {
+    font-size: 45px;
+    line-height: 50px;
+    border-radius: 10px;
+    padding:15px;
+    border-radius: 10px;
+    background: rgba(0,0,0,0.7);
+    display: inline-block;
+
+    @media #{$screen-tablet} {
+      font-size: 30px;
+      line-height: 35px;
+    }
+  }
 }
 
 
@@ -71,6 +97,10 @@ div.fv-receipttitle {
 
 .typo3-neos-alignment-left {
   float: left; margin-right: 2em; margin-bottom: 1em;
+}
+
+.typo3-neos-alignment-center {
+  text-align: center;
 }
 
 .typo3-neos-alignment-left:after,
@@ -103,4 +133,27 @@ div.fv-receipttitle {
   font-size: 14px;
   font-style: normal;
   text-align: center;
+}
+
+div.fv-container {
+
+  table {
+    border-bottom: 1px solid #DDDDDD;
+    border-right: 1px solid #DDDDDD;
+    margin: 0;
+    border-spacing: 0;
+  }
+
+  table td, table th {
+    border-top: 1px solid #DDDDDD;
+    border-left: 1px solid #DDDDDD;
+    margin: 0;
+    padding: 5px;
+  }
+
+  table th {
+    background: #EEEEEE;
+    text-align: center;
+    font-weight: bold;
+  }
 }
