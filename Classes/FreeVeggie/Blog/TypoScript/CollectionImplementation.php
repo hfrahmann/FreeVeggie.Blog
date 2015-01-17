@@ -85,6 +85,9 @@ class CollectionImplementation extends TemplateImplementation {
             }
             $this->buildItems($childNode);
         }
+        if($this->items == NULL) {
+            $this->items = array();
+        }
     }
 
     /**

@@ -7,6 +7,17 @@
     <div class="fv-receipttitle" {f:if(condition: headerImageUri, then: 'style="background-image: url({headerImageUri});"')} >
         <div class="fv-content">
             <h1>{title}</h1>
+
+            <f:if condition="{teaser}">
+                <p class="textblock">
+                    <f:format.nl2br>{teaser -> f:format.raw()}</f:format.nl2br>
+                </p>
+            </f:if>
+        </div>
+    </div>
+    <div class="fv-subtitleblock">
+        <div class="fv-content">
+            {breadcrumb -> f:format.raw()}
         </div>
     </div>
 

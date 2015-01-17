@@ -19,16 +19,16 @@ header div.fv-logo-image:hover { -webkit-transform: rotate(-360deg); -moz-transf
 header div.fv-logo-text { position: relative; top: -7px; display: inline-block; background-image: url(../Images/logotext.png); background-size: 100%; background-position: right; height: 30px; width: 140px; }
 header a.fv-hamburger { display: none; float: right; width: 30px; }
 @media only screen and (max-width: 767px) { header a.fv-hamburger { display: block; } }
-header a.fv-hamburger div { display: block; height: 4px; margin: 5px 0; background: #343434; }
+header a.fv-hamburger div { display: block; height: 4px; margin: 5px 0; background: #212121; }
 
 header nav.fv-navigation { margin-left: 40px; }
 @media only screen and (min-width: 768px) { header nav.fv-navigation { display: inline-block !important; } }
-@media only screen and (max-width: 1000px) { header nav.fv-navigation { width: 65%; } }
+@media only screen and (max-width: 1000px) { header nav.fv-navigation { width: 60%; } }
 @media only screen and (max-width: 767px) { header nav.fv-navigation { margin: 0; width: 100%; height: auto; display: none; } }
 header ul.fv-menu { display: block; margin: 20px 0 0 0; padding: 0; list-style-type: none; }
 header ul.fv-menu > li { float: left; position: relative; }
 @media only screen and (max-width: 767px) { header ul.fv-menu > li { display: block; position: static; float: none; border-bottom: 1px solid #EEEEEE; text-align: center; font-size: 15px; } }
-header ul.fv-menu > li > a { display: block; text-decoration: none; color: #343434; text-transform: uppercase; font-weight: 900; letter-spacing: -1px; font-size: 14px; }
+header ul.fv-menu > li > a { display: block; text-decoration: none; color: #212121; text-transform: uppercase; font-weight: 900; letter-spacing: -1px; font-size: 14px; }
 @media only screen and (min-width: 768px) { header ul.fv-menu > li > a { margin-right: 15px; } }
 @media only screen and (max-width: 767px) { header ul.fv-menu > li > a { padding-top: 15px; padding-bottom: 15px; } }
 header ul.fv-menu > li > a:hover, header ul.fv-menu > li > a.current { color: #72C02C !important; }
@@ -54,15 +54,22 @@ div.fv-container:after { content: " "; display: table; clear: both; }
 div.fv-content { width: 1000px; margin: 0 auto 0 auto; text-align: left !important; box-sizing: border-box; }
 @media only screen and (max-width: 1000px) { div.fv-content { width: 100%; padding-left: 5px; padding-right: 5px; } }
 
-div.fv-pagetitle { background-color: #72C02C; padding: 50px 0px 30px 0px; display: block; color: white; }
-div.fv-pagetitle h1 { font-size: 35px; }
+div.fv-pagetitle { background-color: #72C02C; padding: 20px 0px 0px 0px; height: 100px; display: block; color: white; }
+div.fv-pagetitle h1 { font-size: 45px; }
+@media only screen and (max-width: 767px) { div.fv-pagetitle h1 { padding-top: 10px; font-size: 30px; line-height: 35px; } }
 
-div.fv-blogtitle { background-color: #72C02C; padding: 50px 0px 30px 0px; display: block; color: white; }
+div.fv-blogtitle { background-color: #72C02C; padding: 20px 0px 30px 0px; display: block; color: white; }
+div.fv-blogtitle h1 { font-size: 45px; line-height: 50px; margin: 0; }
+@media only screen and (max-width: 767px) { div.fv-blogtitle h1 { padding-top: 10px; font-size: 30px; line-height: 35px; } }
 
-div.fv-receipttitle { background-color: #343434; background-size: cover; background-attachment: scroll; background-position: center; background-repeat: no-repeat; padding: 50px 0px 0px 0px; height: 300px; display: block; text-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3); color: white; }
+div.fv-receipttitle { background-color: #212121; background-size: cover; background-attachment: scroll; background-position: center; background-repeat: no-repeat; padding: 50px 0px 0px 0px; height: 300px; display: block; text-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3); color: white; }
 @media only screen and (max-width: 767px) { div.fv-receipttitle { height: 200px; padding-top: 10px; } }
-div.fv-receipttitle h1 { font-size: 45px; line-height: 50px; border-radius: 10px; padding: 15px; border-radius: 10px; background: rgba(0, 0, 0, 0.7); display: inline-block; }
+div.fv-receipttitle h1 { font-size: 45px; line-height: 50px; border-radius: 10px; padding: 15px; margin: 0; border-radius: 10px; background: rgba(0, 0, 0, 0.6); display: inline-block; }
 @media only screen and (max-width: 767px) { div.fv-receipttitle h1 { font-size: 30px; line-height: 35px; } }
+div.fv-receipttitle p.textblock { background: rgba(0, 0, 0, 0.6); padding: 10px; border-radius: 10px; width: 50%; }
+@media only screen and (max-width: 767px) { div.fv-receipttitle p.textblock { width: 90%; } }
+
+div.fv-subtitleblock { background: #72C02C; }
 
 .typo3-neos-alignment-right { float: right; margin-left: 2em; margin-bottom: 1em; }
 
@@ -85,16 +92,22 @@ div.fv-container table { border-bottom: 1px solid #DDDDDD; border-right: 1px sol
 div.fv-container table td, div.fv-container table th { border-top: 1px solid #DDDDDD; border-left: 1px solid #DDDDDD; margin: 0; padding: 5px; }
 div.fv-container table th { background: #EEEEEE; text-align: center; font-weight: bold; }
 
-footer { display: block; background: #343434; padding: 40px 0 100px 0; margin-top: 50px; color: #dfdfdf; }
+footer { display: block; background: #212121; padding: 60px 0 130px 0; margin-top: 50px; color: #dfdfdf; }
 footer a { color: white; text-decoration: none; }
 footer a:hover { color: #72C02C; }
 
-ul.breadcrumbs { display: block; list-style-type: none; margin: 40px 0 10px 0; padding: 0; }
+ul.breadcrumbs { display: block; list-style-type: none; padding: 10px 0px; margin: 0px; }
 ul.breadcrumbs > li { display: inline; color: #FFFFFF; font-size: 16px; }
 ul.breadcrumbs > li a { text-decoration: none; color: #FFFFFF; margin-right: 15px; font-size: 16px; }
 ul.breadcrumbs > li a:hover { color: #D4ECBF; }
 
 span.splitter:before { position: relative; top: -1px; content: "\203A"; font-size: 22px; height: 18px; width: 15px; display: inline-block; }
+
+span.fv-languagemenu { float: right; font-size: 14px; }
+span.fv-languagemenu a { text-decoration: none; color: #000000; padding: 0px 2px; }
+span.fv-languagemenu a:hover { color: #72C02C; }
+span.fv-languagemenu a.current { font-weight: bold; font-size: 120%; }
+@media only screen and (max-width: 767px) { span.fv-languagemenu { float: none; position: absolute; right: 70px; top: 7px; font-size: 16px; } }
 
 .multicolumn { margin-right: -5px; margin-left: -5px; }
 .multicolumn .col-33 { width: 33.3333333333%; }

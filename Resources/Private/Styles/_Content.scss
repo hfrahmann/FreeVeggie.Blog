@@ -41,20 +41,39 @@ div.fv-content {
 
 div.fv-pagetitle {
   background-color: $fv-green;
-  padding: 50px 0px 30px 0px;
+  padding: 20px 0px 0px 0px;
+  height: 100px;
   display: block;
   color: white;
 
   h1 {
-    font-size: 35px;
+    font-size: 45px;
+
+    @media #{$screen-tablet} {
+      padding-top: 10px;
+      font-size: 30px;
+      line-height: 35px;
+    }
   }
 }
 
 div.fv-blogtitle {
   background-color: $fv-green;
-  padding: 50px 0px 30px 0px;
+  padding: 20px 0px 30px 0px;
   display: block;
   color: white;
+
+  h1 {
+    font-size: 45px;
+    line-height: 50px;
+    margin: 0;
+
+    @media #{$screen-tablet} {
+      padding-top: 10px;
+      font-size: 30px;
+      line-height: 35px;
+    }
+  }
 }
 
 div.fv-receipttitle {
@@ -79,8 +98,9 @@ div.fv-receipttitle {
     line-height: 50px;
     border-radius: 10px;
     padding:15px;
+    margin:0;
     border-radius: 10px;
-    background: rgba(0,0,0,0.7);
+    background: rgba(0,0,0,0.6);
     display: inline-block;
 
     @media #{$screen-tablet} {
@@ -88,6 +108,22 @@ div.fv-receipttitle {
       line-height: 35px;
     }
   }
+
+  p.textblock {
+    background: rgba(0,0,0,0.6);
+    padding:10px;
+    border-radius: 10px;
+    width:50%;
+
+    @media #{$screen-tablet} {
+      width:90%;
+    }
+  }
+}
+
+
+div.fv-subtitleblock {
+  background: $fv-green;
 }
 
 

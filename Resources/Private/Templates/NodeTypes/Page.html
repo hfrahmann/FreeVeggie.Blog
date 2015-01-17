@@ -4,14 +4,16 @@
 
 <article itemscope="" itemtype="http://schema.org/Article" class="freeveggie-blog-article" xmlns:f="http://www.w3.org/1999/html">
 
-    <f:if condition="{showTitleblock}">
-        <div class="fv-pagetitle">
-            <div class="fv-content">
-                <h1>{title}</h1>
-                {breadcrumb -> f:format.raw()}
-            </div>
+    <div class="fv-pagetitle">
+        <div class="fv-content">
+            <h1>{title}</h1>
         </div>
-    </f:if>
+    </div>
+    <div class="fv-subtitleblock">
+        <div class="fv-content">
+            {breadcrumb -> f:format.raw()}
+        </div>
+    </div>
 
     <div class="fv-content">
         <ts:render path="main" />

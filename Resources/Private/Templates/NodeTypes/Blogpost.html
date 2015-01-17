@@ -7,10 +7,17 @@
     <div class="fv-blogtitle">
         <div class="fv-content">
             <h1>{title}</h1>
-            <!--{breadcrumb -> f:format.raw()}-->
-            <p>
-                <f:format.nl2br>{teaser -> f:format.raw()}</f:format.nl2br>
-            </p>
+
+            <f:if condition="{teaser}">
+                <p>
+                    <f:format.nl2br>{teaser -> f:format.raw()}</f:format.nl2br>
+                </p>
+            </f:if>
+        </div>
+    </div>
+    <div class="fv-subtitleblock">
+        <div class="fv-content">
+            {breadcrumb -> f:format.raw()}
         </div>
     </div>
 

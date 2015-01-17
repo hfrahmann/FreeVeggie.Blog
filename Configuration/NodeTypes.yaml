@@ -11,24 +11,6 @@
 
 
 
-'TYPO3.Neos.NodeTypes:Page':
-  ui:
-    inspector:
-      groups:
-        freeveggie:
-          label: 'Free veggie'
-  properties:
-    showTitleblock:
-      defaultValue: true
-      type: boolean
-      ui:
-        label: 'Show Titleblock'
-        reloadIfChanged: true
-        inspector:
-          group: freeveggie
-
-
-
 # Document: BlogPost
 'FreeVeggie.Blog:Blogpost':
   superTypes:
@@ -208,7 +190,7 @@
           group: 'video'
     'width':
       type: integer
-      defaultValue: 400
+      defaultValue: 560
       ui:
         label: 'Width'
         reloadIfChanged: TRUE
@@ -216,12 +198,32 @@
           group: 'video'
     'height':
       type: integer
-      defaultValue: 300
+      defaultValue: 315
       ui:
         label: 'Height'
         reloadIfChanged: TRUE
         inspector:
           group: 'video'
+    'alignment':
+      type: string
+      ui:
+        label: 'Alignment'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'video'
+          editor: 'TYPO3.Neos/Inspector/Editors/SelectBoxEditor'
+          editorOptions:
+            placeholder: 'Default'
+            values:
+              '':
+                label: ''
+              center:
+                label: 'Center'
+              left:
+                label: 'Left'
+              right:
+                label: 'Right'
+
 
 
 ##
