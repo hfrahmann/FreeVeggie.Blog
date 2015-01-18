@@ -12,10 +12,14 @@ prototype(FreeVeggie.Blog:ReceiptCollection) < prototype(TYPO3.Neos:Content) {
     itemsPerPage = ${q(node).property('itemsPerPage')}
     itemsPerPage.@process.1 = ${(String.toInteger(value) > 0) ? String.toInteger(value) : 10}
 
+    receiptImageMaxWidth = 400
+    receiptImageMaxHeight = 200
+
     @cache {
     mode = 'uncached'
         context {
             1 = 'documentNode'
+            2 = 'node'
         }
     }
 }

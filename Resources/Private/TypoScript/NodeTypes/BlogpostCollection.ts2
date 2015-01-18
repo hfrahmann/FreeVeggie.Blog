@@ -16,6 +16,7 @@ prototype(FreeVeggie.Blog:BlogpostCollection) < prototype(TYPO3.Neos:Content) {
         mode = 'uncached'
         context {
             1 = 'documentNode'
+            2 = 'node'
         }
     }
 }

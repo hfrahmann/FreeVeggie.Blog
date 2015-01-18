@@ -1,7 +1,7 @@
 
 -
   name: 'FreeVeggie - Pagination'
-  uriPattern:    '{node}/page{--typo3-typo3cr-viewhelpers-widget-paginateviewhelper.currentPage}.{@format}'
+  uriPattern:    '{node}/{--typo3-typo3cr-viewhelpers-widget-paginateviewhelper.currentPage}'
   defaults:
     '@package':    'TYPO3.Neos'
     '@controller': 'Frontend\Node'

@@ -45,6 +45,7 @@ div.fv-pagetitle {
   height: 100px;
   display: block;
   color: white;
+  overflow: hidden;
 
   h1 {
     font-size: 45px;
@@ -62,6 +63,7 @@ div.fv-blogtitle {
   padding: 20px 0px 30px 0px;
   display: block;
   color: white;
+  overflow: hidden;
 
   h1 {
     font-size: 45px;
@@ -87,9 +89,10 @@ div.fv-receipttitle {
   display: block;
   text-shadow: 0px 0px 20px rgba(0,0,0,0.3);
   color: white;
+  overflow: hidden;
 
   @media #{$screen-tablet} {
-    height: 200px;
+    height: 250px;
     padding-top: 10px;
   }
 

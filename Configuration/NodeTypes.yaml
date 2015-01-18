@@ -301,7 +301,7 @@
   properties:
     'itemsPerPage':
       type: string
-      defaultValue: 10
+      defaultValue: 6
       ui:
         label: 'Items per page'
         reloadIfChanged: TRUE
@@ -327,7 +327,7 @@
   properties:
     'itemsPerPage':
       type: string
-      defaultValue: 10
+      defaultValue: 6
       ui:
         label: 'Items per page'
         reloadIfChanged: TRUE

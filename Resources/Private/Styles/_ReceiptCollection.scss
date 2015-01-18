@@ -1,0 +1,60 @@
+
+ul.fv-receiptcollection {
+
+  list-style-type: none;
+  width: 100%;
+  display: block;
+  margin: 0 0 20px 0;
+  padding: 0;
+
+  li.fv-receiptbox {
+    box-sizing: border-box;
+    width: 50%;
+    padding: 5px;
+    float: left;
+
+    > a {
+      display: block;
+      border: 1px solid $fv-lightgray;
+      padding: 5px;
+      text-decoration: none;
+      color: #000000;
+    }
+    > a:hover {
+      outline: 1px solid $fv-green;
+      border-color: $fv-green;
+
+      h3.fv-receipttitle {
+        color: $fv-green;
+      }
+    }
+
+    img.fv-receiptimage {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    h3.fv-receipttitle {
+      font-size: 18px;
+      margin: 0;
+      padding: 0;
+    }
+
+    p.fv-receiptteaser {
+      font-size: 14px;
+    }
+
+    @media #{$screen-tablet} {
+      width: 100%;
+      float: none;
+    }
+  }
+
+}
+
+ul.fv-receiptcollection:after {
+  content: " ";
+  display: table;
+  clear: both;
+}

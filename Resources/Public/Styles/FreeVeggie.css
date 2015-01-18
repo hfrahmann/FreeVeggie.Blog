@@ -28,7 +28,7 @@ header nav.fv-navigation { margin-left: 40px; }
 header ul.fv-menu { display: block; margin: 20px 0 0 0; padding: 0; list-style-type: none; }
 header ul.fv-menu > li { float: left; position: relative; }
 @media only screen and (max-width: 767px) { header ul.fv-menu > li { display: block; position: static; float: none; border-bottom: 1px solid #EEEEEE; text-align: center; font-size: 15px; } }
-header ul.fv-menu > li > a { display: block; text-decoration: none; color: #212121; text-transform: uppercase; font-weight: 900; letter-spacing: -1px; font-size: 14px; }
+header ul.fv-menu > li > a { display: block; text-decoration: none; color: #212121; text-transform: uppercase; font-weight: normal; letter-spacing: -1px; font-size: 15px; }
 @media only screen and (min-width: 768px) { header ul.fv-menu > li > a { margin-right: 15px; } }
 @media only screen and (max-width: 767px) { header ul.fv-menu > li > a { padding-top: 15px; padding-bottom: 15px; } }
 header ul.fv-menu > li > a:hover, header ul.fv-menu > li > a.current { color: #72C02C !important; }
@@ -54,16 +54,16 @@ div.fv-container:after { content: " "; display: table; clear: both; }
 div.fv-content { width: 1000px; margin: 0 auto 0 auto; text-align: left !important; box-sizing: border-box; }
 @media only screen and (max-width: 1000px) { div.fv-content { width: 100%; padding-left: 5px; padding-right: 5px; } }
 
-div.fv-pagetitle { background-color: #72C02C; padding: 20px 0px 0px 0px; height: 100px; display: block; color: white; }
+div.fv-pagetitle { background-color: #72C02C; padding: 20px 0px 0px 0px; height: 100px; display: block; color: white; overflow: hidden; }
 div.fv-pagetitle h1 { font-size: 45px; }
 @media only screen and (max-width: 767px) { div.fv-pagetitle h1 { padding-top: 10px; font-size: 30px; line-height: 35px; } }
 
-div.fv-blogtitle { background-color: #72C02C; padding: 20px 0px 30px 0px; display: block; color: white; }
+div.fv-blogtitle { background-color: #72C02C; padding: 20px 0px 30px 0px; display: block; color: white; overflow: hidden; }
 div.fv-blogtitle h1 { font-size: 45px; line-height: 50px; margin: 0; }
 @media only screen and (max-width: 767px) { div.fv-blogtitle h1 { padding-top: 10px; font-size: 30px; line-height: 35px; } }
 
-div.fv-receipttitle { background-color: #212121; background-size: cover; background-attachment: scroll; background-position: center; background-repeat: no-repeat; padding: 50px 0px 0px 0px; height: 300px; display: block; text-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3); color: white; }
-@media only screen and (max-width: 767px) { div.fv-receipttitle { height: 200px; padding-top: 10px; } }
+div.fv-receipttitle { background-color: #212121; background-size: cover; background-attachment: scroll; background-position: center; background-repeat: no-repeat; padding: 50px 0px 0px 0px; height: 300px; display: block; text-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3); color: white; overflow: hidden; }
+@media only screen and (max-width: 767px) { div.fv-receipttitle { height: 250px; padding-top: 10px; } }
 div.fv-receipttitle h1 { font-size: 45px; line-height: 50px; border-radius: 10px; padding: 15px; margin: 0; border-radius: 10px; background: rgba(0, 0, 0, 0.6); display: inline-block; }
 @media only screen and (max-width: 767px) { div.fv-receipttitle h1 { font-size: 30px; line-height: 35px; } }
 div.fv-receipttitle p.textblock { background: rgba(0, 0, 0, 0.6); padding: 10px; border-radius: 10px; width: 50%; }
@@ -108,6 +108,25 @@ span.fv-languagemenu a { text-decoration: none; color: #000000; padding: 0px 2px
 span.fv-languagemenu a:hover { color: #72C02C; }
 span.fv-languagemenu a.current { font-weight: bold; font-size: 120%; }
 @media only screen and (max-width: 767px) { span.fv-languagemenu { float: none; position: absolute; right: 70px; top: 7px; font-size: 16px; } }
+
+nav.fv-pagination { text-align: center; }
+nav.fv-pagination ul { display: inline-block; list-style-type: none; padding: 0; margin: 0; border-top: 1px solid #dfdfdf; border-bottom: 1px solid #dfdfdf; border-left: 1px solid #dfdfdf; }
+nav.fv-pagination ul li { float: left; margin: 0; padding: 0; display: inline-block; border-right: 1px solid #dfdfdf; }
+nav.fv-pagination ul li.current, nav.fv-pagination ul li > a { display: inline-block; padding: 5px 10px; margin: 0; color: black; text-decoration: none; }
+nav.fv-pagination ul li > a:hover { background: #F4F4F4; color: #72C02C; }
+nav.fv-pagination ul li.current { font-weight: bold; background: #F4F4F4; }
+
+ul.fv-receiptcollection { list-style-type: none; width: 100%; display: block; margin: 0 0 20px 0; padding: 0; }
+ul.fv-receiptcollection li.fv-receiptbox { box-sizing: border-box; width: 50%; padding: 5px; float: left; }
+ul.fv-receiptcollection li.fv-receiptbox > a { display: block; border: 1px solid #dfdfdf; padding: 5px; text-decoration: none; color: #000000; }
+ul.fv-receiptcollection li.fv-receiptbox > a:hover { outline: 1px solid #72C02C; border-color: #72C02C; }
+ul.fv-receiptcollection li.fv-receiptbox > a:hover h3.fv-receipttitle { color: #72C02C; }
+ul.fv-receiptcollection li.fv-receiptbox img.fv-receiptimage { display: block; width: 100%; height: auto; }
+ul.fv-receiptcollection li.fv-receiptbox h3.fv-receipttitle { font-size: 18px; margin: 0; padding: 0; }
+ul.fv-receiptcollection li.fv-receiptbox p.fv-receiptteaser { font-size: 14px; }
+@media only screen and (max-width: 767px) { ul.fv-receiptcollection li.fv-receiptbox { width: 100%; float: none; } }
+
+ul.fv-receiptcollection:after { content: " "; display: table; clear: both; }
 
 .multicolumn { margin-right: -5px; margin-left: -5px; }
 .multicolumn .col-33 { width: 33.3333333333%; }

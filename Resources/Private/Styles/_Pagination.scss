@@ -1,0 +1,40 @@
+
+nav.fv-pagination {
+  text-align: center;
+
+  ul {
+    display: inline-block;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    border-top: 1px solid $fv-lightgray;
+    border-bottom: 1px solid $fv-lightgray;
+    border-left: 1px solid $fv-lightgray;
+
+    li {
+      float:left;
+      margin: 0;
+      padding: 0;
+      display: inline-block;
+      border-right: 1px solid $fv-lightgray;
+    }
+
+    li.current, li > a {
+      display: inline-block;
+      padding: 5px 10px;
+      margin: 0;
+      color: black;
+      text-decoration: none;
+    }
+    li > a:hover {
+      background: #F4F4F4;
+      color: $fv-green;
+    }
+
+    li.current {
+      font-weight: bold;
+      background: #F4F4F4;
+    }
+  }
+
+}
