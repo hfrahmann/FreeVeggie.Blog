@@ -15,6 +15,8 @@ use TYPO3\TYPO3CR\Domain\Model\NodeInterface;
  */
 class ContentService {
 
+    const TEASER_MAX_LENGTH = 400;
+
     /**
      * Renders the given Node as a teaser text with up to 600 characters, with all <p> and <a> tags removed.
      *
@@ -33,12 +35,12 @@ class ContentService {
         }
 
         $jumpPosition = strpos($stringToTruncate, '</p>');
-        if ($jumpPosition !== FALSE && $jumpPosition < 600) {
+        if ($jumpPosition !== FALSE && $jumpPosition < self::TEASER_MAX_LENGTH) {
             return $this->stripUnwantedTags(substr($stringToTruncate, 0, $jumpPosition + 4));
         }
 
-        if (strlen($stringToTruncate) > 500) {
-            return substr($this->stripUnwantedTags($stringToTruncate), 0, 501) . ' ...';
+        if (strlen($stringToTruncate) > self::TEASER_MAX_LENGTH) {
+            return substr($this->stripUnwantedTags($stringToTruncate), 0, self::TEASER_MAX_LENGTH+1) . ' ...';
         } else {
             return $this->stripUnwantedTags($stringToTruncate);
         }
