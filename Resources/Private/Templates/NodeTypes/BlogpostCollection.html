@@ -11,17 +11,19 @@
         <ul>
             <typo3cr:widget.paginate nodes="{items}" as="paginatedNodes" configuration="{itemsPerPage: itemsPerPage}">
                 <f:for each="{paginatedNodes}" as="nodeItem">
-                    <li style="border:1ps solid red;">
+                    <li style="border-bottom:1px solid #DDD;margin-bottom:30px;padding-bottom:20px;">
                         <neos:link.node node="{nodeItem}">
                             <h3>{nodeItem.label}</h3>
+                        </neos:link.node>
+                        <p>
                             <f:if condition="{nodeItem.properties.teaser}">
-                                <p>
-                                    {nodeItem.properties.teaser}
-                                </p>
+                                {nodeItem.properties.teaser}
+                                <br />
                             </f:if>
-                            <p>
-                                <fv:teaser node="{nodeItem}" />
-                            </p>
+                            <fv:teaser node="{nodeItem}" />
+                        </p>
+                        <neos:link.node node="{nodeItem}">
+                            <f:translate package="FreeVeggie.Blog">Read more</f:translate>
                         </neos:link.node>
                     </li>
                 </f:for>
