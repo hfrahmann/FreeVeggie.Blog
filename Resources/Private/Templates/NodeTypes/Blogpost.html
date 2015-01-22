@@ -8,10 +8,8 @@
         <div class="fv-content">
             <h1>{title}</h1>
 
-            <f:if condition="{teaser}">
-                <p>
-                    <f:format.nl2br>{teaser -> f:format.raw()}</f:format.nl2br>
-                </p>
+            <f:if condition="{node.properties.author}">
+                <f:format.nl2br>{node.properties.author -> f:format.raw()}</f:format.nl2br>
             </f:if>
         </div>
     </div>
@@ -21,7 +19,7 @@
         </div>
     </div>
 
-    <div class="fv-content">
+    <div class="fv-content fv-topspace">
         <time datetime="{f:format.date(date: node.properties.datePublished, format: 'c')}" itemprop="datePublished">
             <f:format.date format="F jS, Y">{node.properties.datePublished}</f:format.date>
         </time>

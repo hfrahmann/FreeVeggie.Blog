@@ -51,12 +51,18 @@ div.fv-container:after { content: " "; display: table; clear: both; }
 
 [class^="typo3-neos-nodetypes"], .row [class*=" typo3-neos-nodetypes"] { margin-top: 10px; margin-bottom: 10px; }
 
+div.fv-topspace { margin-top: 20px !important; }
+
 div.fv-content { width: 1000px; margin: 0 auto 0 auto; text-align: left !important; box-sizing: border-box; }
 @media only screen and (max-width: 1000px) { div.fv-content { width: 100%; padding-left: 5px; padding-right: 5px; } }
 
 div.fv-pagetitle { background-color: #72C02C; padding: 20px 0px 0px 0px; height: 100px; display: block; color: white; overflow: hidden; }
 div.fv-pagetitle h1 { font-size: 45px; }
 @media only screen and (max-width: 767px) { div.fv-pagetitle h1 { padding-top: 10px; font-size: 30px; line-height: 35px; } }
+
+div.fv-categorytitle { background-color: #72C02C; padding: 20px 0px 30px 0px; display: block; color: white; overflow: hidden; }
+div.fv-categorytitle h1 { font-size: 45px; line-height: 50px; margin: 0; }
+@media only screen and (max-width: 767px) { div.fv-categorytitle h1 { padding-top: 10px; font-size: 30px; line-height: 35px; } }
 
 div.fv-blogtitle { background-color: #72C02C; padding: 20px 0px 30px 0px; display: block; color: white; overflow: hidden; }
 div.fv-blogtitle h1 { font-size: 45px; line-height: 50px; margin: 0; }

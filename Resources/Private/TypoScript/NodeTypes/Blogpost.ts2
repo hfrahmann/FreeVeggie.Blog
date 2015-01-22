@@ -9,5 +9,4 @@ prototype(TYPO3.Neos:PrimaryContent).blogPost {
 
 prototype(FreeVeggie.Blog:Blogpost) < prototype(TYPO3.Neos.NodeTypes:Page) {
     templatePath = 'resource://FreeVeggie.Blog/Private/Templates/NodeTypes/Blogpost.html'
-    teaser = ${q(node).property('teaser')}
 }

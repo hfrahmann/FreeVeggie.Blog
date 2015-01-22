@@ -24,6 +24,9 @@ div.fv-container:after {
   margin-bottom: 10px;
 }
 
+div.fv-topspace {
+  margin-top: 20px !important;
+}
 
 div.fv-content {
   width: 1000px;
@@ -49,6 +52,27 @@ div.fv-pagetitle {
 
   h1 {
     font-size: 45px;
+
+    @media #{$screen-tablet} {
+      padding-top: 10px;
+      font-size: 30px;
+      line-height: 35px;
+    }
+  }
+}
+
+
+div.fv-categorytitle {
+  background-color: $fv-green;
+  padding: 20px 0px 30px 0px;
+  display: block;
+  color: white;
+  overflow: hidden;
+
+  h1 {
+    font-size: 45px;
+    line-height: 50px;
+    margin: 0;
 
     @media #{$screen-tablet} {
       padding-top: 10px;

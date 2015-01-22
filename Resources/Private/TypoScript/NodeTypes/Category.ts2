@@ -1,0 +1,12 @@
+
+##
+# "Category" element
+#
+prototype(TYPO3.Neos:PrimaryContent).category {
+    condition = ${q(documentNode).is('[instanceof FreeVeggie.Blog:Category]')}
+    type = 'FreeVeggie.Blog:Category'
+}
+
+prototype(FreeVeggie.Blog:Category) < prototype(TYPO3.Neos.NodeTypes:Page) {
+    templatePath = 'resource://FreeVeggie.Blog/Private/Templates/NodeTypes/Category.html'
+}

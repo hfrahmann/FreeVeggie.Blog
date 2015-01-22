@@ -11,6 +11,32 @@
 
 
 
+# Document: Category
+'FreeVeggie.Blog:Category':
+  superTypes:
+    - 'TYPO3.Neos:Document'
+  ui:
+    label: 'Category'
+    group: freeveggie
+    icon: 'icon-folder-open-alt'
+    inspector:
+      groups:
+        page:
+          label: 'Category'
+  childNodes:
+    main:
+      type: 'TYPO3.Neos:ContentCollection'
+  properties:
+    teaser:
+      type: string
+      ui:
+        label: Teaser
+        reloadIfChanged: TRUE
+        inspector:
+          group: page
+          editor: 'TYPO3.Neos/Inspector/Editors/TextAreaEditor'
+
+
 # Document: BlogPost
 'FreeVeggie.Blog:Blogpost':
   superTypes:
@@ -39,14 +65,14 @@
           group: page
           editorOptions:
             format: 'd-m-Y H:i'
-    teaser:
+    author:
       type: string
+      defaultValue: 'John Doe'
       ui:
-        label: Teaser
-        reloadIfChanged: TRUE
+        label: Author
+        reloadIfChanged: true
         inspector:
           group: page
-          editor: 'TYPO3.Neos/Inspector/Editors/TextAreaEditor'
 
 
 # Document: Receipt
@@ -99,7 +125,7 @@
             crop:
               aspectRatio:
                 locked:
-                  width: 2
+                  width: 3
                   height: 1
 
 
@@ -386,6 +412,48 @@
     icon: 'icon-list'
     group: freeveggie
     position: 210
+    inspector:
+      groups:
+        'list':
+          label: 'List'
+          position: 50
+        'selection':
+          label: 'Selection'
+          position: 60
+  properties:
+    selection:
+      type: 'references'
+      ui:
+        reloadIfChanged: TRUE
+        label: 'Selection'
+        inspector:
+          group: 'selection'
+    'rootDocument':
+      type: 'reference'
+      ui:
+        label: 'Root Document'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'list'
+    'numberOfItems':
+      type: string
+      defaultValue: 10
+      ui:
+        label: 'Number of Items'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'list'
+
+
+
+
+'FreeVeggie.Blog:CategoryList':
+  superTypes: ['TYPO3.Neos:Content']
+  ui:
+    label: 'Category list'
+    icon: 'icon-list'
+    group: freeveggie
+    position: 220
     inspector:
       groups:
         'list':

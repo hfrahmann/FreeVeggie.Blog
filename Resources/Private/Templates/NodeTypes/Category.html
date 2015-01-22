@@ -2,15 +2,15 @@
 {namespace ts=TYPO3\TypoScript\ViewHelpers}
 
 
-<article itemscope="" itemtype="http://schema.org/Article" class="freeveggie-blog-article" xmlns:f="http://www.w3.org/1999/html">
+<article itemscope="" itemtype="http://schema.org/Article" class="freeveggie-category-article" xmlns:f="http://www.w3.org/1999/html">
 
-    <div class="fv-receipttitle" {f:if(condition: headerImageUri, then: 'style="background-image: url({headerImageUri});"')} >
+    <div class="fv-categorytitle">
         <div class="fv-content">
             <h1>{title}</h1>
 
-            <f:if condition="{teaser}">
-                <p class="textblock">
-                    <f:format.nl2br>{teaser -> f:format.raw()}</f:format.nl2br>
+            <f:if condition="{node.properties.teaser}">
+                <p>
+                    <f:format.nl2br>{node.properties.teaser -> f:format.raw()}</f:format.nl2br>
                 </p>
             </f:if>
         </div>
