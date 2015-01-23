@@ -7,7 +7,7 @@
 
     <f:if condition="{items}">
         <f:then>
-        <typo3cr:widget.paginate nodes="{items}" as="paginatedNodes" configuration="{itemsPerPage: itemsPerPage}">
+        <typo3cr:widget.paginate widgetId="posts-paginator" nodes="{items}" as="paginatedNodes" configuration="{itemsPerPage: itemsPerPage}">
             <ul class="fv-receiptcollection">
                 <f:for each="{paginatedNodes}" as="nodeItem">
                     <li class="fv-receiptbox">

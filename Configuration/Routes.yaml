@@ -1,13 +1,13 @@
 
 -
-  name: 'FreeVeggie - Pagination'
-  uriPattern:    '{node}/{--typo3-typo3cr-viewhelpers-widget-paginateviewhelper.currentPage}'
+  name: 'Freeveggie - Blog post pagination default'
+  uriPattern:    '{node}'
   defaults:
     '@package':    'TYPO3.Neos'
     '@controller': 'Frontend\Node'
     '@format':     'html'
     '@action':     'show'
-    '--typo3-typo3cr-viewhelpers-widget-paginateviewhelper':
+    '--posts-paginator':
       '@package': ''
       '@subpackage': ''
       '@controller': ''
@@ -15,5 +15,23 @@
       'currentPage': '1'
   routeParts:
     node:
-      handler: TYPO3\Neos\Routing\FrontendNodeRoutePartHandler
-  appendExceedingArguments: TRUE
+      handler:    TYPO3\Neos\Routing\FrontendNodeRoutePartHandler
+  appendExceedingArguments: true
+
+-
+  name: 'Freeveggie - Blog post pagination - page > 1'
+  uriPattern:    '{node}/page/{--posts-paginator.currentPage}'
+  defaults:
+    '@package':    'TYPO3.Neos'
+    '@controller': 'Frontend\Node'
+    '@format':     'html'
+    '@action':     'show'
+    '--posts-paginator':
+      '@package': ''
+      '@subpackage': ''
+      '@controller': ''
+      '@action': 'index'
+  routeParts:
+    node:
+      handler:    TYPO3\Neos\Routing\FrontendNodeRoutePartHandler
+  appendExceedingArguments: true
