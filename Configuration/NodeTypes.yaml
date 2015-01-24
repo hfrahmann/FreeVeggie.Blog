@@ -447,42 +447,10 @@
 
 
 
-'FreeVeggie.Blog:CategoryList':
+'FreeVeggie.Blog:CategoryMenu':
   superTypes: ['TYPO3.Neos:Content']
   ui:
-    label: 'Category list'
+    label: 'Category menu'
     icon: 'icon-list'
     group: freeveggie
     position: 220
-    inspector:
-      groups:
-        'list':
-          label: 'List'
-          position: 50
-        'selection':
-          label: 'Selection'
-          position: 60
-  properties:
-    selection:
-      type: 'references'
-      ui:
-        reloadIfChanged: TRUE
-        label: 'Selection'
-        inspector:
-          group: 'selection'
-    'rootDocument':
-      type: 'reference'
-      ui:
-        label: 'Root Document'
-        reloadIfChanged: TRUE
-        inspector:
-          group: 'list'
-    'numberOfItems':
-      type: string
-      defaultValue: 10
-      ui:
-        label: 'Number of Items'
-        reloadIfChanged: TRUE
-        inspector:
-          group: 'list'
-

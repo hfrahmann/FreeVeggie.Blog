@@ -1,0 +1,16 @@
+
+# Category menu
+
+prototype(FreeVeggie.Blog:CategoryMenu) < prototype(TYPO3.Neos:Content) {
+    templatePath = 'resource://FreeVeggie.Blog/Private/Templates/NodeTypes/CategoryMenu.html'
+
+    items = ${q(documentNode).children('[instanceof FreeVeggie.Blog:Category]').get()}
+
+    @cache {
+        mode = 'uncached'
+        context {
+            1 = 'documentNode'
+            2 = 'node'
+        }
+    }
+}

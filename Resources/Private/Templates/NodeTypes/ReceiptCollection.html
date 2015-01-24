@@ -2,6 +2,7 @@
 {namespace ts=TYPO3\TypoScript\ViewHelpers}
 {namespace media=TYPO3\Media\ViewHelpers}
 {namespace typo3cr=TYPO3\TYPO3CR\ViewHelpers}
+{namespace fv=FreeVeggie\Blog\ViewHelpers}
 
 <div{attributes -> f:format.raw()}>
 
@@ -12,14 +13,18 @@
                 <f:for each="{paginatedNodes}" as="nodeItem">
                     <li class="fv-receiptbox">
                         <neos:link.node node="{nodeItem}">
-                            <f:if condition="{nodeItem.properties.headerImage}">
-                                <f:then>
-                                    <media:image image="{nodeItem.properties.headerImage}" alt="{nodeItem.label}" class="fv-receiptimage" maximumWidth="{receiptImageMaxWidth}" maximumHeight="{receiptImageMaxHeight}" />
-                                </f:then>
-                            </f:if>
+                            <div class="fv-receiptimage"{f:if(condition:nodeItem.properties.headerImage, then:' style="background-image:url({media:uri.image(image:nodeItem.properties.headerImage)});"')}></div>
                             <h3 class="fv-receipttitle">{nodeItem.label}</h3>
                             <p class="fv-receiptteaser">
-                                {nodeItem.properties.teaser}
+                                <f:if condition="{nodeItem.properties.teaser}">
+                                    <f:then>
+                                        {nodeItem.properties.teaser}
+                                    </f:then>
+                                    <f:else>
+                                        <fv:teaser node="{nodeItem}" maxTextLength="150" />
+                                    </f:else>
+                                </f:if>
+
                             </p>
                         </neos:link.node>
                     </li>

@@ -123,14 +123,15 @@ nav.fv-pagination ul li > a:hover { background: #F4F4F4; color: #72C02C; }
 nav.fv-pagination ul li.current { font-weight: bold; background: #F4F4F4; }
 
 ul.fv-receiptcollection { list-style-type: none; width: 100%; display: block; margin: 0 0 20px 0; padding: 0; }
-ul.fv-receiptcollection li.fv-receiptbox { box-sizing: border-box; width: 50%; padding: 5px; float: left; }
-ul.fv-receiptcollection li.fv-receiptbox > a { display: block; border: 1px solid #dfdfdf; padding: 5px; text-decoration: none; color: #000000; }
-ul.fv-receiptcollection li.fv-receiptbox > a:hover { outline: 1px solid #72C02C; border-color: #72C02C; }
-ul.fv-receiptcollection li.fv-receiptbox > a:hover h3.fv-receipttitle { color: #72C02C; }
-ul.fv-receiptcollection li.fv-receiptbox img.fv-receiptimage { display: block; width: 100%; height: auto; }
-ul.fv-receiptcollection li.fv-receiptbox h3.fv-receipttitle { font-size: 18px; margin: 0; padding: 0; }
-ul.fv-receiptcollection li.fv-receiptbox p.fv-receiptteaser { font-size: 14px; }
-@media only screen and (max-width: 767px) { ul.fv-receiptcollection li.fv-receiptbox { width: 100%; float: none; } }
+ul.fv-receiptcollection > li:nth-child(2n+1) { clear: both; display: block; content: ""; }
+ul.fv-receiptcollection > li.fv-receiptbox { box-sizing: border-box; width: 50%; padding: 5px; float: left; }
+ul.fv-receiptcollection > li.fv-receiptbox > a { display: block; border: 1px solid #dfdfdf; padding: 5px; text-decoration: none; color: #000000; }
+ul.fv-receiptcollection > li.fv-receiptbox > a:hover { outline: 1px solid #72C02C; border-color: #72C02C; }
+ul.fv-receiptcollection > li.fv-receiptbox > a:hover h3.fv-receipttitle { color: #72C02C; }
+ul.fv-receiptcollection > li.fv-receiptbox div.fv-receiptimage { display: block; width: 100%; height: 130px !important; background-size: cover; background-color: #212121; background-position: center; height: auto; }
+ul.fv-receiptcollection > li.fv-receiptbox h3.fv-receipttitle { font-size: 18px; margin: 0; padding: 0; }
+ul.fv-receiptcollection > li.fv-receiptbox p.fv-receiptteaser { font-size: 14px; }
+@media only screen and (max-width: 767px) { ul.fv-receiptcollection > li.fv-receiptbox { width: 100%; float: none; } }
 
 ul.fv-receiptcollection:after { content: " "; display: table; clear: both; }
 

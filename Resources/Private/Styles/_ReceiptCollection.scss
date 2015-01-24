@@ -7,7 +7,13 @@ ul.fv-receiptcollection {
   margin: 0 0 20px 0;
   padding: 0;
 
-  li.fv-receiptbox {
+  > li:nth-child(2n+1) {
+    clear: both;
+    display: block;
+    content: "";
+  }
+
+  > li.fv-receiptbox {
     box-sizing: border-box;
     width: 50%;
     padding: 5px;
@@ -29,9 +35,13 @@ ul.fv-receiptcollection {
       }
     }
 
-    img.fv-receiptimage {
+    div.fv-receiptimage {
       display: block;
       width: 100%;
+      height: 130px !important;
+      background-size: cover;
+      background-color: $fv-darkgray;
+      background-position: center;
       height: auto;
     }
 

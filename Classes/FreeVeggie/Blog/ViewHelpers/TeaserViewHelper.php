@@ -25,10 +25,11 @@ class TeaserViewHelper extends \TYPO3\Fluid\Core\ViewHelper\AbstractViewHelper {
      * Render a teaser
      *
      * @param \TYPO3\TYPO3CR\Domain\Model\NodeInterface $node
+     * @param string $maxTextLength
      * @return string cropped text
      */
-    public function render(NodeInterface $node) {
-        return $this->contentService->renderTeaser($node);
+    public function render(NodeInterface $node, $maxTextLength = 0) {
+        return $this->contentService->renderTeaser($node, $maxTextLength);
     }
 }
 

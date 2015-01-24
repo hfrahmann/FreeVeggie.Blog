@@ -21,10 +21,15 @@ class ContentService {
      * Renders the given Node as a teaser text with up to 600 characters, with all <p> and <a> tags removed.
      *
      * @param NodeInterface $node
+     * @param string $maxTextLength
      * @return mixed
      */
-    public function renderTeaser(NodeInterface $node) {
+    public function renderTeaser(NodeInterface $node, $maxTextLength = self::TEASER_MAX_LENGTH) {
         $stringToTruncate = '';
+
+        if($maxTextLength <= 0) {
+            $maxTextLength = self::TEASER_MAX_LENGTH;
+        }
 
         foreach ($node->getNode('main')->getChildNodes('TYPO3.Neos.NodeTypes:Text') as $contentNode) {
             foreach ($contentNode->getProperties() as $propertyValue) {
@@ -39,8 +44,8 @@ class ContentService {
             return $this->stripUnwantedTags(substr($stringToTruncate, 0, $jumpPosition + 4));
         }
 
-        if (strlen($stringToTruncate) > self::TEASER_MAX_LENGTH) {
-            return substr($this->stripUnwantedTags($stringToTruncate), 0, self::TEASER_MAX_LENGTH+1) . ' ...';
+        if (strlen($stringToTruncate) > $maxTextLength) {
+            return substr($this->stripUnwantedTags($stringToTruncate), 0, $maxTextLength+1) . ' ...';
         } else {
             return $this->stripUnwantedTags($stringToTruncate);
         }
