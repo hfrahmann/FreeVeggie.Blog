@@ -1,0 +1,20 @@
+
+
+ul.fv-categorymenu {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+
+  > li {
+    border-bottom: 1px solid $fv-lightgray;
+    padding: 10px 0;
+
+    > div.fv-subtext {
+      font-size: 80%;
+    }
+  }
+
+  > li:last-child {
+    border-bottom: none;
+  }
+}

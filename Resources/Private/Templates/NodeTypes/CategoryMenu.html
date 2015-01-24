@@ -2,14 +2,13 @@
 {namespace ts=TYPO3\TypoScript\ViewHelpers}
 {namespace media=TYPO3\Media\ViewHelpers}
 <div{attributes -> f:format.raw()}>
-    <b>Category menu</b>
 
     <f:if condition="{items}">
-        <ul>
+        <ul class="fv-categorymenu">
             <f:for each="{items}" as="item">
                 <li>
                     <neos:link.node node="{item}">{item.properties.title}</neos:link.node>
-                    {item.properties.teaser}
+                    <div class="fv-subtext">{item.properties.teaser}</div>
                 </li>
             </f:for>
         </ul>

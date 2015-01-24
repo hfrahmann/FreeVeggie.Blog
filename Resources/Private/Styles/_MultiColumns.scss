@@ -20,6 +20,10 @@
     width: 25%;
   }
 
+  .col-75 {
+    width: 75%;
+  }
+
   [class^="col-"], .row [class*=" col-"] {
     padding: 5px;
     float: left;

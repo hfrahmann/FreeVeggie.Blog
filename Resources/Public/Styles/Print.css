@@ -8,6 +8,7 @@ body { background: #fff; padding-top: 0 !important; color: #000; font-family: Ge
 .multicolumn .col-66 { width: 66.6666666666%; }
 .multicolumn .col-50 { width: 50%; }
 .multicolumn .col-25 { width: 25%; }
+.multicolumn .col-75 { width: 75%; }
 .multicolumn [class^="col-"], .multicolumn .row [class*=" col-"] { padding: 5px; float: left; min-height: 1px; box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; }
 @media only screen and (max-width: 767px) { .multicolumn [class^="col-"], .multicolumn .row [class*=" col-"] { width: 100% !important; display: block !important; float: none !important; } }
 

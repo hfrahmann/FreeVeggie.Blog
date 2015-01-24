@@ -6,10 +6,21 @@
 
     <div class="fv-blogtitle">
         <div class="fv-content">
+
+            <f:if condition="{node.properties.publishDate}">
+                <div class="fv-date">
+                    <time datetime="{f:format.date(date: node.properties.publishDate, format: 'c')}" itemprop="publishDate">
+                        <f:format.date cldrFormat="{f:translate(package:'FreeVeggie.Blog', id:'format.date')}" forceLocale="{true}" date="{node.properties.publishDate}" />
+                    </time>
+                </div>
+            </f:if>
+
             <h1>{title}</h1>
 
             <f:if condition="{node.properties.author}">
-                <f:format.nl2br>{node.properties.author -> f:format.raw()}</f:format.nl2br>
+                <div class="fv-author">
+                    <f:format.nl2br>{node.properties.author -> f:format.raw()}</f:format.nl2br>
+                </div>
             </f:if>
         </div>
     </div>
@@ -20,10 +31,6 @@
     </div>
 
     <div class="fv-content fv-topspace">
-        <time datetime="{f:format.date(date: node.properties.datePublished, format: 'c')}" itemprop="datePublished">
-            <f:format.date format="F jS, Y">{node.properties.datePublished}</f:format.date>
-        </time>
-
         <ts:render path="main" />
     </div>
 

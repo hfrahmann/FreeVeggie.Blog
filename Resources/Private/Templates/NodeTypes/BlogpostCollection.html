@@ -8,13 +8,25 @@
 
 <f:if condition="{items}">
     <f:then>
-        <ul>
-            <typo3cr:widget.paginate widgetId="posts-paginator" nodes="{items}" as="paginatedNodes" configuration="{itemsPerPage: itemsPerPage}">
+        <typo3cr:widget.paginate widgetId="posts-paginator" nodes="{items}" as="paginatedNodes" configuration="{itemsPerPage: itemsPerPage}">
+            <ul class="fv-blogpostcollection">
                 <f:for each="{paginatedNodes}" as="nodeItem">
-                    <li style="border-bottom:1px solid #DDD;margin-bottom:30px;padding-bottom:20px;">
-                        <neos:link.node node="{nodeItem}">
+                    <li class="fv-blogpost">
+                        {node.properties.datePublished}
+                        <neos:link.node node="{nodeItem}" class="fv-title">
                             <h3>{nodeItem.label}</h3>
                         </neos:link.node>
+                        <span class="fv-subdate">
+                        </span>
+
+                        <f:if condition="{nodeItem.properties.publishDate}">
+                            <span class="fv-subdate">
+                                <time datetime="{f:format.date(date: nodeItem.properties.publishDate, format: 'c')}" itemprop="publishDate">
+                                    <f:format.date cldrFormat="{f:translate(package:'FreeVeggie.Blog', id:'format.date')}" forceLocale="{true}" date="{nodeItem.properties.publishDate}" />
+                                </time>
+                            </span>
+                        </f:if>
+
                         <p>
                             <f:if condition="{nodeItem.properties.teaser}">
                                 {nodeItem.properties.teaser}
@@ -27,8 +39,8 @@
                         </neos:link.node>
                     </li>
                 </f:for>
-            </typo3cr:widget.paginate>
-        </ul>
+            </ul>
+        </typo3cr:widget.paginate>
     </f:then>
 </f:if>
 

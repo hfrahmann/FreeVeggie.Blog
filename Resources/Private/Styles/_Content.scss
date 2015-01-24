@@ -1,4 +1,5 @@
 
+
 :before, :after {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -11,6 +12,20 @@ div.fv-container {
   margin-top: 20px;
   text-align: center;
   line-height: 140%;
+
+  ul {
+    margin: 0;
+  }
+
+
+  a {
+    color: $fv-green;
+    text-decoration: none;
+  }
+  a:hover {
+    color: $fv-darkgray;
+    text-decoration: underline;
+  }
 }
 
 div.fv-container:after {
@@ -99,6 +114,21 @@ div.fv-blogtitle {
       font-size: 30px;
       line-height: 35px;
     }
+  }
+
+  div.fv-author {
+    color: #FFFFFF;
+    padding: 10px 0;
+  }
+  div.fv-date {
+    color: $fv-green;
+    background: #FFFFFF;
+    display: inline-block;
+    padding: 3px;
+    border-radius: 2px;
+    font-weight: bold;
+    letter-spacing: -1px;
+    margin: 0 0 10px 0;
   }
 }
 
