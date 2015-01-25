@@ -1,12 +1,27 @@
 {namespace neos=TYPO3\Neos\ViewHelpers}
 {namespace ts=TYPO3\TypoScript\ViewHelpers}
 {namespace media=TYPO3\Media\ViewHelpers}
-<div{attributes -> f:format.raw()}>
-    <b>Receipt List</b>
+{namespace fv=FreeVeggie\Blog\ViewHelpers}
 
-    <ul>
+<div{attributes -> f:format.raw()}>
+    <ul class="fv-receiptlist">
         <f:for each="{items}" as="item">
-            <li><neos:link.node node="{item}">{item.properties.title}</neos:link.node></li>
+            <li>
+                <neos:link.node node="{item}">{item.properties.title}</neos:link.node>
+                <f:if condition="{showPublishDate}">
+                    <f:if condition="{item.properties.publishDate}">
+                        <div class="fv-subdate">
+                            <time datetime="{f:format.date(date: item.properties.publishDate, format: 'c')}" itemprop="publishDate">
+                                <f:format.date cldrFormat="{f:translate(package:'FreeVeggie.Blog', id:'format.date')}" forceLocale="{true}" date="{item.properties.publishDate}" />
+                            </time>
+                        </div>
+                    </f:if>
+                </f:if>
+                <div class="fv-subtext">
+                    <fv:teaser node="{item}" maxTextLength="100" />
+                    <neos:link.node node="{item}"><f:translate package="FreeVeggie.Blog">More</f:translate></neos:link.node>
+                </div>
+            </li>
         </f:for>
     </ul>
 

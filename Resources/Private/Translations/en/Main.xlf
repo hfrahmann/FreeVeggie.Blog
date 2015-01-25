@@ -5,6 +5,9 @@
                         <trans-unit id="blog.readmore">
                                 <source>Read more</source>
                         </trans-unit>
+                        <trans-unit id="blog.more">
+                                <source>More</source>
+                        </trans-unit>
                         <trans-unit id="format.date">
                                 <source>MMMM d, y</source>
                         </trans-unit>

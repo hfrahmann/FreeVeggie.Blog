@@ -6,6 +6,7 @@ prototype(FreeVeggie.Blog:ReceiptList) < prototype(TYPO3.Neos:Content) {
     @class = 'FreeVeggie\\Blog\\TypoScript\\ListImplementation'
 
     filter = 'FreeVeggie.Blog:Receipt'
+    showPublishDate = ${q(node).property('showPublishDate')}
     itemCollection = ${q(node).property('selection')}
     numberOfItems = ${q(node).property('numberOfItems')}
     listRootDocument = ${q(node).property('rootDocument')}

@@ -1,4 +1,22 @@
 
+h1 {
+  font-size: 32px;
+  line-height: 120%;
+}
+h2 {
+  font-size: 25px;
+  line-height: 120%;
+}
+h3 {
+  font-size: 20px;
+  line-height: 120%;
+}
+
+
+ul {
+  list-style-type: square;
+}
+
 
 :before, :after {
   -webkit-box-sizing: border-box;

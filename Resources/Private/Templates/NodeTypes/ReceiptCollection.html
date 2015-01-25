@@ -13,7 +13,16 @@
                 <f:for each="{paginatedNodes}" as="nodeItem">
                     <li class="fv-receiptbox">
                         <neos:link.node node="{nodeItem}">
-                            <div class="fv-receiptimage"{f:if(condition:nodeItem.properties.headerImage, then:' style="background-image:url({media:uri.image(image:nodeItem.properties.headerImage)});"')}></div>
+                            <f:if condition="{nodeItem.properties.headerImage}">
+                                <f:then>
+                                    <div class="fv-receiptimage" style="background-image: url({media:uri.image(image:nodeItem.properties.headerImage)});"></div>
+                                </f:then>
+                                <f:else>
+                                    <div class="fv-receiptimage"></div>
+                                </f:else>
+                            </f:if>
+
+
                             <h3 class="fv-receipttitle">{nodeItem.label}</h3>
                             <p class="fv-receiptteaser">
                                 <f:if condition="{nodeItem.properties.teaser}">

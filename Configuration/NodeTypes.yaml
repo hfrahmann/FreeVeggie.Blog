@@ -128,8 +128,6 @@
                   width: 3
                   height: 1
 
-
-
 ##
 # Adjust the "TwoColumn" node type:
 # Disable some of the layout options, override labels and set the default layout
@@ -309,6 +307,22 @@
     icon: 'icon-food'
     group: freeveggie
     position: 10
+  properties:
+    text:
+      type: string
+      defaultValue: '1kg sugar'
+      ui:
+        inlineEditable: TRUE
+        autoparagraph: FALSE
+        aloha:
+          'alignment':
+            'left': FALSE
+            'center': FALSE
+            'right': FALSE
+            'justify': FALSE
+          'format':
+            'paragraph': FALSE
+            'removeFormat': FALSE
 
 
 
@@ -378,7 +392,17 @@
         'selection':
           label: 'Selection'
           position: 60
+        'display':
+          label: 'Display'
+          position: 40
   properties:
+    showPublishDate:
+      type: boolean
+      ui:
+        reloadIfChanged: TRUE
+        label: 'Show publish date'
+        inspector:
+          group: display
     selection:
       type: 'references'
       ui:
@@ -420,7 +444,17 @@
         'selection':
           label: 'Selection'
           position: 60
+        'display':
+          label: 'Display'
+          position: 40
   properties:
+    showPublishDate:
+      type: boolean
+      ui:
+        reloadIfChanged: TRUE
+        label: 'Show publish date'
+        inspector:
+          group: display
     selection:
       type: 'references'
       ui:

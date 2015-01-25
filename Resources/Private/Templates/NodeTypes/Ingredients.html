@@ -1,5 +1,5 @@
-<ul>
-    <li>Wasser</li>
-    <li>Zucker</li>
-    <li>Mehr Zucker</li>
-</ul>
+{namespace neos=TYPO3\Neos\ViewHelpers}
+
+<div{attributes -> f:format.raw()}>
+        {neos:contentElement.editable(property: 'text')}
+</div>

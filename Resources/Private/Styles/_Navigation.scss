@@ -44,7 +44,7 @@ header {
         color: $fv-darkgray;
         text-transform: uppercase;
         font-weight: normal;
-        letter-spacing: -1px;
+        letter-spacing: 0px;
         font-size: 15px;
 
         @media #{$screen-aftertablet} {
