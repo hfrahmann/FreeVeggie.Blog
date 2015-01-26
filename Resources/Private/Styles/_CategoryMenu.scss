@@ -9,8 +9,17 @@ ul.fv-categorymenu {
     border-bottom: 1px solid $fv-lightgray;
     padding: 10px 0;
 
+    > a:hover {
+      text-decoration: none;
+    }
+
+    h3 {
+      padding:0;
+      margin: 0;
+    }
+
     > div.fv-subtext {
-      font-size: 80%;
+      margin: 5px 0;
     }
   }
 

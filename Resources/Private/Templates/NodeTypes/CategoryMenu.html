@@ -7,7 +7,7 @@
         <ul class="fv-categorymenu">
             <f:for each="{items}" as="item">
                 <li>
-                    <neos:link.node node="{item}">{item.properties.title}</neos:link.node>
+                    <neos:link.node node="{item}"><b>{item.properties.title}</b></neos:link.node>
                     <div class="fv-subtext">{item.properties.teaser}</div>
                 </li>
             </f:for>

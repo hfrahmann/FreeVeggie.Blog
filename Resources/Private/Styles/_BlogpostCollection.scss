@@ -17,7 +17,7 @@ ul.fv-blogpostcollection {
       color: #000000;
 
       h3 {
-        margin: 0;
+        margin: 5px 0;
       }
     }
     > a.fv-title:hover {
@@ -26,7 +26,7 @@ ul.fv-blogpostcollection {
     }
 
     > span.fv-subdate {
-      font-size: 80%;
+      color: $fv-gray;
     }
   }
 
