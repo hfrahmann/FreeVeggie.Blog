@@ -7,11 +7,8 @@ define(
     'text!./IngredientElement.html'
 ],
 function (Ember, $, Utility, template, templateIngredient) {
-
     return Ember.View.extend({
-
         template: Ember.Handlebars.compile(template),
-
         ingredients: [],
         ingredientsCount: 0,
 
@@ -34,12 +31,18 @@ function (Ember, $, Utility, template, templateIngredient) {
                 classNames: ['fv-inspector-ingredient'],
                 template: Ember.Handlebars.compile(templateIngredient),
                 remove: function() {
-                    console.log("remove: " + this.get('content'));
                     this.get('_parentView._parentView').removeIngredient(this.get('content'));
                 },
-                updateValue: function() {
-                    console.log('update');
-                }
+
+                watchName: function(){
+                    this.get('_parentView._parentView')._updateValue();
+                }.observes('content.name'),
+                watchAmount: function(){
+                    this.get('_parentView._parentView')._updateValue();
+                }.observes('content.amount'),
+                watchUnit: function(){
+                    this.get('_parentView._parentView')._updateValue();
+                }.observes('content.unit')
             }),
 
             emptyView: Ember.View.extend({
@@ -91,9 +94,6 @@ function (Ember, $, Utility, template, templateIngredient) {
             for(i=0;i<ingredients.length;i++) {
                 this._addIngredientObject(ingredients[i]);
             }
-        },
-
-
+        }
     })
-
 });
