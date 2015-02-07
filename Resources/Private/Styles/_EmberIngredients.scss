@@ -1,0 +1,31 @@
+
+div.fv-ember-noingredients {
+  display: block !important;
+  padding: 10px !important;
+  margin: 5px 0 !important;
+  font-style: italic;
+  color :#898989;
+}
+
+.fv-ember-ingredients-40pr,
+.fv-ember-ingredients-20pr {
+  padding-left: 4px !important;
+  padding-right: 4px !important;
+  min-width: 10px !important;
+  margin-right:1px !important;
+}
+
+.fv-ember-ingredients-40pr {
+  width: 43% !important;
+}
+.fv-ember-ingredients-20pr {
+  width: 22% !important;
+}
+
+div.fv-inspector-ingredient {
+  outline: 1px solid #444444;
+}
+
+.fv-inspector-ingredient-remove {
+  margin: 13px 6px !important;
+}

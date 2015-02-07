@@ -1,5 +1,7 @@
 {namespace neos=TYPO3\Neos\ViewHelpers}
 
 <div{attributes -> f:format.raw()}>
+        <f:debug>{ingrValue}</f:debug>
+
         {neos:contentElement.editable(property: 'text')}
 </div>

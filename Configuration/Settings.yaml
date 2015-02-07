@@ -23,6 +23,12 @@ TYPO3:
           typoScriptRenderingPath: 'print'
           title: 'Print'
           position: 200
+      requireJsPathMapping:
+        'FreeVeggie.Blog/Inspector/Editors': 'resource://FreeVeggie.Blog/Public/JavaScript/Content/Inspector/Editors/'
+      inspector:
+        dataTypes:
+          'ingredients':
+            editor: 'FreeVeggie.Blog/Inspector/Editors/IngredientsEditor'
     nodeTypes:
       groups:
         freeveggie:

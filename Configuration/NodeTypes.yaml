@@ -307,22 +307,40 @@
     icon: 'icon-food'
     group: freeveggie
     position: 10
+    inspector:
+      groups:
+        'ingredients':
+          label: 'Ingredients'
+          position: 50
   properties:
+    portion:
+      type: 'integer'
+      defaultValue: '1'
+      ui:
+        label: 'For Portion'
+        reloadIfChanged: TRUE
+        position: 10
+        inspector:
+          group: 'ingredients'
+    ingredients:
+      type: 'ingredients'
+      defaultValue: ''
+      ui:
+        label: 'Ingredients'
+        reloadIfChanged: TRUE
+        position: 30
+        inspector:
+          group: 'ingredients'
     text:
       type: string
-      defaultValue: '1kg sugar'
+      defaultValue: ''
       ui:
-        inlineEditable: TRUE
-        autoparagraph: FALSE
-        aloha:
-          'alignment':
-            'left': FALSE
-            'center': FALSE
-            'right': FALSE
-            'justify': FALSE
-          'format':
-            'paragraph': FALSE
-            'removeFormat': FALSE
+        label: 'Additional Information'
+        reloadIfChnaged: TRUE
+        position: 40
+        inspector:
+          editor: 'TYPO3.Neos/Inspector/Editors/TextAreaEditor'
+          group: 'ingredients'
 
 
 

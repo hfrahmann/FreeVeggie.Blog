@@ -5,4 +5,6 @@
 prototype(FreeVeggie.Blog:Ingredients) < prototype(Content) {
     templatePath = 'resource://FreeVeggie.Blog/Private/Templates/NodeTypes/Ingredients.html'
     attributes.class = 'fv-ingredients'
+
+    ingrValue = ${q(node).property('ingredients')}
 }
