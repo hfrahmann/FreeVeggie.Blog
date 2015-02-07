@@ -16,16 +16,17 @@ div.fv-ember-noingredients {
 }
 
 .fv-ember-ingredients-40pr {
-  width: 43% !important;
+  width: 45% !important;
 }
 .fv-ember-ingredients-20pr {
   width: 22% !important;
 }
 
 div.fv-inspector-ingredient {
-  outline: 1px solid #444444;
+  margin: 1px !important;
 }
 
 .fv-inspector-ingredient-remove {
   margin: 13px 6px !important;
+  cursor: pointer;
 }

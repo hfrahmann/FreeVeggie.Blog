@@ -2,16 +2,23 @@ define(
 [
     'emberjs',
     'Library/jquery-with-dependencies',
+    'Shared/Utility',
     'text!./IngredientsEditor.html',
     'text!./IngredientElement.html'
 ],
-function (Ember, $, template, templateIngredient) {
+function (Ember, $, Utility, template, templateIngredient) {
 
     return Ember.View.extend({
 
         template: Ember.Handlebars.compile(template),
 
         ingredients: [],
+        ingredientsCount: 0,
+
+        didInsertElement: function() {
+            this._super();
+            this._deserializeValue();
+        },
 
         ingredientsView: Ember.CollectionView.extend({
             tagName: 'div',
@@ -27,7 +34,11 @@ function (Ember, $, template, templateIngredient) {
                 classNames: ['fv-inspector-ingredient'],
                 template: Ember.Handlebars.compile(templateIngredient),
                 remove: function() {
+                    console.log("remove: " + this.get('content'));
                     this.get('_parentView._parentView').removeIngredient(this.get('content'));
+                },
+                updateValue: function() {
+                    console.log('update');
                 }
             }),
 
@@ -40,20 +51,47 @@ function (Ember, $, template, templateIngredient) {
         }),
 
         addIngredient: function () {
-            newIngredient = {"name": "Mehl", "amount": "22", "unit": "g"};
-            this.get('ingredients').addObject(newIngredient);
+            newIngredient = {"identifier": 0, "name": "", "amount": "", "unit": ""};
+            this._addIngredientObject(newIngredient);
             this._updateValue();
         },
 
         removeIngredient: function(ingredient) {
-            this.get('ingredients').removeObject(this.get('ingredients').findProperty('name', ingredient.name));
+            ingredientToRemove = this.get('ingredients').findProperty('identifier', ingredient.identifier);
+            this.get('ingredients').removeObject(ingredientToRemove);
             this._updateValue();
         },
 
+        _addIngredientObject: function (ingredient) {
+            ingredientsCount = this.get('ingredientsCount');
+            ingredientsCount += 1;
+            this.set('ingredientsCount', ingredientsCount);
+
+            ingredient.identifier = ingredientsCount;
+
+            this.get('ingredients').pushObject(ingredient);
+        },
+
         _updateValue: function() {
-            console.log(this.get('ingredients'));
-            this.set('value', 'Zutatenliste' + Math.random());
-        }
+            value = JSON.stringify(this.get('ingredients'));
+            this.set('value', value);
+        },
+
+        _deserializeValue: function() {
+            var value = this.get('value');
+
+            if (!value || !Utility.isValidJsonString(value)) {
+                return;
+            }
+
+            this.set('ingredients', Ember.A());
+
+            ingredients = $.parseJSON(value);
+
+            for(i=0;i<ingredients.length;i++) {
+                this._addIngredientObject(ingredients[i]);
+            }
+        },
 
 
     })

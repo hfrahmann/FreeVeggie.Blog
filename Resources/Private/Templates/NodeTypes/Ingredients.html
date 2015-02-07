@@ -1,7 +1,13 @@
 {namespace neos=TYPO3\Neos\ViewHelpers}
 
 <div{attributes -> f:format.raw()}>
-        <f:debug>{ingrValue}</f:debug>
 
-        {neos:contentElement.editable(property: 'text')}
+<b>Portions: </b> {portion}
+<br /><br />
+
+<b>Text: </b> <br /> {text}
+<br /><br />
+
+<b>Ingredients: </b> <br /> {ingredients}
+
 </div>
