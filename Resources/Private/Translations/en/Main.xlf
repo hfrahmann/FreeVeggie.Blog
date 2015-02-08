@@ -11,6 +11,9 @@
                         <trans-unit id="format.date">
                                 <source>MMMM d, y</source>
                         </trans-unit>
+                        <trans-unit id="ingredients">
+                                <source>Ingredients</source>
+                        </trans-unit>
                         <trans-unit id="ingredients.portiontext">
                                 <source>Calculate the portion</source>
                         </trans-unit>

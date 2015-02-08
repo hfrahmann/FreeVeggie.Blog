@@ -5,8 +5,7 @@
     <table width="100%" class="fv-ingredients-table-{node.identifier}">
         <tr>
             <td>
-                <f:translate package="FreeVeggie.Blog" id="ingredients.portiontext" />
-
+                <b><f:translate package="FreeVeggie.Blog" id="ingredients" /></b>
             </td>
             <td colspan="2">
                 <input type="text" onkeyup="fvCalculateIngredients($('table.fv-ingredients-table-{node.identifier}'), {portion});" onblur="fvCalculateBlur($(this), {portion});" value="{portion}" size="4" class="fv-ingredient-portion" />
@@ -25,7 +24,7 @@
         <f:if condition="{text}">
             <tr>
                 <td colspan="3">
-                    {text}
+                    {text -> f:format.nl2br()}
                 </td>
             </tr>
         </f:if>
