@@ -11,6 +11,12 @@
                         <trans-unit id="format.date">
                                 <source>MMMM d, y</source>
                         </trans-unit>
+                        <trans-unit id="ingredients.portiontext">
+                                <source>Calculate the portion</source>
+                        </trans-unit>
+                        <trans-unit id="ingredients.portion">
+                                <source>portion(s)</source>
+                        </trans-unit>
                 </body>
         </file>
 </xliff>

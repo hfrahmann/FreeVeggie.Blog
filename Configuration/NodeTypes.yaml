@@ -336,7 +336,7 @@
       defaultValue: ''
       ui:
         label: 'Additional Information'
-        reloadIfChnaged: TRUE
+        reloadIfChanged: TRUE
         position: 40
         inspector:
           editor: 'TYPO3.Neos/Inspector/Editors/TextAreaEditor'

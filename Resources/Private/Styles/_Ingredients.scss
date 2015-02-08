@@ -1,4 +1,15 @@
 
 div.fv-ingredients {
-  background: #FFFFDD;
+
+  margin-top: 10px;
+  margin-bottom: 10px;
+
+  input.fv-ingredient-portion:focus {
+    outline: 0;
+  }
+
+  td.fv-ingredient-amount {
+    text-align: right;
+  }
+
 }

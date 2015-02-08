@@ -2,12 +2,34 @@
 
 <div{attributes -> f:format.raw()}>
 
-<b>Portions: </b> {portion}
-<br /><br />
+    <table width="100%" class="fv-ingredients-table-{node.identifier}">
+        <tr>
+            <td>
+                <f:translate package="FreeVeggie.Blog" id="ingredients.portiontext" />
 
-<b>Text: </b> <br /> {text}
-<br /><br />
+            </td>
+            <td colspan="2">
+                <input type="text" onkeyup="fvCalculateIngredients($('table.fv-ingredients-table-{node.identifier}'), {portion});" onblur="fvCalculateBlur($(this), {portion});" value="{portion}" size="4" class="fv-ingredient-portion" />
+                <f:translate package="FreeVeggie.Blog" id="ingredients.portion" />
+            </td>
+        </tr>
 
-<b>Ingredients: </b> <br /> {ingredients}
+        <f:for each="{ingredients}" as="ingredient">
+            <tr>
+                <td>{ingredient.name}</td>
+                <td width="60" class="fv-ingredient-amount fv-ingr{ingredient.identifier}" data-originalamount="{ingredient.amount}">{ingredient.amount}</td>
+                <td width="60">{ingredient.unit}</td>
+            </tr>
+        </f:for>
+
+        <f:if condition="{text}">
+            <tr>
+                <td colspan="3">
+                    {text}
+                </td>
+            </tr>
+        </f:if>
+
+    </table>
 
 </div>

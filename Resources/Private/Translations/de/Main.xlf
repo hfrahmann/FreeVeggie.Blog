@@ -14,6 +14,14 @@
                                 <source>MMMM d, y</source>
                                 <target>d. MMMM y</target>
                         </trans-unit>
+                        <trans-unit id="ingredients.portiontext">
+                                <source>Calculate the portion</source>
+                                <target>Portion berechnen</target>
+                        </trans-unit>
+                        <trans-unit id="ingredients.portion">
+                                <source>portion(s)</source>
+                                <target>Portion(en)</target>
+                        </trans-unit>
                 </body>
         </file>
 </xliff>

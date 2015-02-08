@@ -274,3 +274,13 @@ div.fv-container {
     font-weight: bold;
   }
 }
+
+
+div.typo3-neos-nodetypes-text {
+  p:first-child {
+    margin-top: 0px !important;
+  }
+  p:last-child {
+    margin-bottom: 0px !important;
+  }
+}
