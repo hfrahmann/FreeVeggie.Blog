@@ -30,8 +30,10 @@ function (Ember, $, Utility, template, templateIngredient) {
                 tagName: 'div',
                 classNames: ['fv-inspector-ingredient'],
                 template: Ember.Handlebars.compile(templateIngredient),
-                remove: function() {
-                    this.get('_parentView._parentView').removeIngredient(this.get('content'));
+                actions: {
+                    remove: function() {
+                        this.get('_parentView._parentView').removeIngredient(this.get('content'));
+                    }
                 },
 
                 watchName: function(){
