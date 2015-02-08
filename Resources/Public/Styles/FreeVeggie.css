@@ -185,7 +185,7 @@ ul.fv-receiptlist > li:last-child { border-bottom: none; }
 
 div.fv-ingredients { margin-top: 10px; margin-bottom: 10px; }
 div.fv-ingredients input.fv-ingredient-portion:focus { outline: 0; }
-div.fv-ingredients td.fv-ingredient-amount { text-align: right; }
+div.fv-ingredients td.fv-ingredient-amount { text-align: right; font-weight: bold; }
 
 div.fv-ember-noingredients { display: block !important; padding: 10px !important; margin: 5px 0 !important; font-style: italic; color: #898989; }
 

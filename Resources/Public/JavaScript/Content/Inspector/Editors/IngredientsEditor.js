@@ -38,6 +38,12 @@ function (Ember, $, Utility, template, templateIngredient) {
                     this.get('_parentView._parentView')._updateValue();
                 }.observes('content.name'),
                 watchAmount: function(){
+                    amount = this.get('content.amount');
+                    if(amount != this.get('lastAmount')) {
+                        this.set('lastAmount', amount);
+                        amount = amount.replace(',', '.');
+                        this.set('content.amount', amount);
+                    }
                     this.get('_parentView._parentView')._updateValue();
                 }.observes('content.amount'),
                 watchUnit: function(){
