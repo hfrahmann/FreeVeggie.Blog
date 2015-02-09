@@ -39,12 +39,10 @@ class ContentService {
             }
         }
 
-        /*
         $jumpPosition = strpos($stringToTruncate, '</p>');
         if ($jumpPosition !== FALSE && $jumpPosition < self::TEASER_MAX_LENGTH) {
             return $this->stripUnwantedTags(substr($stringToTruncate, 0, $jumpPosition + 4));
         }
-        */
 
         if (strlen($stringToTruncate) > $maxTextLength) {
             return substr($this->stripUnwantedTags($stringToTruncate), 0, $maxTextLength+1) . ' ...';
@@ -62,10 +60,7 @@ class ContentService {
      */
     protected function stripUnwantedTags($content) {
         $content = trim($content);
-        $content = preg_replace(array('/\\<a [^\\>]+\\>/', '/\<\\/a\\>/', '/\\<span style[^\\>]+\\>/'), '', $content);
-        $content = preg_replace(array('/\\<h1 [^\\>]+\\>/', '/\<\\/a\\>/', '/\\<span style[^\\>]+\\>/'), '', $content);
-        $content = preg_replace(array('/\\<h2 [^\\>]+\\>/', '/\<\\/a\\>/', '/\\<span style[^\\>]+\\>/'), '', $content);
-        $content = preg_replace(array('/\\<h3 [^\\>]+\\>/', '/\<\\/a\\>/', '/\\<span style[^\\>]+\\>/'), '', $content);
+        $content = strip_tags($content);
         $content = str_replace('&nbsp;', ' ', $content);
 
         if (substr($content, 0, 3) === '<p>' && substr($content, -4, 4) === '</p>') {

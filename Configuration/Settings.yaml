@@ -1,19 +1,4 @@
 TYPO3:
-  TYPO3CR:
-    contentDimensions:
-      'language':
-        default: 'de'
-        defaultPreset: 'de'
-        presets:
-          'all': ~
-          'de':
-            label: 'German'
-            values: ['de', 'en']
-            uriSegment: 'de'
-          'en':
-            label: 'English'
-            values: ['en', 'de']
-            uriSegment: 'en'
   Neos:
     userInterface:
       editPreviewModes:
