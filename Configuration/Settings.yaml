@@ -1,4 +1,8 @@
 TYPO3:
+  Flow:
+    i18n:
+      defaultLocale: de
+
   Neos:
     userInterface:
       editPreviewModes:
