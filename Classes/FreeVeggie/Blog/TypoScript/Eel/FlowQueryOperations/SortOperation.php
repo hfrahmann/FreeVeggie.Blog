@@ -2,8 +2,9 @@
 namespace FreeVeggie\Blog\TypoScript\Eel\FlowQueryOperations;
 
 /*                                                                        *
- * This script belongs to the TYPO3 Flow package "Sfi.News".          *
+ * This script belongs to the TYPO3 Flow package "Sfi.News".              *
  *                                                                        *
+ * This Class is copied from "Sfi.News"                                   *
  *                                                                        */
 
 use TYPO3\Eel\FlowQuery\Operations\AbstractOperation;
