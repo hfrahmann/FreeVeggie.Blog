@@ -399,7 +399,7 @@
                 label: '17'
     'width':
       type: integer
-      defaultValue: 560
+      defaultValue: 400
       ui:
         label: 'Width'
         reloadIfChanged: TRUE
@@ -407,7 +407,7 @@
           group: 'image'
     'height':
       type: integer
-      defaultValue: 315
+      defaultValue: 300
       ui:
         label: 'Height'
         reloadIfChanged: TRUE
