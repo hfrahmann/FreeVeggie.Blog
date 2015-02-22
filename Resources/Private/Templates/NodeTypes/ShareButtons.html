@@ -1,0 +1,18 @@
+{namespace neos=TYPO3\Neos\ViewHelpers}
+<div{attributes -> f:format.raw()}>
+
+    <div class="fv-share-block" style="{f:if(condition: node.properties.alignment, then: 'text-align:{node.properties.alignment};')}">
+
+        <f:if condition="{node.properties.facebook}">
+            <a class="fv-share-facebook" href="https://www.facebook.com/sharer/sharer.php?u={neos:uri.node(absolute:true)}" onclick="fvSharePopup($(this));return false;"></a>
+        </f:if>
+        <f:if condition="{node.properties.twitter}">
+            <a class="fv-share-twitter" href="https://twitter.com/intent/tweet?text={title -> f:format.urlencode()}&url={neos:uri.node(absolute:true)}" onclick="fvSharePopup($(this));return false;"></a>
+        </f:if>
+        <f:if condition="{node.properties.mail}">
+            <a class="fv-share-mail" href="mailto:?body={title -> f:format.urlencode()}%2F{neos:uri.node(absolute:true)}"></a>
+        </f:if>
+
+    </div>
+
+</div>

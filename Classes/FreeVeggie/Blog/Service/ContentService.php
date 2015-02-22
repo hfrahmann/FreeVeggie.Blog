@@ -26,6 +26,7 @@ class ContentService {
      */
     public function renderTeaser(NodeInterface $node, $maxTextLength = self::TEASER_MAX_LENGTH) {
         $stringToTruncate = '';
+        $content = '';
 
         if($maxTextLength <= 0) {
             $maxTextLength = self::TEASER_MAX_LENGTH;
@@ -39,17 +40,21 @@ class ContentService {
             }
         }
 
-        $jumpPosition = strpos($stringToTruncate, '</p>');
-        if ($jumpPosition !== FALSE && $jumpPosition < self::TEASER_MAX_LENGTH) {
-            return $this->stripUnwantedTags(substr($stringToTruncate, 0, $jumpPosition + 4));
+
+        if (strlen($stringToTruncate) > $maxTextLength) {
+            $content = substr($this->stripUnwantedTags($stringToTruncate), 0, $maxTextLength);
+        } else {
+            $content = $this->stripUnwantedTags($stringToTruncate);
         }
 
         if (strlen($stringToTruncate) > $maxTextLength) {
-            return substr($this->stripUnwantedTags($stringToTruncate), 0, $maxTextLength+1) . ' ...';
-        } else {
-            return $this->stripUnwantedTags($stringToTruncate);
+            $content .= ' ...';
+        }
+        if (substr($content, -4, 4) != '</p>') {
+            $content .= '</p>';
         }
 
+        return $content;
     }
 
     /**
@@ -59,13 +64,9 @@ class ContentService {
      * @return string The stripped content
      */
     protected function stripUnwantedTags($content) {
-        $content = trim($content);
-        $content = strip_tags($content);
+        $content = strip_tags($content, '<p></p>');
         $content = str_replace('&nbsp;', ' ', $content);
 
-        if (substr($content, 0, 3) === '<p>' && substr($content, -4, 4) === '</p>') {
-            $content = substr($content, 3, -4);
-        }
         return trim($content);
     }
 }

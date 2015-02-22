@@ -1,0 +1,10 @@
+
+##
+# "Map" element
+#
+prototype(FreeVeggie.Blog:ShareButtons) < prototype(Content) {
+    templatePath = 'resource://FreeVeggie.Blog/Private/Templates/NodeTypes/ShareButtons.html'
+    attributes.class = 'fv-sharebuttons'
+
+    title = ${q(documentNode).property('title')}
+}

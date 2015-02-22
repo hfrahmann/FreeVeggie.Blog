@@ -22,9 +22,13 @@
                                 <source>Calculate the portion</source>
                                 <target>Portion berechnen</target>
                         </trans-unit>
+                        <trans-unit id="share">
+                            <source>Share</source>
+                            <target>Teilen</target>
+                        </trans-unit>
                         <trans-unit id="ingredients.portion">
-                                <source>portion(s)</source>
-                                <target>Portion(en)</target>
+                            <source>portion(s)</source>
+                            <target>Portion(en)</target>
                         </trans-unit>
                 </body>
         </file>

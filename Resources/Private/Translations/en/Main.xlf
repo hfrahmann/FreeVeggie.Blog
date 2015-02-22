@@ -17,6 +17,9 @@
                         <trans-unit id="ingredients.portiontext">
                                 <source>Calculate the portion</source>
                         </trans-unit>
+                        <trans-unit id="share">
+                            <source>Share</source>
+                        </trans-unit>
                         <trans-unit id="ingredients.portion">
                                 <source>portion(s)</source>
                         </trans-unit>

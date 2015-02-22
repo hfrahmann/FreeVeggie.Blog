@@ -257,7 +257,7 @@
   superTypes: ['TYPO3.Neos:Content']
   ui:
     label: 'Quote'
-    icon: 'icon-comment-alt'
+    icon: 'icon-quote-left'
     group: freeveggie
     position: 20
     inspector:
@@ -295,6 +295,227 @@
           'format':
             'paragraph': FALSE
             'removeFormat': FALSE
+
+
+##
+# A "Carousel" content element
+#
+'FreeVeggie.Blog:Carousel':
+  superTypes: ['TYPO3.Neos:Content']
+  ui:
+    label: 'Carousel'
+    icon: 'icon-play'
+    group: freeveggie
+    position: 40
+    inspector:
+      groups:
+        'carousel':
+          label: Carousel
+          position: 100
+  properties:
+
+
+##
+# A "Map" content element
+#
+'FreeVeggie.Blog:StaticMap':
+  superTypes: ['TYPO3.Neos:Content']
+  ui:
+    label: 'Static map'
+    icon: 'icon-map-marker'
+    group: freeveggie
+    position: 39
+    inspector:
+      groups:
+        'link':
+          label: 'Link'
+          position: 150
+        'map':
+          label: 'Map'
+          position: 100
+        'image':
+          label: 'Image'
+          position: 200
+  properties:
+    'link':
+      type: boolean
+      defaultValue: TRUE
+      ui:
+        reloadIfChanged: TRUE
+        label: 'Link to Google Maps'
+        inspector:
+          group: 'link'
+    address:
+      type: string
+      defaultValue: ''
+      ui:
+        label: 'Address'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'map'
+    maptype:
+      type: string
+      defaultValue: 'roadmap'
+      ui:
+        label: 'Map Type'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'map'
+          editor: 'TYPO3.Neos/Inspector/Editors/SelectBoxEditor'
+          editorOptions:
+            values:
+              'roadmap':
+                label: 'Roadmap'
+              'terrain':
+                label: 'Terrain'
+              'hybrid':
+                label: 'Hybrid'
+              'satellite':
+                label: 'Satellite'
+    zoom:
+      type: integer
+      defaultValue: 15
+      ui:
+        label: 'Zoom'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'map'
+          editor: 'TYPO3.Neos/Inspector/Editors/SelectBoxEditor'
+          editorOptions:
+            values:
+              '5':
+                label: '5'
+              '7':
+                label: '7'
+              '9':
+                label: '9'
+              '11':
+                label: '11'
+              '13':
+                label: '13'
+              '15':
+                label: '15'
+              '17':
+                label: '17'
+    'width':
+      type: integer
+      defaultValue: 560
+      ui:
+        label: 'Width'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'image'
+    'height':
+      type: integer
+      defaultValue: 315
+      ui:
+        label: 'Height'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'image'
+    'alignment':
+      type: string
+      ui:
+        label: 'Alignment'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'image'
+          editor: 'TYPO3.Neos/Inspector/Editors/SelectBoxEditor'
+          editorOptions:
+            placeholder: 'Default'
+            values:
+              '':
+                label: ''
+              center:
+                label: 'Center'
+              left:
+                label: 'Left'
+              right:
+                label: 'Right'
+
+
+
+
+##
+# A "Share" content element
+#
+'FreeVeggie.Blog:ShareButtons':
+  superTypes: ['TYPO3.Neos:Content']
+  ui:
+    label: 'Share buttons'
+    icon: 'icon-facebook'
+    group: freeveggie
+    position: 41
+    inspector:
+      groups:
+        'sharebuttons':
+          label: 'Share buttons'
+          position: 100
+  properties:
+    'facebook':
+      type: boolean
+      defaultValue: TRUE
+      ui:
+        label: 'Facebook'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'sharebuttons'
+          position: 10
+    'twitter':
+      type: boolean
+      defaultValue: TRUE
+      ui:
+        label: 'Twitter'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'sharebuttons'
+          position: 110
+    'mail':
+      type: boolean
+      defaultValue: TRUE
+      ui:
+        label: 'Mail'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'sharebuttons'
+          position: 200
+    'alignment':
+      type: string
+      ui:
+        label: 'Alignment'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'sharebuttons'
+          position: 300
+          editor: 'TYPO3.Neos/Inspector/Editors/SelectBoxEditor'
+          editorOptions:
+            placeholder: 'Default'
+            values:
+              '':
+                label: ''
+              left:
+                label: 'Left'
+              right:
+                label: 'Right'
+
+
+
+##
+# A "ContactForm" content element
+#
+'FreeVeggie.Blog:ContactForm':
+  superTypes: ['TYPO3.Neos:Content']
+  ui:
+    label: 'Contact form'
+    icon: 'icon-envelope-alt'
+    group: freeveggie
+    position: 1
+    inspector:
+      groups:
+        'contactform':
+          label: 'Contact Form'
+          position: 100
+  properties:
 
 
 ##

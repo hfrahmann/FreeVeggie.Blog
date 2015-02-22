@@ -1,0 +1,19 @@
+{namespace neos=TYPO3\Neos\ViewHelpers}
+<div{attributes -> f:format.raw()} style="{f:if(condition: center, then: 'text-align:{center};')}">
+
+    <f:if condition="{link}">
+        <f:then>
+
+            <a href="{linkUrl}" target="_blank" style="{f:if(condition: float, then: 'float:{float};')}">
+                <img src="{mapUrl}" height="{height}" width="{width}" />
+            </a>
+
+        </f:then>
+        <f:else>
+
+            <img src="{mapUrl}" height="{height}" width="{width}" style="{f:if(condition: float, then: 'float:{float};')}" />
+
+        </f:else>
+    </f:if>
+
+</div>

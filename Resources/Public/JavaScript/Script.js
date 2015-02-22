@@ -39,3 +39,28 @@ function fvCalculateBlur(portionInput, originalPortion) {
     }
 
 }
+
+
+
+function fvGoogleMapImage(imageObject, address, zoom) {
+    encodedAddress = encodeURIComponent(address);
+    $.get("http://maps.googleapis.com/maps/api/geocode/json?address=" + encodedAddress + "&sensor=false", function(data, status) {
+        var lat = data.results[0].geometry.location.lat;
+        var lng = data.results[0].geometry.location.lng;
+
+        var mapUrl = "http://maps.googleapis.com/maps/api/staticmap?";
+        mapUrl += "center=" + encodedAddress + "&";
+        mapUrl += "zoom=" + parseInt(zoom) + "&";
+        mapUrl += "size=600x300&";
+        mapUrl += "maptype=roadmap&";
+        mapUrl += "markers=color:red%7Clabel:A%7C"+lat+","+lng+"&";
+
+        imageObject.attr('src', mapUrl);
+    });
+}
+
+
+function fvSharePopup(shareLinkObject) {
+    var href = shareLinkObject.attr('href');
+    window.open(href, "Sharepopup"+Math.random(), "width=450,height=350,resizable=no");
+}

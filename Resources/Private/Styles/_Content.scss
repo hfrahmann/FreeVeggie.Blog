@@ -209,11 +209,11 @@ div.fv-subtitleblock {
 
 
 .typo3-neos-alignment-right {
-  float: right; margin-left: 2em; margin-bottom: 1em;
+  float: right; margin: 0 0 0 1em;
 }
 
 .typo3-neos-alignment-left {
-  float: left; margin-right: 2em; margin-bottom: 1em;
+  float: left; margin: 0 1em 0 0;
 }
 
 .typo3-neos-alignment-center {
@@ -225,6 +225,22 @@ div.fv-subtitleblock {
   content: "";
   display: table;
   clear: both;
+}
+
+.typo3-neos-alignment-right,
+.typo3-neos-alignment-left {
+  @media #{$screen-tablet} {
+    float: none;
+    margin: 0;
+  }
+}
+
+.typo3-neos-alignment-right img,
+.typo3-neos-alignment-left img {
+  @media #{$screen-tablet} {
+    max-width: 100%;
+    height: auto;
+  }
 }
 
 /*** Quote ***/

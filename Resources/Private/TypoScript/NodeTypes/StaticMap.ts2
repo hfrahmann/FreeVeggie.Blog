@@ -1,0 +1,23 @@
+
+##
+# "Map" element
+#
+prototype(FreeVeggie.Blog:StaticMap) < prototype(Content) {
+    @class = 'FreeVeggie\\Blog\\TypoScript\\StaticMapImplementation'
+
+    templatePath = 'resource://FreeVeggie.Blog/Private/Templates/NodeTypes/StaticMap.html'
+    attributes.class = 'fv-staticmap'
+
+    address = ${q(node).property('address')}
+    zoom = ${q(node).property('zoom')}
+    maptype = ${q(node).property('maptype')}
+    link = ${q(node).property('link')}
+    width = ${q(node).property('width')}
+    height = ${q(node).property('height')}
+    alignment = ${q(node).property('alignment')}
+
+    float = ${this.float}
+    center = ${this.center}
+    linkUrl = ${this.linkUrl}
+    mapUrl = ${this.mapUrl}
+}
