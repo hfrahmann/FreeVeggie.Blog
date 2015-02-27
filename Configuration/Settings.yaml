@@ -2,6 +2,14 @@ TYPO3:
   Flow:
     i18n:
       defaultLocale: de
+    error:
+      exceptionHandler:
+        renderingGroups:
+          notFoundExceptions:
+            matchingStatusCodes: [ 404 ]
+            options:
+              templatePathAndFilename: 'resource://FreeVeggie.Blog/Private/Templates/Error/Index.html'
+              format: 'html'
 
   Neos:
     userInterface:

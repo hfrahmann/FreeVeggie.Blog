@@ -162,7 +162,8 @@ div.fv-receipttitle {
   background-attachment: scroll;
   background-position: center;
   background-repeat: no-repeat;
-  padding: 50px 0px 0px 0px;
+  border-top:5px solid $fv-green;
+  padding: 0px;
   height: 300px;
   display: block;
   text-shadow: 0px 0px 20px rgba(0,0,0,0.3);
@@ -171,7 +172,7 @@ div.fv-receipttitle {
 
   @media #{$screen-tablet} {
     height: 250px;
-    padding-top: 10px;
+    padding-top: 0px;
   }
 
   h1 {
@@ -198,6 +199,21 @@ div.fv-receipttitle {
 
     @media #{$screen-tablet} {
       width:90%;
+    }
+  }
+
+  div.fv-foodtype {
+    display: block;
+    width:180px;
+    font-weight: bold;
+    background: $fv-green;
+    padding:1px 0px 5px 10px;
+    margin-bottom: 25px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+
+    @media #{$screen-tablet} {
+      margin-bottom: 15px;
     }
   }
 }

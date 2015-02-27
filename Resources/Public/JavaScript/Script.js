@@ -62,5 +62,5 @@ function fvGoogleMapImage(imageObject, address, zoom) {
 
 function fvSharePopup(shareLinkObject) {
     var href = shareLinkObject.attr('href');
-    window.open(href, "Sharepopup"+Math.random(), "width=450,height=350,resizable=no");
+    window.open(href, "Sharepopup"+Math.random(), "width=500,height=500,resizable=no");
 }

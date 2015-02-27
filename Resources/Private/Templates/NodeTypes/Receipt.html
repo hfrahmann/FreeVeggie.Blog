@@ -5,7 +5,20 @@
 <article itemscope="" itemtype="http://schema.org/Article" class="freeveggie-blog-article" xmlns:f="http://www.w3.org/1999/html">
 
     <div class="fv-receipttitle" {f:if(condition: headerImageUri, then: 'style="background-image: url({headerImageUri});"')} >
+
+
         <div class="fv-content">
+            <f:if condition="{node.properties.foodtype}">
+                <div class="fv-foodtype">
+                    <f:if condition="{0: node.properties.foodtype} == {0: 'vegetarian'}">
+                        <f:translate package="FreeVeggie.Blog" id="foodtype.vegetarian" />
+                    </f:if>
+                    <f:if condition="{0: node.properties.foodtype} == {0: 'vegan'}">
+                        <f:translate package="FreeVeggie.Blog" id="foodtype.vegan" />
+                    </f:if>
+                </div>
+            </f:if>
+
             <h1>{title}</h1>
 
             <f:if condition="{teaser}">

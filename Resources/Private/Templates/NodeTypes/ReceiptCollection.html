@@ -15,7 +15,7 @@
                         <neos:link.node node="{nodeItem}">
                             <f:if condition="{nodeItem.properties.headerImage}">
                                 <f:then>
-                                    <div class="fv-receiptimage" style="background-image: url({media:uri.image(image:nodeItem.properties.headerImage)});"></div>
+                                    <div class="fv-receiptimage" style="background-image: url({media:uri.image(image:nodeItem.properties.headerImage,maximumWidth:400)});"></div>
                                 </f:then>
                                 <f:else>
                                     <div class="fv-receiptimage"></div>
@@ -23,6 +23,16 @@
                             </f:if>
 
 
+                            <f:if condition="{nodeItem.properties.foodtype}">
+                                <span class="right fv-foodtype">
+                                    <f:if condition="{0: nodeItem.properties.foodtype} == {0: 'vegetarian'}">
+                                        <f:translate package="FreeVeggie.Blog" id="foodtype.vegetarian" />
+                                    </f:if>
+                                    <f:if condition="{0: nodeItem.properties.foodtype} == {0: 'vegan'}">
+                                        <f:translate package="FreeVeggie.Blog" id="foodtype.vegan" />
+                                    </f:if>
+                                </span>
+                            </f:if>
                             <h3 class="fv-receipttitle">{nodeItem.label}</h3>
                             <p class="fv-receiptteaser">
                                 <f:if condition="{nodeItem.properties.teaser}">

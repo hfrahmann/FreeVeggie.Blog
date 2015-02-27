@@ -23,6 +23,12 @@
                         <trans-unit id="ingredients.portion">
                                 <source>portion(s)</source>
                         </trans-unit>
+                        <trans-unit id="foodtype.vegetarian">
+                            <source>vegetarian</source>
+                        </trans-unit>
+                        <trans-unit id="foodtype.vegan">
+                            <source>vegan</source>
+                        </trans-unit>
                 </body>
         </file>
 </xliff>

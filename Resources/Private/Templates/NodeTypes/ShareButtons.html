@@ -3,14 +3,27 @@
 
     <div class="fv-share-block" style="{f:if(condition: node.properties.alignment, then: 'text-align:{node.properties.alignment};')}">
 
+        <div class="fv-share-title"><f:translate package="FreeVeggie.Blog" id="share" />:</div>
+
         <f:if condition="{node.properties.facebook}">
-            <a class="fv-share-facebook" href="https://www.facebook.com/sharer/sharer.php?u={neos:uri.node(absolute:true)}" onclick="fvSharePopup($(this));return false;"></a>
+            <a class="fv-share-facebook" href="https://www.facebook.com/sharer/sharer.php?u={neos:uri.node(absolute:true)}" onclick="fvSharePopup($(this));return false;">
+                Facebook
+            </a>
         </f:if>
         <f:if condition="{node.properties.twitter}">
-            <a class="fv-share-twitter" href="https://twitter.com/intent/tweet?text={title -> f:format.urlencode()}&url={neos:uri.node(absolute:true)}" onclick="fvSharePopup($(this));return false;"></a>
+            <a class="fv-share-twitter" href="https://twitter.com/intent/tweet?text={title -> f:format.urlencode()}&url={neos:uri.node(absolute:true)}" onclick="fvSharePopup($(this));return false;">
+                Twitter
+            </a>
+        </f:if>
+        <f:if condition="{node.properties.googleplus}">
+            <a class="fv-share-googleplus" href="https://plus.google.com/share?url={neos:uri.node(absolute:true)}" onclick="fvSharePopup($(this));return false;">
+                Google+
+            </a>
         </f:if>
         <f:if condition="{node.properties.mail}">
-            <a class="fv-share-mail" href="mailto:?body={title -> f:format.urlencode()}%2F{neos:uri.node(absolute:true)}"></a>
+            <a class="fv-share-mail" href="mailto:?body={title -> f:format.urlencode()}%2F{neos:uri.node(absolute:true)}">
+                Mail
+            </a>
         </f:if>
 
     </div>

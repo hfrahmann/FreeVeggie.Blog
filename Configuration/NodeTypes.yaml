@@ -113,6 +113,24 @@
           group: page
           editor: 'TYPO3.Neos/Inspector/Editors/TextAreaEditor'
           position: 20
+    foodtype:
+      type: string
+      defaultValue: ''
+      ui:
+        label: 'Food type'
+        reloadIfChanged: TRUE
+        inspector:
+          position: 20
+          group: 'page'
+          editor: 'TYPO3.Neos/Inspector/Editors/SelectBoxEditor'
+          editorOptions:
+            values:
+              '':
+                label: ''
+              'vegetarian':
+                label: 'Vegetarian'
+              'vegan':
+                label: 'Vegan'
     headerImage:
       type: TYPO3\Media\Domain\Model\ImageVariant
       ui:
@@ -470,6 +488,15 @@
         inspector:
           group: 'sharebuttons'
           position: 110
+    'googleplus':
+      type: boolean
+      defaultValue: TRUE
+      ui:
+        label: 'Google+'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'sharebuttons'
+          position: 210
     'mail':
       type: boolean
       defaultValue: TRUE
@@ -478,7 +505,7 @@
         reloadIfChanged: TRUE
         inspector:
           group: 'sharebuttons'
-          position: 200
+          position: 999
     'alignment':
       type: string
       ui:

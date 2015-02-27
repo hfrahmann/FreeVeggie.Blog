@@ -30,6 +30,14 @@
                             <source>portion(s)</source>
                             <target>Portion(en)</target>
                         </trans-unit>
+                        <trans-unit id="foodtype.vegetarian">
+                            <source>vegetarian</source>
+                            <target>vegetarisch</target>
+                        </trans-unit>
+                        <trans-unit id="foodtype.vegan">
+                            <source>vegan</source>
+                            <target>vegan</target>
+                        </trans-unit>
                 </body>
         </file>
 </xliff>

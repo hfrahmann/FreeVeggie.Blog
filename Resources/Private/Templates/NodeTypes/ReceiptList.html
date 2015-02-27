@@ -18,8 +18,16 @@
                     </f:if>
                 </f:if>
                 <div class="fv-subtext">
-                    <fv:teaser node="{item}" maxTextLength="300" />
+                    <f:if condition="{item.properties.teaser}">
+                        <f:then>
+                            {item.properties.teaser}
+                        </f:then>
+                        <f:else>
+                            <fv:teaser node="{item}" maxTextLength="200" />
+                        </f:else>
+                    </f:if>
                     <neos:link.node node="{item}"><f:translate package="FreeVeggie.Blog">More</f:translate></neos:link.node>
+                    <div class="clear"></div>
                 </div>
             </li>
         </f:for>
