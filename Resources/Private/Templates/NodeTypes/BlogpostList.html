@@ -22,11 +22,10 @@
                         {item.properties.teaser}
                         <br />
                     </f:if>
-                    <fv:teaser node="{item}" maxTextLength="300" />
+                    <fv:teaser node="{item}" maxTextLength="200" />
                     <neos:link.node node="{item}"><f:translate package="FreeVeggie.Blog">More</f:translate></neos:link.node>
                 </div>
             </li>
         </f:for>
     </ul>
-
 </div>

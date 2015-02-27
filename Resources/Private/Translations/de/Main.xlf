@@ -38,6 +38,14 @@
                             <source>vegan</source>
                             <target>vegan</target>
                         </trans-unit>
+                        <trans-unit id="blogposts.noposts">
+                            <source>No blogposts available</source>
+                            <target>Keine Blogeinträge vorhanden</target>
+                        </trans-unit>
+                        <trans-unit id="receipts.noposts">
+                            <source>No receipts available</source>
+                            <target>Keine Rezepte vorhanden</target>
+                        </trans-unit>
                 </body>
         </file>
 </xliff>

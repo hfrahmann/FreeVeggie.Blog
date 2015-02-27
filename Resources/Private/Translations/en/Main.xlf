@@ -29,6 +29,12 @@
                         <trans-unit id="foodtype.vegan">
                             <source>vegan</source>
                         </trans-unit>
+                        <trans-unit id="blogposts.noposts">
+                            <source>No blogposts available</source>
+                        </trans-unit>
+                        <trans-unit id="receipts.noposts">
+                            <source>No receipts available</source>
+                        </trans-unit>
                 </body>
         </file>
 </xliff>
