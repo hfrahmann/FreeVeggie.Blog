@@ -9,6 +9,23 @@
 #    sidebar:
 #      type: 'TYPO3.Neos:ContentCollection'
 
+########################################################################################################################
+
+# Document: Root
+'FreeVeggie.Blog:RootDocument':
+  superTypes:
+    - 'TYPO3.Neos:Document'
+  ui:
+    label: 'Root Document'
+    group: freeveggie
+    icon: 'icon-globe'
+    inspector:
+      position: 999
+  childNodes:
+    head:
+      type: 'TYPO3.Neos:ContentCollection'
+    main:
+      type: 'TYPO3.Neos:ContentCollection'
 
 
 # Document: Category
@@ -20,8 +37,9 @@
     group: freeveggie
     icon: 'icon-folder-open-alt'
     inspector:
+      position: 10
       groups:
-        page:
+       category:
           label: 'Category'
   childNodes:
     main:
@@ -33,7 +51,7 @@
         label: Teaser
         reloadIfChanged: TRUE
         inspector:
-          group: page
+          group: category
           editor: 'TYPO3.Neos/Inspector/Editors/TextAreaEditor'
 
 
@@ -46,8 +64,9 @@
     group: freeveggie
     icon: 'icon-file-text'
     inspector:
+      position: 100
       groups:
-        page:
+        blogpost:
           label: 'Blog Post'
   childNodes:
     main:
@@ -62,7 +81,7 @@
         label: 'Publication Date'
         reloadIfChanged: true
         inspector:
-          group: page
+          group: blogpost
           editorOptions:
             format: 'd-m-Y H:i'
     author:
@@ -72,7 +91,7 @@
         label: Author
         reloadIfChanged: true
         inspector:
-          group: page
+          group: blogpost
 
 
 # Document: Receipt
@@ -84,6 +103,7 @@
     group: freeveggie
     icon: 'icon-food'
     inspector:
+      position: 200
       groups:
         page:
           label: 'Receipt'
@@ -146,6 +166,10 @@
                   width: 3
                   height: 1
 
+
+########################################################################################################################
+
+
 ##
 # Adjust the "TwoColumn" node type:
 # Disable some of the layout options, override labels and set the default layout
@@ -206,6 +230,57 @@
                 label: '25% / 25% / 25% / 25%'
 
 
+########################################################################################################################
+
+
+
+
+##
+# A "Ingredients" content element
+#
+'FreeVeggie.Blog:Ingredients':
+  superTypes: ['TYPO3.Neos:Content']
+  ui:
+    label: 'Ingredients'
+    icon: 'icon-food'
+    group: freeveggiecontent
+    position: 10
+    inspector:
+      groups:
+        'ingredients':
+          label: 'Ingredients'
+          position: 10
+  properties:
+    portion:
+      type: 'integer'
+      defaultValue: '1'
+      ui:
+        label: 'For Portion'
+        reloadIfChanged: TRUE
+        position: 10
+        inspector:
+          group: 'ingredients'
+    ingredients:
+      type: 'ingredients'
+      defaultValue: ''
+      ui:
+        label: 'Ingredients'
+        reloadIfChanged: TRUE
+        position: 30
+        inspector:
+          group: 'ingredients'
+    text:
+      type: string
+      defaultValue: ''
+      ui:
+        label: 'Additional Information'
+        reloadIfChanged: TRUE
+        position: 40
+        inspector:
+          editor: 'TYPO3.Neos/Inspector/Editors/TextAreaEditor'
+          group: 'ingredients'
+
+
 ##
 # A "Youtube" content element
 #
@@ -214,13 +289,13 @@
   ui:
     label: YouTube
     icon: 'icon-youtube'
-    group: freeveggie
-    position: 30
+    group: freeveggiecontent
+    position: 20
     inspector:
       groups:
         'video':
           label: Video
-          position: 50
+          position: 20
   properties:
     'video':
       type: string
@@ -276,13 +351,13 @@
   ui:
     label: 'Quote'
     icon: 'icon-quote-left'
-    group: freeveggie
-    position: 20
+    group: freeveggiecontent
+    position: 30
     inspector:
       groups:
         'quote':
           label: Quote
-          position: 50
+          position: 30
   properties:
     'quotedate':
       type: date
@@ -315,23 +390,6 @@
             'removeFormat': FALSE
 
 
-##
-# A "Carousel" content element
-#
-'FreeVeggie.Blog:Carousel':
-  superTypes: ['TYPO3.Neos:Content']
-  ui:
-    label: 'Carousel'
-    icon: 'icon-play'
-    group: freeveggie
-    position: 40
-    inspector:
-      groups:
-        'carousel':
-          label: Carousel
-          position: 100
-  properties:
-
 
 ##
 # A "Map" content element
@@ -341,8 +399,8 @@
   ui:
     label: 'Static map'
     icon: 'icon-map-marker'
-    group: freeveggie
-    position: 39
+    group: freeveggiecontent
+    position: 40
     inspector:
       groups:
         'link':
@@ -462,8 +520,8 @@
   ui:
     label: 'Share buttons'
     icon: 'icon-facebook'
-    group: freeveggie
-    position: 41
+    group: freeveggiecontent
+    position: 50
     inspector:
       groups:
         'sharebuttons':
@@ -535,8 +593,8 @@
   ui:
     label: 'Contact form'
     icon: 'icon-envelope-alt'
-    group: freeveggie
-    position: 1
+    group: freeveggiecontent
+    position: 100
     inspector:
       groups:
         'contactform':
@@ -545,51 +603,9 @@
   properties:
 
 
-##
-# A "Ingredients" content element
-#
-'FreeVeggie.Blog:Ingredients':
-  superTypes: ['TYPO3.Neos:Content']
-  ui:
-    label: 'Ingredients'
-    icon: 'icon-food'
-    group: freeveggie
-    position: 10
-    inspector:
-      groups:
-        'ingredients':
-          label: 'Ingredients'
-          position: 50
-  properties:
-    portion:
-      type: 'integer'
-      defaultValue: '1'
-      ui:
-        label: 'For Portion'
-        reloadIfChanged: TRUE
-        position: 10
-        inspector:
-          group: 'ingredients'
-    ingredients:
-      type: 'ingredients'
-      defaultValue: ''
-      ui:
-        label: 'Ingredients'
-        reloadIfChanged: TRUE
-        position: 30
-        inspector:
-          group: 'ingredients'
-    text:
-      type: string
-      defaultValue: ''
-      ui:
-        label: 'Additional Information'
-        reloadIfChanged: TRUE
-        position: 40
-        inspector:
-          editor: 'TYPO3.Neos/Inspector/Editors/TextAreaEditor'
-          group: 'ingredients'
 
+
+########################################################################################################################
 
 
 'FreeVeggie.Blog:BlogpostCollection':
@@ -597,7 +613,7 @@
   ui:
     label: 'Blogpost collection'
     icon: 'icon-th-large'
-    group: freeveggie
+    group: freeveggiemenu
     position: 100
     inspector:
       groups:
@@ -623,7 +639,7 @@
   ui:
     label: 'Receipt collection'
     icon: 'icon-th-large'
-    group: freeveggie
+    group: freeveggiemenu
     position: 110
     inspector:
       groups:
@@ -648,7 +664,7 @@
   ui:
     label: 'Blogpost list'
     icon: 'icon-list'
-    group: freeveggie
+    group: freeveggiemenu
     position: 200
     inspector:
       groups:
@@ -700,7 +716,7 @@
   ui:
     label: 'Receipt list'
     icon: 'icon-list'
-    group: freeveggie
+    group: freeveggiemenu
     position: 210
     inspector:
       groups:
@@ -752,5 +768,82 @@
   ui:
     label: 'Category menu'
     icon: 'icon-list'
-    group: freeveggie
+    group: freeveggiemenu
     position: 220
+
+
+########################################################################################################################
+
+##
+# A "Carousel" content element
+#
+'FreeVeggie.Blog:Carousel':
+  superTypes: ['TYPO3.Neos:Content']
+  childNodes:
+      carouselItems:
+        type: 'TYPO3.Neos:ContentCollection'
+  ui:
+    label: 'Carousel'
+    icon: 'icon-play'
+    group: freeveggiecarousel
+    position: 10
+    inlineEditable: TRUE
+    inspector:
+      groups:
+        'carousel':
+          label: Carousel
+          position: 100
+  properties:
+    autoplay:
+      type: boolean
+      defaultValue: TRUE
+      ui:
+        reloadIfChanged: TRUE
+        label: 'Autoplay'
+        inspector:
+          group: carousel
+    autoplaySpeed:
+      type: integer
+      defaultValue: 5000
+      ui:
+        reloadIfChanged: TRUE
+        label: 'Autoplay Speed'
+        placeholder: 'microseconds'
+        inspector:
+          group: carousel
+
+
+##
+# A "CarouselItem" abstract element
+#
+'FreeVeggie.Blog:CarouselItem':
+  superTypes: ['TYPO3.Neos:Content']
+  abstract: TRUE
+
+
+##
+# A "Carousel" content element
+#
+'FreeVeggie.Blog:CarouselItemReceipt':
+  superTypes: ['FreeVeggie.Blog:CarouselItem']
+  ui:
+    label: 'Receipt Item'
+    icon: 'icon-food'
+    group: freeveggiecarousel
+    position: 20
+    inlineEditable: FALSE
+    inspector:
+      groups:
+        'receipt':
+          label: Receipt
+          position: 100
+  properties:
+    receipt:
+      type: 'reference'
+      ui:
+        reloadIfChanged: TRUE
+        label: 'Receipt'
+        inspector:
+          group: receipt
+          editorOptions:
+            nodeTypes: ['TYPO3.Neos:Document']

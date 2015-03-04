@@ -1,0 +1,22 @@
+{namespace media=TYPO3\Media\ViewHelpers}
+{namespace neos=TYPO3\Neos\ViewHelpers}
+
+<f:if condition="{node.properties.receipt}">
+    <f:then>
+        <div{attributes -> f:format.raw()} {f:if(condition:node.properties.receipt.properties.headerImage, then:'style="background-image:url({media:uri.image(image:node.properties.receipt.properties.headerImage,maximumWidth:1000)});"')}>
+            <neos:link.node node="{node.properties.receipt}">
+                <div class="fv-slider-title">
+                    <h1>{node.properties.receipt.label}</h1>
+                    <p>
+                        {node.properties.receipt.properties.teaser}&nbsp;
+                    </p>
+                </div>
+            </neos:link.node>
+        </div>
+    </f:then>
+    <f:else>
+        <div{attributes -> f:format.raw()}>
+
+        </div>
+    </f:else>
+</f:if>

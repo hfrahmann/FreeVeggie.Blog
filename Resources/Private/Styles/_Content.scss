@@ -81,6 +81,16 @@ div.fv-content {
 }
 
 
+div.fv-rootdocumenthead {
+  background-color: $fv-green;
+  padding: 0px;
+  min-height: 100px;
+  display: block;
+  color: white;
+  overflow: visible;
+}
+
+
 div.fv-pagetitle {
   background-color: $fv-green;
   padding: 20px 0px 0px 0px;
@@ -180,8 +190,11 @@ div.fv-receipttitle {
     line-height: 50px;
     border-radius: 10px;
     padding:15px;
-    margin:0;
-    border-radius: 3px;
+    margin: 20px 0 0 0 !important;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
     background: rgba(0,0,0,0.6);
     display: inline-block;
 
@@ -196,6 +209,11 @@ div.fv-receipttitle {
     padding:10px;
     border-radius: 3px;
     width:50%;
+    margin: 0 !important;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+    border-top-right-radius: 3px;
+    border-top-left-radius: 0px;
 
     @media #{$screen-tablet} {
       width:90%;
@@ -208,7 +226,7 @@ div.fv-receipttitle {
     font-weight: bold;
     background: $fv-green;
     padding:1px 0px 5px 10px;
-    margin-bottom: 25px;
+    margin-bottom: 5px;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
 

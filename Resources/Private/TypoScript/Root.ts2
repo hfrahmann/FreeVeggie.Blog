@@ -53,10 +53,13 @@ page = Page {
 		}
 		// These are your content areas, you can define as many as you want, just name them and the nodePath.
 		content {
-			main = PrimaryContent {
-				nodePath = 'main'
-			}
+            main = PrimaryContent {
+                nodePath = 'main'
+            }
+
 		}
+
+
 
         footer = ContentCollection {
             nodePath = ${q(site).children('footer').property('_path')}

@@ -1,4 +1,5 @@
 
+
 function fvToggleNavigation(selector) {
     $(selector).slideToggle('fast');
 }
@@ -64,3 +65,5 @@ function fvSharePopup(shareLinkObject) {
     var href = shareLinkObject.attr('href');
     window.open(href, "Sharepopup"+Math.random(), "width=500,height=500,resizable=no");
 }
+
+

@@ -1,0 +1,25 @@
+##
+# "Carousel" element
+#
+prototype(FreeVeggie.Blog:Carousel) {
+    attributes.class = 'typo3-neos-nodetypes-fvcarousel fv-slider carousel slide'
+    attributes.id = ${'carousel-' + q(node).property('_identifier')}
+    attributes.data-ride = 'carousel'
+
+    carouselItemsArray = ${q(node).children('carouselItems').children().get()}
+
+    carouselItems = ContentCollection {
+        @class = 'FreeVeggie\\Blog\\TypoScript\\FilteredContentCollectionImplementation'
+        filter = 'FreeVeggie.Blog:CarouselItem'
+        nodePath = 'carouselItems'
+        iterationName = 'carouselItemsIteration'
+        attributes.class = ${'carousel-inner fv-slider-content'}
+        attributes.role = 'listbox'
+    }
+
+    // Enhance image prototype for the carousel
+    prototype(FreeVeggie.Blog:CarouselItemReceipt) {
+        attributes.class = ${'fv-slider-item fv-slider-receipt item ' +(carouselItemsIteration.isFirst ? 'active' : '')}
+    }
+
+}

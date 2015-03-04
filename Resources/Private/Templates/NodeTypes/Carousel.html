@@ -1,6 +1,19 @@
 {namespace neos=TYPO3\Neos\ViewHelpers}
-<div{attributes -> f:format.raw()}>
+<div{attributes -> f:format.raw()} {f:if(condition:"{0:node.context.workspace.name,1:node.properties.autoplay}=={0:'live',1:true}",then:'data-interval="{node.properties.autoplaySpeed}"',else:'data-interval="false"')}>
 
-Carousel
+    {carouselItems -> f:format.raw()}
+
+
+    <ol class="fv-slider-paging carousel-indicators">
+        <f:for each="{carouselItemsArray}" as="item" iteration="itemIterator">
+            <li class="{f:if(condition: itemIterator.isFirst, then: 'active')}" data-target="#carousel-{node.identifier}" data-slide-to="{itemIterator.index}">&#149;</li>
+        </f:for>
+    </ol>
+
+    <f:if condition="{0: node.context.workspace.name} == {0: 'live'}">
+        <f:if condition="{node.properties.autoplay}">
+
+        </f:if>
+    </f:if>
 
 </div>

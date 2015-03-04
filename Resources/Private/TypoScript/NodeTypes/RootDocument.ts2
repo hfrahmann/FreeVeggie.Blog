@@ -1,0 +1,25 @@
+
+##
+# "RootDocument" element
+#
+prototype(TYPO3.Neos:PrimaryContent).rootDocument {
+    condition = ${q(documentNode).is('[instanceof FreeVeggie.Blog:RootDocument]')}
+    type = 'FreeVeggie.Blog:RootDocument'
+}
+
+prototype(FreeVeggie.Blog:RootDocument) < prototype(TYPO3.Neos.NodeTypes:Page) {
+    templatePath = 'resource://FreeVeggie.Blog/Private/Templates/NodeTypes/RootDocument.html'
+
+    head = TYPO3.Neos:ContentCollection {
+        nodePath = 'head'
+        @cache {
+            mode = 'cached'
+        }
+    }
+    main = TYPO3.Neos:ContentCollection {
+        nodePath = 'main'
+        @cache {
+            mode = 'cached'
+        }
+    }
+}

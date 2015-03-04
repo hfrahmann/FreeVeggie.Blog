@@ -21,5 +21,12 @@
                 </properties>
             </node>
         </node>
+        <node type="TYPO3.Neos:ContentCollection" nodeName="head">
+            <node type="TYPO3.Neos.NodeTypes:Text" nodeName="text2">
+                <properties>
+                    <text><![CDATA[<p>This is the head</p>]]></text>
+                </properties>
+            </node>
+        </node>
     </site>
 </root>

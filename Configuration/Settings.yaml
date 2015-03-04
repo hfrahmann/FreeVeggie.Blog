@@ -30,7 +30,16 @@ TYPO3:
       groups:
         freeveggie:
           position: 'after general'
-          label: 'Free veggie'
+          label: 'Free Veggie'
+        freeveggiecontent:
+          position: 'after general'
+          label: 'Free Veggie: Content'
+        freeveggiemenu:
+          position: 'after freeveggiecontent'
+          label: 'Free Veggie: Menu'
+        freeveggiecarousel:
+          position: 'after freeveggiemenu'
+          label: 'Free Veggie: Carousel'
     typoScript:
       autoInclude:
         'FreeVeggie.Blog': true
