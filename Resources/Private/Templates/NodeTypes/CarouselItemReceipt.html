@@ -4,7 +4,7 @@
 <f:if condition="{node.properties.receipt}">
     <f:then>
         <div{attributes -> f:format.raw()} {f:if(condition:node.properties.receipt.properties.headerImage, then:'style="background-image:url({media:uri.image(image:node.properties.receipt.properties.headerImage,maximumWidth:1000)});"')}>
-            <neos:link.node node="{node.properties.receipt}">
+            <neos:link.node node="{node.properties.receipt}" class="fv-block-link">
                 <div class="fv-slider-title">
                     <h1>{node.properties.receipt.label}</h1>
                     <p>

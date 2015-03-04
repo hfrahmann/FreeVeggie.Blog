@@ -62,10 +62,17 @@ div.fv-slider {
     }
   }
 
+  a.fv-block-link {
+    width:100%;
+    height:100%;
+    display:block;
+  }
+
   /** Receipt **/
 
   div.fv-slider-receipt {
     background-size: cover;
+    background-position: center;
     background-color: $fv-gray;
 
     .fv-foodtype {
