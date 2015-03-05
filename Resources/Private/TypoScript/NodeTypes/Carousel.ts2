@@ -22,4 +22,8 @@ prototype(FreeVeggie.Blog:Carousel) {
         attributes.class = ${'fv-slider-item fv-slider-receipt item ' +(carouselItemsIteration.isFirst ? 'active' : '')}
     }
 
+    prototype(FreeVeggie.Blog:CarouselItemText) {
+        attributes.class = ${'fv-slider-item fv-slider-text item ' +(carouselItemsIteration.isFirst ? 'active' : '')}
+    }
+
 }

@@ -847,3 +847,42 @@
           group: receipt
           editorOptions:
             nodeTypes: ['TYPO3.Neos:Document']
+
+
+##
+# A "Carousel" content element
+#
+'FreeVeggie.Blog:CarouselItemText':
+  superTypes: ['FreeVeggie.Blog:CarouselItem']
+  ui:
+    label: 'Text Item'
+    icon: 'icon-file-text'
+    group: freeveggiecarousel
+    position: 20
+    inlineEditable: TRUE
+    inspector:
+      groups:
+        'link':
+          label: Link
+          position: 100
+  properties:
+    text:
+      type: string
+      ui:
+        inlineEditable: TRUE
+    url:
+      type: string
+      ui:
+        reloadIfChanged: TRUE
+        label: 'Web URL'
+        placeholder: 'http://'
+        inspector:
+          group: link
+    reference:
+      type: 'reference'
+      ui:
+        reloadIfChanged: TRUE
+        label: 'Document'
+        inspector:
+          group: link
+

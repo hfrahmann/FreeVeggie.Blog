@@ -80,4 +80,23 @@ div.fv-slider {
     }
   }
 
+  /** Text **/
+
+  div.fv-slider-text {
+    box-sizing: border-box;
+    padding: 10px;
+    background-size: cover;
+    background-position: center;
+    background-color: darken($fv-green, 10);
+
+    h1,h2,h3,h4,h5,h6 {
+      margin:0 !important;
+      padding:0 !important;
+    }
+
+    div.editable-text {
+      min-height: 200px;
+    }
+  }
+
 }
