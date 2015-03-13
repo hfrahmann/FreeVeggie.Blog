@@ -1,8 +1,37 @@
 {namespace media=TYPO3\Media\ViewHelpers}
 {namespace neos=TYPO3\Neos\ViewHelpers}
 
-<div{attributes -> f:format.raw()}>
+<div{attributes -> f:format.raw()} style="background-color: {node.properties.backgroundColor};">
 
-    {neos:contentElement.editable(property: 'text', class: 'editable-text')}
+    <f:if condition="{0:node.context.workspace.name}=={0:'live'}">
+        <f:then>
+
+            <f:if condition="{node.properties.reference}">
+                <f:then>
+                    <neos:link.node node="{node.properties.reference}" class="fv-block-link">
+                        {node.properties.text -> f:format.raw()}
+                    </neos:link.node>
+                </f:then>
+                <f:else>
+                    <f:if condition="{node.properties.url}">
+                        <f:then>
+                            <a href="{node.properties.url}" target="_blank" class="fv-block-link">
+                                {node.properties.text -> f:format.raw()}
+                            </a>
+                        </f:then>
+                        <f:else>
+                            {node.properties.text -> f:format.raw()}
+                        </f:else>
+                    </f:if>
+                </f:else>
+            </f:if>
+
+        </f:then>
+        <f:else>
+
+            {neos:contentElement.editable(property: 'text', class: 'editable-text')}
+
+        </f:else>
+    </f:if>
 
 </div>

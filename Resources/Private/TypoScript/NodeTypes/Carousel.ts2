@@ -5,6 +5,7 @@ prototype(FreeVeggie.Blog:Carousel) {
     attributes.class = 'typo3-neos-nodetypes-fvcarousel fv-slider carousel slide'
     attributes.id = ${'carousel-' + q(node).property('_identifier')}
     attributes.data-ride = 'carousel'
+    attributes.data-keyboard = 'false'
 
     carouselItemsArray = ${q(node).children('carouselItems').children().get()}
 

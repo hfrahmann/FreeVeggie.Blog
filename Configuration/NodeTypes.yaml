@@ -865,6 +865,9 @@
         'link':
           label: Link
           position: 100
+        'element':
+          label: Element
+          position: 200
   properties:
     text:
       type: string
@@ -885,4 +888,12 @@
         label: 'Document'
         inspector:
           group: link
+    backgroundColor:
+      type: string
+      defaultValue: '#353535'
+      ui:
+        reloadIfChanged: TRUE
+        label: 'Background Color'
+        inspector:
+          group: element
 

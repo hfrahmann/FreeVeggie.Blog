@@ -73,7 +73,7 @@ div.fv-slider {
   div.fv-slider-receipt {
     background-size: cover;
     background-position: center;
-    background-color: $fv-gray;
+    background-color: $fv-darkgray;
 
     .fv-foodtype {
       font-weight: bold;
@@ -87,7 +87,13 @@ div.fv-slider {
     padding: 10px;
     background-size: cover;
     background-position: center;
-    background-color: darken($fv-green, 10);
+    background-color: lighten($fv-darkgray,5);
+    color: #FFFFFF;
+
+    > a.fv-block-link, > a.fv-block-link:hover {
+      color: #FFFFFF;
+      text-decoration: none;
+    }
 
     h1,h2,h3,h4,h5,h6 {
       margin:0 !important;
@@ -95,7 +101,8 @@ div.fv-slider {
     }
 
     div.editable-text {
-      min-height: 200px;
+      height: 300px;
+      overflow: hidden;
     }
   }
 
