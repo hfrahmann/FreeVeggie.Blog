@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <root>
-    <site nodeName="blog" type="TYPO3.Neos.NodeTypes:Page">
+    <site nodeName="blog" type="FreeVeggie.Blog:RootDocument">
         <properties>
             <name>Free Veggie</name>
             <title><![CDATA[Home]]></title>

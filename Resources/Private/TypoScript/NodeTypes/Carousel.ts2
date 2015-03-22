@@ -25,6 +25,9 @@ prototype(FreeVeggie.Blog:Carousel) {
 
     prototype(FreeVeggie.Blog:CarouselItemText) {
         attributes.class = ${'fv-slider-item fv-slider-text item ' +(carouselItemsIteration.isFirst ? 'active' : '')}
+        target = ${q(node).property('target')}
+        targetConverted = ${Neos.Link.hasSupportedScheme(this.target) ? Neos.Link.convertUriToObject(this.target, node) : null}
+        targetSchema = ${Neos.Link.getScheme(this.target)}
     }
 
 }

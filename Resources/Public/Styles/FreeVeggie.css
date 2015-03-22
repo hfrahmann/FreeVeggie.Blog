@@ -1,7 +1,7 @@
 /* General */
 html, body { margin: 0; -webkit-text-size-adjust: none; }
 
-body, table { font-family: "Lato", "Helvetica neue", Helvetica, Arial, sans-serif; font-size: 16px; font-weight: 400; -webkit-font-smoothing: antialiased; }
+body, table { font-family: 'Open Sans', "Helvetica neue", Helvetica, Arial, sans-serif; font-size: 16px; font-weight: 400; -webkit-font-smoothing: antialiased; }
 
 /* Positions */
 .left { float: left; }
@@ -12,7 +12,7 @@ body, table { font-family: "Lato", "Helvetica neue", Helvetica, Arial, sans-seri
 
 header { display: block; margin-top: 5px; }
 @media only screen and (max-width: 767px) { header { margin-bottom: 15px; } }
-header a.fv-logo { display: block; text-decoration: none; float: left; width: 211px; margin-top: 12px; }
+header a.fv-logo { display: block; text-decoration: none; float: left; width: 215px; margin-top: 12px; }
 @media only screen and (max-width: 767px) { header a.fv-logo { float: none; display: inline-block; } }
 header div.fv-logo-image { display: inline-block; background-image: url(../Images/logo.png); background-size: 100%; height: 40px; width: 50px; margin-right: 0px; margin-left: 17px; overflow: hidden; -webkit-transition-duration: 0.8s; -moz-transition-duration: 0.8s; -o-transition-duration: 0.8s; transition-duration: 0.8s; -webkit-transition-property: -webkit-transform; -moz-transition-property: -moz-transform; -o-transition-property: -o-transform; transition-property: transform; }
 header div.fv-logo-image:hover { -webkit-transform: rotate(-360deg); -moz-transform: rotate(-360deg); -o-transform: rotate(-360deg); }
@@ -43,11 +43,11 @@ header ul.fv-secondmenu-tablet { display: none; }
   header ul.fv-secondmenu-tablet > li a { text-decoration: none; color: #343434; font-size: 15px; display: block; padding: 6px 0px 12px 0px; }
   header ul.fv-secondmenu-tablet > li a:hover, header ul.fv-secondmenu-tablet > li a.current { color: #72C02C !important; } }
 
-h1 { font-family: "Oswald"; font-size: 32px; line-height: 120%; margin: 30px 0 6px 0 !important; }
+h1 { font-size: 32px; line-height: 120%; margin: 20px 0 6px 0 !important; font-weight: 400; }
 
-h2 { font-family: "Oswald"; font-size: 25px; margin: 30px 0 6px 0 !important; line-height: 120%; }
+h2 { font-size: 25px; margin: 20px 0 6px 0 !important; line-height: 120%; font-weight: 400; }
 
-h3 { font-family: "Oswald"; font-size: 20px; margin: 30px 0 6px 0 !important; line-height: 120%; }
+h3 { font-size: 20px; margin: 20px 0 6px 0 !important; line-height: 120%; font-weight: 400; }
 
 ul { list-style-type: square; }
 
@@ -234,9 +234,9 @@ div.fv-slider div.fv-slider-content { width: 100%; height: 300px; overflow: hidd
 div.fv-slider div.fv-slider-item { width: 100%; height: 300px; position: absolute; top: 0; left: 0; right: 0; }
 div.fv-slider .fv-slider-paging { display: block; text-align: center; list-style-type: none; margin: 5px 0 0 0; padding: 0; }
 div.fv-slider .fv-slider-paging li.active { opacity: 1.0; }
-div.fv-slider .fv-slider-paging li { opacity: 0.3; display: inline; padding: 5px; cursor: pointer; font-size: 30px; }
+div.fv-slider .fv-slider-paging li { opacity: 0.3; display: inline; padding: 5px; cursor: pointer; font-size: 30px; font-family: monospace; }
 div.fv-slider div.fv-slider-title { position: absolute; bottom: 0; background: rgba(0, 0, 0, 0.8); color: #FFF; width: 100%; padding: 9px; }
-div.fv-slider div.fv-slider-title h1 { margin: 0 0 5px 0 !important; font-size: 18px; }
+div.fv-slider div.fv-slider-title h1 { margin: 0 0 5px 0 !important; font-size: 18px; font-weight: bold; }
 div.fv-slider div.fv-slider-title p { margin: 0 !important; }
 div.fv-slider a.fv-block-link { width: 100%; height: 100%; display: block; }
 div.fv-slider div.fv-slider-receipt { background-size: cover; background-position: center; background-color: #212121; }

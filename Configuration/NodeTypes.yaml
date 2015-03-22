@@ -873,21 +873,16 @@
       type: string
       ui:
         inlineEditable: TRUE
-    url:
+    target:
       type: string
       ui:
+        label: 'Target'
         reloadIfChanged: TRUE
-        label: 'Web URL'
-        placeholder: 'http://'
         inspector:
-          group: link
-    reference:
-      type: 'reference'
-      ui:
-        reloadIfChanged: TRUE
-        label: 'Document'
-        inspector:
-          group: link
+          group: 'link'
+          editor: 'TYPO3.Neos/Inspector/Editors/LinkEditor'
+          editorOptions:
+            assets: FALSE
     backgroundColor:
       type: string
       defaultValue: '#353535'
