@@ -585,26 +585,6 @@
 
 
 
-##
-# A "ContactForm" content element
-#
-'FreeVeggie.Blog:ContactForm':
-  superTypes: ['TYPO3.Neos:Content']
-  ui:
-    label: 'Contact form'
-    icon: 'icon-envelope-alt'
-    group: freeveggiecontent
-    position: 100
-    inspector:
-      groups:
-        'contactform':
-          label: 'Contact Form'
-          position: 100
-  properties:
-
-
-
-
 ########################################################################################################################
 
 
@@ -780,8 +760,14 @@
 'FreeVeggie.Blog:Carousel':
   superTypes: ['TYPO3.Neos:Content']
   childNodes:
-      carouselItems:
-        type: 'TYPO3.Neos:ContentCollection'
+    carouselItems:
+      type: 'TYPO3.Neos:ContentCollection'
+      constraints:
+          nodeTypes:
+            # ALLOW text, DISALLOW Image
+            'FreeVeggie.Blog:CarouselItem': TRUE
+            # DISALLOW as Fallback (for not-explicitely-listed node types)
+            '*': FALSE
   ui:
     label: 'Carousel'
     icon: 'icon-play'

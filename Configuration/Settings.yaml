@@ -10,7 +10,6 @@ TYPO3:
             options:
               templatePathAndFilename: 'resource://FreeVeggie.Blog/Private/Templates/Error/Index.html'
               format: 'html'
-
   Neos:
     userInterface:
       editPreviewModes:

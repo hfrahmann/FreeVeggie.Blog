@@ -4,7 +4,8 @@
     "description": "Add description here",
     "require": {
         "typo3/neos": "*",
-        "typo3/neos-nodetypes": "*"
+        "typo3/neos-nodetypes": "*",
+        "typo3/swiftmailer": "*"
     },
     "autoload": {
         "psr-0": {
