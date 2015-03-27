@@ -31,12 +31,12 @@ header ul.fv-menu > li { float: left; position: relative; }
 header ul.fv-menu > li > a { display: block; text-decoration: none; color: #212121; text-transform: uppercase; font-weight: normal; letter-spacing: 0px; font-size: 15px; }
 @media only screen and (min-width: 768px) { header ul.fv-menu > li > a { margin-right: 15px; } }
 @media only screen and (max-width: 767px) { header ul.fv-menu > li > a { padding-top: 15px; padding-bottom: 15px; } }
-header ul.fv-menu > li > a:hover, header ul.fv-menu > li > a.current { color: #72C02C !important; }
+header ul.fv-menu > li > a:hover, header ul.fv-menu > li > a.current, header ul.fv-menu > li > a.active { color: #72C02C !important; }
 header ul.fv-secondmenu-desktop { display: block; clear: both; padding: 15px 0 0 0; }
 @media only screen and (max-width: 767px) { header ul.fv-secondmenu-desktop { display: none; } }
 header ul.fv-secondmenu-desktop > li { float: left; margin: 0 15px 0 0; list-style-type: none; }
 header ul.fv-secondmenu-desktop > li a { text-decoration: none; color: #343434; font-size: 14px; }
-header ul.fv-secondmenu-desktop > li a:hover, header ul.fv-secondmenu-desktop > li a.current { color: #72C02C !important; }
+header ul.fv-secondmenu-desktop > li a:hover, header ul.fv-secondmenu-desktop > li a.current, header ul.fv-secondmenu-desktop > li a.active { color: #72C02C !important; }
 header ul.fv-secondmenu-tablet { display: none; }
 @media only screen and (max-width: 767px) { header ul.fv-secondmenu-tablet { display: block; clear: both; padding: 15px 0 0 0; text-align: center; list-style-type: none; }
   header ul.fv-secondmenu-tablet > li { display: block; float: none; }

@@ -11,6 +11,14 @@
 
 ########################################################################################################################
 
+
+'TYPO3.Neos:Document':
+  childNodes:
+    main:
+      constraints:
+        nodeTypes:
+          'FreeVeggie.Blog:CarouselItem': FALSE
+
 # Document: Root
 'FreeVeggie.Blog:RootDocument':
   superTypes:
